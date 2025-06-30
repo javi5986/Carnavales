@@ -52,6 +52,7 @@
 
         Catch ex As Exception
             MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
         Finally
             conexion.Close()
         End Try
@@ -110,6 +111,7 @@
             lector.Close()
         Catch ex As Exception
             MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
         Finally
             conexion.Close()
         End Try

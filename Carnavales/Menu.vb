@@ -242,7 +242,8 @@ Public Class Menu
             ImprimirTexto(texto, p)
             p.Print()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
+
         End Try
     End Sub
 
@@ -347,7 +348,7 @@ Public Class Menu
 
 
             Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
+                MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
             End Try
 
         End If
@@ -391,7 +392,8 @@ Public Class Menu
             Application.Restart() ' Reiniciar la aplicación para que los cambios surtan efecto
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al resetear Base de Datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
         Finally
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
@@ -412,13 +414,13 @@ Public Class Menu
             File.Delete(dbPath)
             File.Move(tempPath, dbPath)
 
+            MessageBox.Show("Base de datos compactada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error al compactar: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
+            Application.Exit()
         End Try
 
-        MessageBox.Show("Base de datos compactada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub ResetTabla_Click(sender As Object, e As EventArgs) Handles ResetTabla.Click

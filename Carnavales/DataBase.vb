@@ -31,6 +31,7 @@ Module DataBase
 
         Catch ex As Exception
             MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
         End Try
 
         ' Retornar los datos al formulario que la llamó
@@ -65,6 +66,7 @@ Module DataBase
 
         Catch ex As Exception
             MessageBox.Show("Error al insertar datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
             Return False
         End Try
 
@@ -96,6 +98,7 @@ Module DataBase
 
             Catch ex As Exception
                 MessageBox.Show("Error al actualizar en " & tabla & ": " & ex.Message)
+                Application.Exit()
                 Return False
             End Try
         End Using

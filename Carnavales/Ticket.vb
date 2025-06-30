@@ -197,7 +197,7 @@ Public Class Ticket
             Catch ex As Exception
 
                 MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+                Application.Exit()
             End Try
 
         End If
@@ -256,7 +256,10 @@ Public Class Ticket
                                     End Sub
             p.Print()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
+            MessageBox.Show("Revise la tabla principal para confirmar si el ticket fue guardado y reimprimirlo")
+            Me.Dispose()
+            Menu.Show()
         End Try
     End Sub
 

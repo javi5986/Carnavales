@@ -51,7 +51,7 @@
                 Catch ex As Exception
 
                     MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
+                    Application.Exit()
                 End Try
 
             Else
