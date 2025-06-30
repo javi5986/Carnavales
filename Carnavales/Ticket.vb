@@ -123,16 +123,16 @@ Public Class Ticket
 
         Else
 
-            Dim respuesta As DialogResult
+            'Dim respuesta As DialogResult
 
 
-            respuesta = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-            If respuesta = DialogResult.Yes Then
+            'respuesta = MessageBox.Show("¿Deseas continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+            'If respuesta = DialogResult.Yes Then
 
 
-            Else
-                Exit Sub
-            End If
+            'Else
+            'Exit Sub
+            'End If
 
             Dim venta As New Ventas()
 
@@ -211,13 +211,14 @@ Public Class Ticket
 
             Dim texto As String
             Dim FechaHora As Date = Now
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 42 caracteres)
+            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 42/27 caracteres)
             texto = "===========================" & vbCrLf
-            texto = texto & "     ADJC CARNAVALES       " & vbCrLf
+            texto = texto & "            ADJC           " & vbCrLf
             texto = texto & "===========================" & vbCrLf
             texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
             texto = texto & "Ticket Nº: " & LabelNumTicket.Text & "  " & vbCrLf
-            texto = texto & "Cajero: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
+            texto = texto & "Evento/Cajeros: " & vbCrLf
+            texto = texto & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
             texto = texto & "Cant Detalle          Monto" & vbCrLf
             For i = 1 To DatosGlobales.ListaProductos.Count
 

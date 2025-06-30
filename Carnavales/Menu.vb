@@ -201,13 +201,14 @@ Public Class Menu
 
             Dim texto As String
             Dim FechaHora As Date = Now
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 42 caracteres)
+            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 27 caracteres)
             texto = "===========================" & vbCrLf
-            texto = texto & "     ADJC CARNAVALES       " & vbCrLf
+            texto = texto & "            ADJC           " & vbCrLf
             texto = texto & "===========================" & vbCrLf
             texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
             texto = texto & "Ticket Nº: " & venta.ID.ToString & "  " & vbCrLf
-            texto = texto & "Cajero: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
+            texto = texto & "Evento/Cajeros: " & vbCrLf
+            texto = texto & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
             texto = texto & "Cant Detalle          Monto" & vbCrLf
             For i = 1 To DatosGlobales.ListaProductos.Count
 

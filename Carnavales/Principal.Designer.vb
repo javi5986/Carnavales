@@ -35,21 +35,21 @@ Partial Class Principal
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(179, 63)
+        Label1.Location = New Point(154, 89)
         Label1.Name = "Label1"
-        Label1.Size = New Size(392, 62)
+        Label1.Size = New Size(434, 62)
         Label1.TabIndex = 0
-        Label1.Text = "ADJC Carnavales"
+        Label1.Text = "Sistema de Cobros"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 19.8000011F)
-        Label2.Location = New Point(131, 213)
+        Label2.Location = New Point(154, 171)
         Label2.Name = "Label2"
-        Label2.Size = New Size(535, 46)
+        Label2.Size = New Size(459, 92)
         Label2.TabIndex = 1
-        Label2.Text = "Ingrese los apellidos de los cajeros"
+        Label2.Text = "Ingrese el nombre del evento" & vbCrLf & "o los apellidos de los cajeros"
         ' 
         ' PictureBox1
         ' 
@@ -64,7 +64,8 @@ Partial Class Principal
         ' Apellidos
         ' 
         Apellidos.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Apellidos.Location = New Point(131, 288)
+        Apellidos.Location = New Point(119, 288)
+        Apellidos.MaxLength = 40
         Apellidos.Name = "Apellidos"
         Apellidos.Size = New Size(535, 51)
         Apellidos.TabIndex = 4
@@ -73,7 +74,7 @@ Partial Class Principal
         ' Aceptar
         ' 
         Aceptar.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
-        Aceptar.Location = New Point(177, 374)
+        Aceptar.Location = New Point(165, 374)
         Aceptar.Name = "Aceptar"
         Aceptar.Size = New Size(189, 56)
         Aceptar.TabIndex = 5
@@ -83,7 +84,7 @@ Partial Class Principal
         ' Salir
         ' 
         Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
-        Salir.Location = New Point(419, 374)
+        Salir.Location = New Point(410, 374)
         Salir.Name = "Salir"
         Salir.Size = New Size(189, 56)
         Salir.TabIndex = 6
