@@ -30,10 +30,11 @@ Public Class Ticket
         ' Agregar evento a los botones dinámicamente
         For i As Integer = 1 To DatosGlobales.ListaProductos.Count
 
-            Dim btnMas As Button = Me.Controls("ButtonMas" & i)
+            Dim btnMas As Button = tblBotones.Controls("ButtonMas" & i)
             btnMas.Text = DatosGlobales.ListaProductos(i - 1).Nombre
-            Dim btnMenos As Button = Me.Controls("ButtonMenos" & i)
-
+            btnMas.Dock = DockStyle.Fill
+            Dim btnMenos As Button = tblBotones.Controls("ButtonMenos" & i)
+            btnMenos.Dock = DockStyle.Fill
             If btnMas IsNot Nothing Then
 
                 btnMas.Tag = i
@@ -61,8 +62,8 @@ Public Class Ticket
         Dim index As Integer = CInt(boton.Tag) ' Identifica el producto
 
         ' Buscar los controles asociados al producto
-        Dim txtCantidad As TextBox = Me.Controls("TextBoxCantidad" & index)
-        Dim txtTotal As TextBox = Me.Controls("TextBoxSubTotal" & index)
+        Dim txtCantidad As TextBox = tblBotones.Controls("TextBoxCantidad" & index)
+        Dim txtTotal As TextBox = tblBotones.Controls("TextBoxSubTotal" & index)
 
 
         '        Dim lblNombre As Label = Me.Controls("lblNombre" & index)
@@ -101,7 +102,7 @@ Public Class Ticket
         Dim total As Double = 0
         For i As Integer = 1 To DatosGlobales.ListaProductos.Count
 
-            Dim txtTotal As TextBox = TryCast(Me.Controls("TextBoxSubTotal" & i), TextBox)
+            Dim txtTotal As TextBox = TryCast(tblBotones.Controls("TextBoxSubTotal" & i), TextBox)
 
             If txtTotal IsNot Nothing Then
 
@@ -144,7 +145,7 @@ Public Class Ticket
             End If
             For i As Integer = 1 To DatosGlobales.ListaProductos.Count
 
-                Dim txt As TextBox = TryCast(Me.Controls("TextBoxCantidad" & i), TextBox)
+                Dim txt As TextBox = TryCast(tblBotones.Controls("TextBoxCantidad" & i), TextBox)
 
                 If txt IsNot Nothing Then
 
@@ -171,9 +172,9 @@ Public Class Ticket
                     ' Limpiar los controles
                     For i As Integer = 1 To DatosGlobales.ListaProductos.Count
 
-                        Dim txtCantidad As TextBox = TryCast(Me.Controls("TextBoxCantidad" & i), TextBox)
-                        Dim txtTotal As TextBox = TryCast(Me.Controls("TextBoxSubTotal" & i), TextBox)
-                        Dim labelElementos As Label = TryCast(Me.Controls("Label" & i), Label)
+                        Dim txtCantidad As TextBox = TryCast(tblBotones.Controls("TextBoxCantidad" & i), TextBox)
+                        Dim txtTotal As TextBox = TryCast(tblBotones.Controls("TextBoxSubTotal" & i), TextBox)
+                        Dim labelElementos As Label = TryCast(tblBotones.Controls("Label" & i), Label)
 
                         If txtCantidad IsNot Nothing Then
 
@@ -209,17 +210,25 @@ Public Class Ticket
     Private Sub Impresion(venta As Ventas)
         Try
 
-            Dim texto As String
+            Dim texto As String = ""
+            ' Reset de la impresora
+            texto &= Chr(&H1B) & "@"
+            ' Fuente A (12pt), con negrita
+            texto &= Chr(&H1B) & "!" & Chr(16)
+
+
             Dim FechaHora As Date = Now
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 42/27 caracteres)
-            texto = "===========================" & vbCrLf
-            texto = texto & "            ADJC           " & vbCrLf
-            texto = texto & "===========================" & vbCrLf
+
+            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
+
+            texto = texto & "================================================" & vbCrLf
+            texto = texto & "                     ADJC                       " & vbCrLf
+            texto = texto & "================================================" & vbCrLf
             texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
             texto = texto & "Ticket Nº: " & LabelNumTicket.Text & "  " & vbCrLf
-            texto = texto & "Evento/Cajeros: " & vbCrLf
-            texto = texto & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
-            texto = texto & "Cant Detalle          Monto" & vbCrLf
+            texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
+            texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+            texto = texto & "------------------------------------------------" & vbCrLf
             For i = 1 To DatosGlobales.ListaProductos.Count
 
                 Dim propiedad As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
@@ -227,49 +236,28 @@ Public Class Ticket
                 Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
                 If propiedad.GetValue(venta) > 0 Then
 
-                    texto = texto & " " & propiedad.GetValue(venta) & "  " & nombre & vbCrLf
-                    texto = texto & "                  $" & precio * propiedad.GetValue(venta) & vbCrLf
-                    texto = texto & "---------------------------" & vbCrLf
+                    texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
+
+                    texto = texto & "------------------------------------------------" & vbCrLf
                 End If
             Next
-            texto = texto & "===========================" & vbCrLf
+            texto = texto & "================================================" & vbCrLf
             Dim propiedad2 As System.Reflection.PropertyInfo = venta.GetType().GetProperty("TotalVentas")
-            texto = texto & "TOTAL DEL TICKET   $" & propiedad2.GetValue(venta) & vbCrLf
-            texto = texto & "===========================" & vbCrLf
-            texto = texto & vbCrLf & vbCrLf & vbCrLf & vbCrLf ' Espacios para el corte
+            texto = texto & "TOTAL DEL TICKET             $" & propiedad2.GetValue(venta) & vbCrLf
+            texto = texto & "================================================" & vbCrLf
 
-            ' ESC/POS: Comando para tamaño de fuente doble en ancho y alto
-            Dim esc As String = Chr(&H1B) ' Código ESC
-            Dim dobleTamaño As String = esc & "!" & Chr(56) ' Doble ancho y alto
-            Dim reset As String = esc & "@" ' Reset de la impresora
-
-            ' Texto a enviar con formato
-            Dim comando As String = reset & dobleTamaño & texto & vbCrLf & vbCrLf
+            texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
 
             ' Enviar a la impresora
-            Dim p As New PrintDocument()
-            p.PrinterSettings.PrinterName = Configuraciones.nombreImpresora
+            RawPrinterHelper.SendStringToPrinter(Configuraciones.nombreImpresora, texto)
 
-            AddHandler p.PrintPage, Sub(sender As Object, e As PrintPageEventArgs)
-                                        Dim font As New Font("Courier New", 12, FontStyle.Bold)
-                                        e.Graphics.DrawString(texto, font, Brushes.Black, 0, 0)
-                                    End Sub
-            p.Print()
+
         Catch ex As Exception
             MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
             MessageBox.Show("Revise la tabla principal para confirmar si el ticket fue guardado y reimprimirlo")
             Me.Dispose()
             Menu.Show()
         End Try
-    End Sub
-
-    Private Sub Ticket_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-
-
-        For Each ctrl As Control In Me.Controls
-
-            ctrl.AutoSize = True
-        Next
     End Sub
 
     Private Sub CheckBoxtTransferencia_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxtTransferencia.CheckedChanged

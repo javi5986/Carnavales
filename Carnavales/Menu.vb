@@ -199,17 +199,28 @@ Public Class Menu
 
         Try
 
-            Dim texto As String
+            Dim texto As String = ""
+            ' Reset de la impresora
+            texto &= Chr(&H1B) & "@"
+            ' Fuente A (12pt), con negrita
+            texto &= Chr(&H1B) & "!" & Chr(16)
+
+
             Dim FechaHora As Date = Now
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 27 caracteres)
-            texto = "===========================" & vbCrLf
-            texto = texto & "            ADJC           " & vbCrLf
-            texto = texto & "===========================" & vbCrLf
+
+            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
+
+
+            texto = texto & "================================================" & vbCrLf
+            texto = texto & "                     ADJC                       " & vbCrLf
+            texto = texto & "================================================" & vbCrLf
+
             texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
             texto = texto & "Ticket Nº: " & venta.ID.ToString & "  " & vbCrLf
-            texto = texto & "Evento/Cajeros: " & vbCrLf
-            texto = texto & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
-            texto = texto & "Cant Detalle          Monto" & vbCrLf
+            texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
+            texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+            texto = texto & "------------------------------------------------" & vbCrLf
+
             For i = 1 To DatosGlobales.ListaProductos.Count
 
                 Dim propiedad As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
@@ -217,30 +228,19 @@ Public Class Menu
                 Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
                 If propiedad.GetValue(venta) > 0 Then
 
-                    texto = texto & " " & propiedad.GetValue(venta) & "  " & nombre & vbCrLf
-                    texto = texto & "                  $" & precio * propiedad.GetValue(venta) & vbCrLf
-                    texto = texto & "---------------------------" & vbCrLf
+                    texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
+                    texto = texto & "------------------------------------------------" & vbCrLf
                 End If
             Next
-            texto = texto & "===========================" & vbCrLf
+            texto = texto & "================================================" & vbCrLf
             Dim propiedad2 As System.Reflection.PropertyInfo = venta.GetType().GetProperty("TotalVentas")
-            texto = texto & "TOTAL DEL TICKET   $" & propiedad2.GetValue(venta) & vbCrLf
-            texto = texto & "===========================" & vbCrLf
-            texto = texto & vbCrLf & vbCrLf & vbCrLf & vbCrLf ' Espacios para el corte
+            texto = texto & "TOTAL DEL TICKET             $" & propiedad2.GetValue(venta) & vbCrLf
+            texto = texto & "================================================" & vbCrLf
 
-            ' ESC/POS: Comando para tamaño de fuente doble en ancho y alto
-            Dim esc As String = Chr(&H1B) ' Código ESC
-            Dim dobleTamaño As String = esc & "!" & Chr(56) ' Doble ancho y alto
-            Dim reset As String = esc & "@" ' Reset de la impresora
-
-            ' Texto a enviar con formato
-            Dim comando As String = reset & dobleTamaño & texto & vbCrLf & vbCrLf
-
+            texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
             ' Enviar a la impresora
-            Dim p As New PrintDocument()
-            p.PrinterSettings.PrinterName = Configuraciones.nombreImpresora
-            ImprimirTexto(texto, p)
-            p.Print()
+            RawPrinterHelper.SendStringToPrinter(Configuraciones.nombreImpresora, texto)
+
         Catch ex As Exception
             MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
 
@@ -295,17 +295,25 @@ Public Class Menu
 
             Try
 
-                Dim texto As String
+                Dim texto As String = ""
+                ' Reset de la impresora
+                texto &= Chr(&H1B) & "@"
+                ' Fuente A (12pt), con negrita
+                texto &= Chr(&H1B) & "!" & Chr(16)
+
                 Dim FechaHora As Date = Now
-                ' Texto a imprimir (asegurarse de que cada línea tenga hasta 42 caracteres)
-                texto = "===========================" & vbCrLf
-                texto = texto & "     ADJC CARNAVALES       " & vbCrLf
-                texto = texto & "===========================" & vbCrLf
+
+                ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
+                texto = texto & "================================================" & vbCrLf
+                texto = texto & "                     ADJC                       " & vbCrLf
+                texto = texto & "================================================" & vbCrLf
                 texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
                 texto = texto & "CIERRE DE CAJA " & vbCrLf
-                texto = texto & "Cajero: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
+                texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
                 texto = texto & "Cant de ticket: " & cantidadTickets & "  " & vbCrLf
-                texto = texto & "Cant Detalle          Monto" & vbCrLf
+                texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+                texto = texto & "------------------------------------------------" & vbCrLf
+
                 For i = 1 To DatosGlobales.ListaProductos.Count
 
                     If cantidades(i - 1) = 0 Then
@@ -314,38 +322,20 @@ Public Class Menu
                     ' MONTO TOTAL POR PRODUCTO
                     Dim montoTotalCant As Double = cantidades(i - 1) * DatosGlobales.ListaProductos(i - 1).Precio
 
+                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(33) & "$" & montoTotalCant.ToString.PadLeft(8) & vbCrLf
 
-                    texto = texto & " " & cantidades(i - 1).ToString & "  " & DatosGlobales.ListaProductos(i - 1).Nombre & vbCrLf
-                    texto = texto & "                  $" & montoTotalCant & vbCrLf
-                    texto = texto & "---------------------------" & vbCrLf
+                    texto = texto & "------------------------------------------------" & vbCrLf
 
-                Next
-                texto = texto & "===========================" & vbCrLf
-                texto = texto & "TOTAL EFECTIVO $" & VentasEfectivo & vbCrLf
-                texto = texto & "TOTAL TRANSFER $" & VentasTransferencia & vbCrLf
-                texto = texto & "TOTAL VENTAS $" & montoTotal & vbCrLf
-                texto = texto & "===========================" & vbCrLf
-                texto = texto & vbCrLf & vbCrLf & vbCrLf & vbCrLf ' Espacios para el corte
+                Next i
+                texto = texto & "================================================" & vbCrLf
+                texto = texto & "TOTAL EFECTIVO      $" & VentasEfectivo & vbCrLf
+                texto = texto & "TOTAL TRANSFERENCIA $" & VentasTransferencia & vbCrLf
+                texto = texto & "TOTAL VENTAS        $" & montoTotal & vbCrLf
+                texto = texto & "================================================" & vbCrLf
 
-                ' ESC/POS: Comando para tamaño de fuente doble en ancho y alto
-                Dim esc As String = Chr(&H1B) ' Código ESC
-                Dim dobleTamaño As String = esc & "!" & Chr(56) ' Doble ancho y alto
-                Dim reset As String = esc & "@" ' Reset de la impresora
-
-                ' Texto a enviar con formato
-                Dim comando As String = reset & dobleTamaño & texto & vbCrLf & vbCrLf
-
+                texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
                 ' Enviar a la impresora
-                Dim p As New PrintDocument()
-                ' Configurar la impresora
-                p.PrinterSettings.PrinterName = Configuraciones.nombreImpresora
-
-                ' Asegurarse de que la impresora esté configurada correctamente
-                ImprimirTexto(texto, p)
-
-                ' Asignar el evento PrintPage para imprimir el texto
-                p.Print()
-
+                RawPrinterHelper.SendStringToPrinter(Configuraciones.nombreImpresora, texto)
 
             Catch ex As Exception
                 MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)

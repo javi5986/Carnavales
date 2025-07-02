@@ -64,10 +64,10 @@ Partial Class Principal
         ' Apellidos
         ' 
         Apellidos.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Apellidos.Location = New Point(119, 288)
-        Apellidos.MaxLength = 40
+        Apellidos.Location = New Point(62, 288)
+        Apellidos.MaxLength = 32
         Apellidos.Name = "Apellidos"
-        Apellidos.Size = New Size(535, 51)
+        Apellidos.Size = New Size(670, 51)
         Apellidos.TabIndex = 4
         Apellidos.TextAlign = HorizontalAlignment.Center
         ' 
