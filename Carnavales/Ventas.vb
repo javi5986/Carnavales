@@ -23,6 +23,11 @@
     Public Property Cantidad20 As Integer
     Public Property Cantidad21 As Integer
     Public Property Cantidad22 As Integer
+    Public Property Cantidad23 As Integer
+    Public Property Cantidad24 As Integer
+    Public Property Cantidad25 As Integer
+    Public Property Cantidad26 As Integer
+    Public Property Cantidad27 As Integer
     Public Property TotalVentas As Double
     Public Property Anulado As Boolean
     Public Property MetodoPago As Boolean

@@ -42,6 +42,11 @@
                     .Cantidad20 = Convert.ToInt32(lector("Cantidad20")),
                     .Cantidad21 = Convert.ToInt32(lector("Cantidad21")),
                     .Cantidad22 = Convert.ToInt32(lector("Cantidad22")),
+                    .Cantidad23 = Convert.ToInt32(lector("Cantidad23")),
+                    .Cantidad24 = Convert.ToInt32(lector("Cantidad24")),
+                    .Cantidad25 = Convert.ToInt32(lector("Cantidad25")),
+                    .Cantidad26 = Convert.ToInt32(lector("Cantidad26")),
+                    .Cantidad27 = Convert.ToInt32(lector("Cantidad27")),
                     .TotalVentas = Convert.ToDouble(lector("TotalVentas")),
                     .Anulado = Convert.ToBoolean(lector("Anulado")),
                     .MetodoPago = Convert.ToBoolean(lector("Efectivo"))
@@ -51,7 +56,7 @@
             lector.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al ejecutar SQL aca: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Application.Exit()
         Finally
             conexion.Close()
@@ -92,8 +97,6 @@
     Public Function ObtenerProductos() As List(Of Producto)
 
         Dim productos As New List(Of Producto)
-
-        ' Conexión a Access        
         Dim conexion As New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Configuraciones.rutaDB & ";")
         Dim comando As New OleDb.OleDbCommand("SELECT Id, Nombre, Precio FROM Listado", conexion)
 
@@ -102,12 +105,29 @@
             Dim lector As OleDb.OleDbDataReader = comando.ExecuteReader()
 
             While lector.Read()
-                productos.Add(New Producto With {
-                    .ID = Convert.ToInt32(lector("Id")),
-                    .Nombre = lector("Nombre").ToString(),
-                    .Precio = Convert.ToDecimal(lector("Precio"))
-                })
+                Dim producto As New Producto
+
+                If Not IsDBNull(lector("Id")) Then
+                    producto.ID = Convert.ToInt32(lector("Id"))
+                Else
+                    producto.ID = 0
+                End If
+
+                If Not IsDBNull(lector("Nombre")) Then
+                    producto.Nombre = lector("Nombre").ToString()
+                Else
+                    producto.Nombre = ""
+                End If
+
+                If Not IsDBNull(lector("Precio")) Then
+                    producto.Precio = Convert.ToDecimal(lector("Precio"))
+                Else
+                    producto.Precio = 0
+                End If
+
+                productos.Add(producto)
             End While
+
             lector.Close()
         Catch ex As Exception
             MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -119,5 +139,6 @@
         Return productos
 
     End Function
+
 
 End Module

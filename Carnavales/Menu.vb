@@ -6,6 +6,8 @@ Imports System.IO
 
 Public Class Menu
 
+    Private ToolTipConfigurar As New ToolTip()
+
     Private Sub Menu_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
         Application.Exit()
@@ -39,17 +41,17 @@ Public Class Menu
         With DataGridView1
             .Columns("ID").HeaderText = "ID"
             .Columns("ID").ReadOnly = True
-            .Columns("ID").Width = 120
+            .Columns("ID").Width = 110
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("TotalVentas").HeaderText = "Monto Total"
             .Columns("TotalVentas").ReadOnly = True
-            .Columns("TotalVentas").Width = 230
+            .Columns("TotalVentas").Width = 220
             .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Anulado").HeaderText = "Anulado"
-            .Columns("Anulado").Width = 160
+            .Columns("Anulado").Width = 150
             .Columns("Anulado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("MetodoPago").HeaderText = "Efectivo"
-            .Columns("MetodoPago").Width = 160
+            .Columns("MetodoPago").Width = 150
             .Columns("MetodoPago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             ' Asegurar que solo se muestren las columnas necesarias
             For Each col As DataGridViewColumn In .Columns
@@ -76,7 +78,29 @@ Public Class Menu
 
         ' Sumamos el total vendido
         Dim montoTotal As Double = ventasValidas.Sum(Function(v) v.TotalVentas)
-        TxtTotalVentas.Text = montoTotal.ToString()
+        TxtTotalVentas.Text = montoTotal.ToString("N0")
+
+        If DatosGlobales.ListaVentas IsNot Nothing AndAlso DatosGlobales.ListaVentas.Count > 0 Then
+            ' Simula desactivación
+            ConfigurarProductos.Enabled = True
+            ConfigurarProductos.ForeColor = Color.Gray
+            ConfigurarProductos.BackColor = Color.LightGray
+            ConfigurarProductos.Cursor = Cursors.No
+            ConfigurarProductos.Tag = "Bloqueado"
+
+            ToolTipConfigurar.SetToolTip(ConfigurarProductos, "No se pueden cambiar los precios si ya tiene ventas realizadas." & vbCrLf & "Para modificar precios debe Cerrar Caja y luego eliminar todas las Ventas.")
+        Else
+            ConfigurarProductos.Enabled = True
+            ConfigurarProductos.ForeColor = SystemColors.ControlText
+            ConfigurarProductos.BackColor = SystemColors.Control
+            ConfigurarProductos.Cursor = Cursors.Default
+            ConfigurarProductos.Tag = ""
+
+            ToolTipConfigurar.SetToolTip(ConfigurarProductos, "")
+        End If
+
+
+
 
     End Sub
 
@@ -187,7 +211,7 @@ Public Class Menu
     Private Sub Reimprimir_Click(sender As Object, e As EventArgs) Handles Reimprimir.Click
 
         Dim idVenta As Integer = DataGridView1.CurrentRow.Cells("ID").Value
-        Dim totalVenta As Decimal = DataGridView1.CurrentRow.Cells("TotalVentas").Value
+        Dim totalVenta As Double = DataGridView1.CurrentRow.Cells("TotalVentas").Value
         Dim anulado As Boolean = DataGridView1.CurrentRow.Cells("Anulado").Value
 
         Dim venta As Ventas = DatosGlobales.ListaVentas.Find(Function(v) v.ID = idVenta)
@@ -234,7 +258,8 @@ Public Class Menu
             Next
             texto = texto & "================================================" & vbCrLf
             Dim propiedad2 As System.Reflection.PropertyInfo = venta.GetType().GetProperty("TotalVentas")
-            texto = texto & "TOTAL DEL TICKET             $" & propiedad2.GetValue(venta) & vbCrLf
+            Dim totalTicket As Double = Convert.ToDouble(propiedad2.GetValue(venta))
+            texto = texto & "TOTAL DEL TICKET             $" & totalTicket.ToString("N0") & vbCrLf
             texto = texto & "================================================" & vbCrLf
 
             texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
@@ -256,52 +281,57 @@ Public Class Menu
 
     Private Sub CerrarCaja_Click(sender As Object, e As EventArgs) Handles CerrarCaja.Click
 
+        ' Verificar si hay ventas registradas
+        If DatosGlobales.ListaVentas.Count = 0 Then
+            MessageBox.Show("No hay ventas registradas para cerrar la caja.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
 
         ' Preguntar al usuario si está seguro de cerrar la caja
-        Dim respuesta As DialogResult = MessageBox.Show("¿Está seguro de que desea CERRAR LA CAJA ?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim respuesta = MessageBox.Show("¿Está seguro de que desea CERRAR LA CAJA ?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         ' Verificamos si el usuario confirma el cierre de caja
         If respuesta = DialogResult.Yes Then
 
 
-            Dim ventas As List(Of Ventas) = DatosGlobales.ObtenerVentas()
+            Dim ventas = ObtenerVentas()
 
             ' Filtramos solo las ventas no anuladas
-            Dim ventasValidas As IEnumerable(Of Ventas) = ventas.Where(Function(v) Not v.Anulado)
+            Dim ventasValidas = ventas.Where(Function(v) Not v.Anulado)
 
             ' Contamos los tickets (IDs únicos)
-            Dim cantidadTickets As Integer = ventasValidas.Count()
+            Dim cantidadTickets = ventasValidas.Count
 
             ' Sumamos las cantidades vendidas de cada elemento
-            Dim cantidades(DatosGlobales.ListaProductos.Count - 1) As Integer
+            Dim cantidades(ListaProductos.Count - 1) As Integer
 
             For Each venta In ventasValidas
 
-                For i As Integer = 0 To DatosGlobales.ListaProductos.Count - 1
+                For i = 0 To ListaProductos.Count - 1
 
-                    cantidades(i) += CInt(CallByName(venta, "Cantidad" & (i + 1), CallType.Get))
+                    cantidades(i) += CInt(CallByName(venta, "Cantidad" & i + 1, CallType.Get))
 
                 Next
 
             Next
 
             ' Filtramos solo las ventas Efectivo
-            Dim ventasValidasEfectivo As IEnumerable(Of Ventas) = ventasValidas.Where(Function(v) v.MetodoPago)
-            Dim ventasValidasTransferencia As IEnumerable(Of Ventas) = ventasValidas.Where(Function(v) Not v.MetodoPago)
+            Dim ventasValidasEfectivo = ventasValidas.Where(Function(v) v.MetodoPago)
+            Dim ventasValidasTransferencia = ventasValidas.Where(Function(v) Not v.MetodoPago)
             ' Sumamos el total vendido
-            Dim VentasEfectivo As Double = ventasValidasEfectivo.Sum(Function(v) v.TotalVentas)
-            Dim VentasTransferencia As Double = ventasValidasTransferencia.Sum(Function(v) v.TotalVentas)
-            Dim montoTotal As Double = Double.Parse(VentasEfectivo) + Double.Parse(VentasTransferencia)
+            Dim VentasEfectivo = ventasValidasEfectivo.Sum(Function(v) v.TotalVentas)
+            Dim VentasTransferencia = ventasValidasTransferencia.Sum(Function(v) v.TotalVentas)
+            Dim montoTotal = Double.Parse(VentasEfectivo) + Double.Parse(VentasTransferencia)
 
             Try
 
-                Dim texto As String = ""
+                Dim texto = ""
                 ' Reset de la impresora
                 texto &= Chr(&H1B) & "@"
                 ' Fuente A (12pt), con negrita
                 texto &= Chr(&H1B) & "!" & Chr(16)
 
-                Dim FechaHora As Date = Now
+                Dim FechaHora = Now
 
                 ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
                 texto = texto & "================================================" & vbCrLf
@@ -314,28 +344,28 @@ Public Class Menu
                 texto = texto & "Cant Detalle                             Monto  " & vbCrLf
                 texto = texto & "------------------------------------------------" & vbCrLf
 
-                For i = 1 To DatosGlobales.ListaProductos.Count
+                For i = 1 To ListaProductos.Count
 
                     If cantidades(i - 1) = 0 Then
                         Continue For
                     End If
                     ' MONTO TOTAL POR PRODUCTO
-                    Dim montoTotalCant As Double = cantidades(i - 1) * DatosGlobales.ListaProductos(i - 1).Precio
+                    Dim montoTotalCant = cantidades(i - 1) * ListaProductos(i - 1).Precio
 
-                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(33) & "$" & montoTotalCant.ToString.PadLeft(8) & vbCrLf
+                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & ListaProductos(i - 1).Nombre.ToString.PadRight(33) & "$" & montoTotalCant.ToString.PadLeft(8) & vbCrLf
 
                     texto = texto & "------------------------------------------------" & vbCrLf
 
                 Next i
                 texto = texto & "================================================" & vbCrLf
-                texto = texto & "TOTAL EFECTIVO      $" & VentasEfectivo & vbCrLf
-                texto = texto & "TOTAL TRANSFERENCIA $" & VentasTransferencia & vbCrLf
-                texto = texto & "TOTAL VENTAS        $" & montoTotal & vbCrLf
+                texto = texto & "TOTAL EFECTIVO      $" & VentasEfectivo.ToString("N0") & vbCrLf
+                texto = texto & "TOTAL TRANSFERENCIA $" & VentasTransferencia.ToString("N0") & vbCrLf
+                texto = texto & "TOTAL VENTAS        $" & montoTotal.ToString("N0") & vbCrLf
                 texto = texto & "================================================" & vbCrLf
 
                 texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
                 ' Enviar a la impresora
-                RawPrinterHelper.SendStringToPrinter(Configuraciones.nombreImpresora, texto)
+                RawPrinterHelper.SendStringToPrinter(nombreImpresora, texto)
 
             Catch ex As Exception
                 MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
@@ -424,5 +454,18 @@ Public Class Menu
 
             ActualizarDataViewGrid()
         End If
+    End Sub
+
+    Private Sub ConfigurarProductos_Click(sender As Object, e As EventArgs) Handles ConfigurarProductos.Click
+
+
+        If ConfigurarProductos.Tag = "Bloqueado" Then
+            ' No hacer nada
+            Return
+        End If
+
+        ' Abrís el formulario solo si está permitido
+        Precios.ShowDialog()
+
     End Sub
 End Class

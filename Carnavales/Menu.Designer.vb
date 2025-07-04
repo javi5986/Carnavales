@@ -33,13 +33,14 @@ Partial Class Menu
         ResetTabla = New Button()
         Label1 = New Label()
         TxtTotalVentas = New TextBox()
+        ConfigurarProductos = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Cobrar
         ' 
         Cobrar.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Cobrar.Location = New Point(85, 74)
+        Cobrar.Location = New Point(85, 41)
         Cobrar.Name = "Cobrar"
         Cobrar.Size = New Size(270, 95)
         Cobrar.TabIndex = 0
@@ -49,7 +50,7 @@ Partial Class Menu
         ' CerrarCaja
         ' 
         CerrarCaja.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        CerrarCaja.Location = New Point(85, 190)
+        CerrarCaja.Location = New Point(85, 151)
         CerrarCaja.Name = "CerrarCaja"
         CerrarCaja.Size = New Size(270, 95)
         CerrarCaja.TabIndex = 1
@@ -59,7 +60,7 @@ Partial Class Menu
         ' Salir
         ' 
         Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Salir.Location = New Point(85, 564)
+        Salir.Location = New Point(85, 630)
         Salir.Name = "Salir"
         Salir.Size = New Size(270, 95)
         Salir.TabIndex = 2
@@ -85,18 +86,18 @@ Partial Class Menu
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        DataGridView1.Location = New Point(486, 74)
+        DataGridView1.Location = New Point(443, 41)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 70
         DataGridView1.ScrollBars = ScrollBars.Vertical
-        DataGridView1.Size = New Size(737, 459)
+        DataGridView1.Size = New Size(780, 549)
         DataGridView1.TabIndex = 3
         ' 
         ' Reimprimir
         ' 
         Reimprimir.Enabled = False
         Reimprimir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Reimprimir.Location = New Point(560, 566)
+        Reimprimir.Location = New Point(537, 630)
         Reimprimir.Name = "Reimprimir"
         Reimprimir.Size = New Size(270, 95)
         Reimprimir.TabIndex = 4
@@ -106,7 +107,7 @@ Partial Class Menu
         ' ConfigurarImpresora
         ' 
         ConfigurarImpresora.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ConfigurarImpresora.Location = New Point(85, 312)
+        ConfigurarImpresora.Location = New Point(85, 393)
         ConfigurarImpresora.Name = "ConfigurarImpresora"
         ConfigurarImpresora.Size = New Size(270, 95)
         ConfigurarImpresora.TabIndex = 5
@@ -116,7 +117,7 @@ Partial Class Menu
         ' ResetTabla
         ' 
         ResetTabla.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
-        ResetTabla.Location = New Point(85, 438)
+        ResetTabla.Location = New Point(85, 511)
         ResetTabla.Name = "ResetTabla"
         ResetTabla.Size = New Size(270, 95)
         ResetTabla.TabIndex = 6
@@ -127,7 +128,7 @@ Partial Class Menu
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(916, 545)
+        Label1.Location = New Point(917, 617)
         Label1.Name = "Label1"
         Label1.Size = New Size(207, 31)
         Label1.TabIndex = 7
@@ -137,17 +138,28 @@ Partial Class Menu
         ' 
         TxtTotalVentas.Enabled = False
         TxtTotalVentas.Font = New Font("Segoe UI", 24.8000011F, FontStyle.Bold)
-        TxtTotalVentas.Location = New Point(889, 586)
+        TxtTotalVentas.Location = New Point(890, 663)
         TxtTotalVentas.Name = "TxtTotalVentas"
         TxtTotalVentas.Size = New Size(266, 62)
         TxtTotalVentas.TabIndex = 8
         TxtTotalVentas.TextAlign = HorizontalAlignment.Center
         ' 
+        ' ConfigurarProductos
+        ' 
+        ConfigurarProductos.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ConfigurarProductos.Location = New Point(85, 268)
+        ConfigurarProductos.Name = "ConfigurarProductos"
+        ConfigurarProductos.Size = New Size(270, 107)
+        ConfigurarProductos.TabIndex = 9
+        ConfigurarProductos.Text = "CONFIGURAR" & vbCrLf & "PRECIOS"
+        ConfigurarProductos.UseVisualStyleBackColor = True
+        ' 
         ' Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1262, 673)
+        ClientSize = New Size(1262, 800)
+        Controls.Add(ConfigurarProductos)
         Controls.Add(TxtTotalVentas)
         Controls.Add(Label1)
         Controls.Add(ResetTabla)
@@ -176,4 +188,5 @@ Partial Class Menu
     Friend WithEvents ResetTabla As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtTotalVentas As TextBox
+    Friend WithEvents ConfigurarProductos As Button
 End Class

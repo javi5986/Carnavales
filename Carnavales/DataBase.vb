@@ -104,4 +104,55 @@ Module DataBase
         End Using
     End Function
 
+    Public Sub ActualizarListadoProductos(grilla As DataGridView, Optional formulario As Form = Nothing)
+        Dim rutaEscritorio As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+        Dim rutaDB As String = System.IO.Path.Combine(rutaEscritorio, "Carnavales.accdb")
+        Dim cadenaConexion As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & rutaDB & ";"
+
+        Using conexion As New OleDb.OleDbConnection(cadenaConexion)
+            Try
+                conexion.Open()
+
+                For Each fila As DataGridViewRow In grilla.Rows
+                    If Not fila.IsNewRow Then
+                        Dim id As Integer = Convert.ToInt32(fila.Cells("ID").Value)
+                        Dim nombre As String = ""
+                        Dim precio As Decimal = 0
+
+                        Dim nombreCelda As Object = fila.Cells("Nombre").Value
+                        Dim precioCelda As Object = fila.Cells("Precio").Value
+
+                        If nombreCelda IsNot Nothing AndAlso Not IsDBNull(nombreCelda) AndAlso Not String.IsNullOrWhiteSpace(nombreCelda.ToString()) Then
+                            nombre = nombreCelda.ToString().Trim()
+
+                            If precioCelda IsNot Nothing AndAlso Not IsDBNull(precioCelda) AndAlso IsNumeric(precioCelda) Then
+                                precio = Convert.ToDecimal(precioCelda)
+                            End If
+                        End If
+
+                        Dim sqlUpdate As String = "UPDATE Listado SET Nombre = @Nombre, Precio = @Precio WHERE ID = @ID"
+                        Using comando As New OleDb.OleDbCommand(sqlUpdate, conexion)
+                            comando.Parameters.AddWithValue("@Nombre", nombre)
+                            If precio = 0 Then
+                                comando.Parameters.AddWithValue("@Precio", DBNull.Value)
+                            Else
+                                comando.Parameters.AddWithValue("@Precio", precio)
+                            End If
+                            comando.Parameters.AddWithValue("@ID", id)
+                            comando.ExecuteNonQuery()
+                        End Using
+                    End If
+                Next
+
+                MessageBox.Show("Actualización completada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If formulario IsNot Nothing Then formulario.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Error al actualizar la tabla Listado de Productos: " & ex.Message)
+            End Try
+        End Using
+    End Sub
+
+
+
 End Module
