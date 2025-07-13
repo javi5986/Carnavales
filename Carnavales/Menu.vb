@@ -148,7 +148,7 @@ Public Class Menu
 
                     ' Sumamos el total vendido
                     Dim montoTotal As Double = ventasValidas.Sum(Function(v) v.TotalVentas)
-                    TxtTotalVentas.Text = montoTotal.ToString()
+                    TxtTotalVentas.Text = montoTotal.ToString("N0")
                 End If
             Else
                 Dim idVenta As Integer = DataGridView1.CurrentRow.Cells("ID").Value
@@ -165,7 +165,7 @@ Public Class Menu
 
                     ' Sumamos el total vendido
                     Dim montoTotal As Double = ventasValidas.Sum(Function(v) v.TotalVentas)
-                    TxtTotalVentas.Text = montoTotal.ToString()
+                    TxtTotalVentas.Text = montoTotal.ToString("N0")
                 End If
             End If
         End If

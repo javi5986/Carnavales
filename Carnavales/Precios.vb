@@ -2,21 +2,25 @@
 
 Public Class Precios
 
+    Private copiaProductos As List(Of Producto)
+
     Private Sub Precios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Cargar una copia profunda de los productos
+        copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
+        .ID = p.ID,
+        .Nombre = p.Nombre,
+        .Precio = p.Precio
+    }).ToList()
 
-        ActualizarDataViewGrid()
+        DataGridView1.DataSource = Nothing
+        DataGridView1.DataSource = copiaProductos
 
+        ConfigurarDataGridView()
     End Sub
 
-    Private Sub ActualizarDataViewGrid()
 
-
-        DatosGlobales.ObtenerProductos() ' Actualiza la lista de productos desde la base de datos
-        DataGridView1.DataSource = Nothing
-        DataGridView1.DataSource = DatosGlobales.ListaProductos
-
+    Private Sub ConfigurarDataGridView()
         With DataGridView1
-
             .Columns("ID").ReadOnly = True
             .Columns("ID").Width = 80
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -27,8 +31,8 @@ Public Class Precios
             .Columns("Precio").Width = 200
             .Columns("Precio").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         End With
-
     End Sub
+
 
 
 
@@ -52,50 +56,57 @@ Public Class Precios
 
 
     Private Sub ConvertirAMayusculas_KeyPress(sender As Object, e As KeyPressEventArgs)
-        ' Convertir cada letra que se presiona a mayúscula
-        e.KeyChar = Char.ToUpper(e.KeyChar)
+        If Char.IsLetter(e.KeyChar) Then
+            e.KeyChar = Char.ToUpper(e.KeyChar)
+        End If
+        ' No toques los números ni otros caracteres
     End Sub
 
-    Private Sub Salir_Click(sender As Object, e As EventArgs) Handles Salir.Click
 
-        ' pregunta si se desea salir sin guardar los cambios
+    Private Sub Salir_Click(sender As Object, e As EventArgs) Handles Salir.Click
         Dim resultado As DialogResult = MessageBox.Show("¿Desea salir sin guardar los cambios?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If resultado = DialogResult.Yes Then
-            Me.Close() ' Cierra el formulario
+            Me.Close()
         End If
     End Sub
 
-    Private Sub Guardar_Click(sender As Object, e As EventArgs) Handles Guardar.Click
 
+    Private Sub Guardar_Click(sender As Object, e As EventArgs) Handles Guardar.Click
         If ValidarDatosAntesDeGuardar() Then
-            ' Si los datos son válidos, actualiza la tabla Listado de Productos
             DataBase.ActualizarListadoProductos(DataGridView1, Me)
+            ' También podés copiar los cambios a DatosGlobales si querés
+            DatosGlobales.ListaProductos = copiaProductos.Select(Function(p) New Producto With {
+            .ID = p.ID,
+            .Nombre = p.Nombre,
+            .Precio = p.Precio
+        }).ToList()
         Else
             MessageBox.Show("Hay errores en la tabla. Verifique que los nombres tengan precios y los precios tengan nombres.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
+
+
+
     Private Sub DataGridView1_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DataGridView1.EditingControlShowing
+        Dim txt As TextBox = TryCast(e.Control, TextBox)
+        If txt Is Nothing Then Exit Sub
 
-        ' Solo si es la columna "Precio"
+        ' Siempre eliminamos handlers previos para evitar conflictos
+        RemoveHandler txt.KeyPress, AddressOf SoloNumeros_KeyPress
+        RemoveHandler txt.KeyPress, AddressOf ConvertirAMayusculas_KeyPress
+
+        ' Si está editando la columna Precio => solo números
         If DataGridView1.CurrentCell.ColumnIndex = DataGridView1.Columns("Precio").Index Then
-            ' Elimina manejadores anteriores para evitar duplicados
-            Dim txt As TextBox = CType(e.Control, TextBox)
-
-            RemoveHandler txt.KeyPress, AddressOf SoloNumeros_KeyPress
             AddHandler txt.KeyPress, AddressOf SoloNumeros_KeyPress
         End If
 
-        ' Solo si es la columna "Nombre"
+        ' Si está editando la columna Nombre => mayúsculas solo para letras
         If DataGridView1.CurrentCell.ColumnIndex = DataGridView1.Columns("Nombre").Index Then
-            ' Elimina manejadores anteriores para evitar duplicados
-            Dim txtEdit As TextBox = CType(e.Control, TextBox)
-
-            RemoveHandler txtEdit.KeyPress, AddressOf ConvertirAMayusculas_KeyPress
-            AddHandler txtEdit.KeyPress, AddressOf ConvertirAMayusculas_KeyPress
+            AddHandler txt.KeyPress, AddressOf ConvertirAMayusculas_KeyPress
         End If
-
     End Sub
+
 
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs)
 

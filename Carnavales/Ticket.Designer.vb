@@ -1030,7 +1030,7 @@ Partial Class Ticket
         CheckBoxEfectivo.Checked = True
         CheckBoxEfectivo.CheckState = CheckState.Checked
         CheckBoxEfectivo.Dock = DockStyle.Fill
-        CheckBoxEfectivo.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        CheckBoxEfectivo.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
         CheckBoxEfectivo.Location = New Point(945, 326)
         CheckBoxEfectivo.Name = "CheckBoxEfectivo"
         tblBotones.SetRowSpan(CheckBoxEfectivo, 3)
@@ -1043,7 +1043,7 @@ Partial Class Ticket
         ' 
         Label50.AutoSize = True
         Label50.Dock = DockStyle.Fill
-        Label50.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label50.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
         Label50.Location = New Point(231, 0)
         Label50.Name = "Label50"
         tblBotones.SetRowSpan(Label50, 3)
@@ -1055,7 +1055,7 @@ Partial Class Ticket
         ' LabelNumTicket
         ' 
         LabelNumTicket.AutoSize = True
-        LabelNumTicket.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LabelNumTicket.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
         LabelNumTicket.Location = New Point(541, 0)
         LabelNumTicket.Name = "LabelNumTicket"
         tblBotones.SetRowSpan(LabelNumTicket, 3)
@@ -1704,7 +1704,7 @@ Partial Class Ticket
         Label1000.AutoSize = True
         tblBotones.SetColumnSpan(Label1000, 3)
         Label1000.Dock = DockStyle.Fill
-        Label1000.Font = New Font("Segoe UI", 33F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1000.Font = New Font("Segoe UI", 33F, FontStyle.Bold)
         Label1000.Location = New Point(749, 492)
         Label1000.Name = "Label1000"
         tblBotones.SetRowSpan(Label1000, 3)
@@ -1715,7 +1715,7 @@ Partial Class Ticket
         ' TextBoxTotal
         ' 
         TextBoxTotal.Dock = DockStyle.Fill
-        TextBoxTotal.Font = New Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        TextBoxTotal.Font = New Font("Segoe UI", 28.2F, FontStyle.Bold)
         TextBoxTotal.Location = New Point(945, 491)
         TextBoxTotal.Name = "TextBoxTotal"
         TextBoxTotal.ReadOnly = True
@@ -1728,7 +1728,7 @@ Partial Class Ticket
         ' 
         CheckBoxtTransferencia.AutoSize = True
         CheckBoxtTransferencia.Dock = DockStyle.Fill
-        CheckBoxtTransferencia.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        CheckBoxtTransferencia.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
         CheckBoxtTransferencia.Location = New Point(945, 392)
         CheckBoxtTransferencia.Name = "CheckBoxtTransferencia"
         tblBotones.SetRowSpan(CheckBoxtTransferencia, 3)
@@ -1741,7 +1741,7 @@ Partial Class Ticket
         ' 
         tblBotones.SetColumnSpan(Salir, 2)
         Salir.Dock = DockStyle.Fill
-        Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
         Salir.Location = New Point(1235, 594)
         Salir.Name = "Salir"
         tblBotones.SetRowSpan(Salir, 3)
@@ -1753,7 +1753,7 @@ Partial Class Ticket
         ' Imprimir
         ' 
         Imprimir.Dock = DockStyle.Fill
-        Imprimir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Imprimir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
         Imprimir.Location = New Point(945, 594)
         Imprimir.Name = "Imprimir"
         tblBotones.SetRowSpan(Imprimir, 3)

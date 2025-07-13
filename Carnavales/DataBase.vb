@@ -105,6 +105,7 @@ Module DataBase
     End Function
 
     Public Sub ActualizarListadoProductos(grilla As DataGridView, Optional formulario As Form = Nothing)
+
         Dim rutaEscritorio As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
         Dim rutaDB As String = System.IO.Path.Combine(rutaEscritorio, "Carnavales.accdb")
         Dim cadenaConexion As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & rutaDB & ";"

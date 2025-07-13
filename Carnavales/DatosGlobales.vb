@@ -119,11 +119,14 @@
                     producto.Nombre = ""
                 End If
 
-                If Not IsDBNull(lector("Precio")) Then
-                    producto.Precio = Convert.ToDecimal(lector("Precio"))
-                Else
-                    producto.Precio = 0
-                End If
+
+                If IsDBNull(lector("Precio")) Then
+                        producto.Precio = Nothing
+                    Else
+                        producto.Precio = Convert.ToDecimal(lector("Precio"))
+                    End If
+                'producto.Precio = Convert.ToDecimal(lector("Precio"))
+
 
                 productos.Add(producto)
             End While

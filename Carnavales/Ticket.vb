@@ -21,6 +21,14 @@ Public Class Ticket
 
     Private Sub Ticket_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+        ' Detectar tamaño del monitor
+        Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
+
+        ' Si es menor a 1300px de ancho (monitor chico)
+        If screenWidth < 1300 Then
+            ReducirFuentes()
+        End If
+
         ' Inicializar los controles de la tabla de botones
         CheckBoxEfectivo.ForeColor = Color.Green
         LabelNumTicket.Text = DatosGlobales.ListaVentas.Count + 1
@@ -53,6 +61,29 @@ Public Class Ticket
         Next
 
     End Sub
+
+    Private Sub ReducirFuentes()
+
+        ' Cambiar fuente de todos los controles del formulario a menor tamaño
+        For Each ctrl As Control In Me.Controls
+            AjustarFuente(ctrl)
+        Next
+    End Sub
+
+    Private Sub AjustarFuente(ctrl As Control)
+        ' Recursivo para contenedores como GroupBox, Panel, TableLayoutPanel
+        If TypeOf ctrl Is ContainerControl OrElse TypeOf ctrl Is Panel OrElse TypeOf ctrl Is TableLayoutPanel Then
+            For Each subCtrl As Control In ctrl.Controls
+                AjustarFuente(subCtrl)
+            Next
+        End If
+
+        ' Cambiar fuente si es Label, Button o TextBox
+        If TypeOf ctrl Is Label OrElse TypeOf ctrl Is Button OrElse TypeOf ctrl Is TextBox Then
+            ctrl.Font = New Font(ctrl.Font.FontFamily, ctrl.Font.Size - 4)
+        End If
+    End Sub
+
 
 
     Private Sub BotonCantidad_Click(sender As Object, e As EventArgs)
