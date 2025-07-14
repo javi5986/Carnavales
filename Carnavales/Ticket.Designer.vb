@@ -156,23 +156,23 @@ Partial Class Ticket
         ' tblBotones
         ' 
         tblBotones.ColumnCount = 17
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 2.139076F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 4.278152F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.30506516F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 6.52532339F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.30506456F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 19.5759716F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.42876744F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 12.8589067F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.30506456F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 4.27337074F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.30506456F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 6.525324F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.21896839F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 19.6389332F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.30506444F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 13.0506477F))
-        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.96123767F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 2.30927229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 3.23869538F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.40890229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 3.81024218F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.40890229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 27.8348217F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.54244792F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 7.95280647F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.40890229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 3.236096F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.40890229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 3.81024218F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.31595528F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 27.8348217F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 1.40890229F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 7.95280647F))
+        tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 2.11728358F))
         tblBotones.Controls.Add(ButtonMenos1, 1, 3)
         tblBotones.Controls.Add(ButtonMas1, 5, 3)
         tblBotones.Controls.Add(TextBoxCantidad1, 3, 3)
@@ -294,47 +294,47 @@ Partial Class Ticket
         tblBotones.Location = New Point(0, 0)
         tblBotones.Name = "tblBotones"
         tblBotones.RowCount = 41
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.514643F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.51464343F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.51464343F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058573F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6085837F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6085837F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6085837F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.4175725F))
-        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6085837F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.51464319F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.51464355F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 1.51464355F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.6058574F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.608583748F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.608583748F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.608583748F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 4.417573F))
+        tblBotones.RowStyles.Add(New RowStyle(SizeType.Percent, 0.608583748F))
         tblBotones.Size = New Size(1477, 667)
         tblBotones.TabIndex = 0
         ' 
@@ -343,9 +343,9 @@ Partial Class Ticket
         ButtonMenos1.Dock = DockStyle.Fill
         ButtonMenos1.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos1.ForeColor = Color.Red
-        ButtonMenos1.Location = New Point(34, 33)
+        ButtonMenos1.Location = New Point(37, 33)
         ButtonMenos1.Name = "ButtonMenos1"
-        ButtonMenos1.Size = New Size(57, 23)
+        ButtonMenos1.Size = New Size(41, 23)
         ButtonMenos1.TabIndex = 0
         ButtonMenos1.Text = "-"
         ButtonMenos1.TextAlign = ContentAlignment.TopCenter
@@ -356,9 +356,9 @@ Partial Class Ticket
         ButtonMas1.Dock = DockStyle.Fill
         ButtonMas1.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas1.ForeColor = Color.Black
-        ButtonMas1.Location = New Point(231, 33)
+        ButtonMas1.Location = New Point(180, 33)
         ButtonMas1.Name = "ButtonMas1"
-        ButtonMas1.Size = New Size(283, 23)
+        ButtonMas1.Size = New Size(405, 23)
         ButtonMas1.TabIndex = 1
         ButtonMas1.TextAlign = ContentAlignment.TopCenter
         ButtonMas1.UseVisualStyleBackColor = True
@@ -367,10 +367,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad1.Dock = DockStyle.Fill
         TextBoxCantidad1.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad1.Location = New Point(116, 33)
+        TextBoxCantidad1.Location = New Point(104, 33)
         TextBoxCantidad1.Name = "TextBoxCantidad1"
         TextBoxCantidad1.ReadOnly = True
-        TextBoxCantidad1.Size = New Size(90, 34)
+        TextBoxCantidad1.Size = New Size(50, 34)
         TextBoxCantidad1.TabIndex = 2
         TextBoxCantidad1.Text = "0"
         TextBoxCantidad1.TextAlign = HorizontalAlignment.Center
@@ -379,10 +379,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal1.Dock = DockStyle.Fill
         TextBoxSubTotal1.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal1.Location = New Point(541, 33)
+        TextBoxSubTotal1.Location = New Point(613, 33)
         TextBoxSubTotal1.Name = "TextBoxSubTotal1"
         TextBoxSubTotal1.ReadOnly = True
-        TextBoxSubTotal1.Size = New Size(183, 34)
+        TextBoxSubTotal1.Size = New Size(111, 34)
         TextBoxSubTotal1.TabIndex = 4
         TextBoxSubTotal1.Text = "0"
         TextBoxSubTotal1.TextAlign = HorizontalAlignment.Center
@@ -391,10 +391,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad2.Dock = DockStyle.Fill
         TextBoxCantidad2.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad2.Location = New Point(116, 66)
+        TextBoxCantidad2.Location = New Point(104, 66)
         TextBoxCantidad2.Name = "TextBoxCantidad2"
         TextBoxCantidad2.ReadOnly = True
-        TextBoxCantidad2.Size = New Size(90, 34)
+        TextBoxCantidad2.Size = New Size(50, 34)
         TextBoxCantidad2.TabIndex = 7
         TextBoxCantidad2.Text = "0"
         TextBoxCantidad2.TextAlign = HorizontalAlignment.Center
@@ -404,9 +404,9 @@ Partial Class Ticket
         ButtonMenos2.Dock = DockStyle.Fill
         ButtonMenos2.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos2.ForeColor = Color.Red
-        ButtonMenos2.Location = New Point(34, 66)
+        ButtonMenos2.Location = New Point(37, 66)
         ButtonMenos2.Name = "ButtonMenos2"
-        ButtonMenos2.Size = New Size(57, 23)
+        ButtonMenos2.Size = New Size(41, 23)
         ButtonMenos2.TabIndex = 5
         ButtonMenos2.Text = "-"
         ButtonMenos2.TextAlign = ContentAlignment.TopCenter
@@ -417,9 +417,9 @@ Partial Class Ticket
         ButtonMenos3.Dock = DockStyle.Fill
         ButtonMenos3.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos3.ForeColor = Color.Red
-        ButtonMenos3.Location = New Point(34, 99)
+        ButtonMenos3.Location = New Point(37, 99)
         ButtonMenos3.Name = "ButtonMenos3"
-        ButtonMenos3.Size = New Size(57, 23)
+        ButtonMenos3.Size = New Size(41, 23)
         ButtonMenos3.TabIndex = 10
         ButtonMenos3.Text = "-"
         ButtonMenos3.TextAlign = ContentAlignment.TopCenter
@@ -430,9 +430,9 @@ Partial Class Ticket
         ButtonMenos4.Dock = DockStyle.Fill
         ButtonMenos4.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos4.ForeColor = Color.Red
-        ButtonMenos4.Location = New Point(34, 132)
+        ButtonMenos4.Location = New Point(37, 132)
         ButtonMenos4.Name = "ButtonMenos4"
-        ButtonMenos4.Size = New Size(57, 23)
+        ButtonMenos4.Size = New Size(41, 23)
         ButtonMenos4.TabIndex = 15
         ButtonMenos4.Text = "-"
         ButtonMenos4.TextAlign = ContentAlignment.TopCenter
@@ -443,9 +443,9 @@ Partial Class Ticket
         ButtonMenos5.Dock = DockStyle.Fill
         ButtonMenos5.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos5.ForeColor = Color.Red
-        ButtonMenos5.Location = New Point(34, 165)
+        ButtonMenos5.Location = New Point(37, 165)
         ButtonMenos5.Name = "ButtonMenos5"
-        ButtonMenos5.Size = New Size(57, 23)
+        ButtonMenos5.Size = New Size(41, 23)
         ButtonMenos5.TabIndex = 20
         ButtonMenos5.Text = "-"
         ButtonMenos5.TextAlign = ContentAlignment.TopCenter
@@ -456,9 +456,9 @@ Partial Class Ticket
         ButtonMenos6.Dock = DockStyle.Fill
         ButtonMenos6.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos6.ForeColor = Color.Red
-        ButtonMenos6.Location = New Point(34, 198)
+        ButtonMenos6.Location = New Point(37, 198)
         ButtonMenos6.Name = "ButtonMenos6"
-        ButtonMenos6.Size = New Size(57, 23)
+        ButtonMenos6.Size = New Size(41, 23)
         ButtonMenos6.TabIndex = 25
         ButtonMenos6.Text = "-"
         ButtonMenos6.TextAlign = ContentAlignment.TopCenter
@@ -469,9 +469,9 @@ Partial Class Ticket
         ButtonMenos7.Dock = DockStyle.Fill
         ButtonMenos7.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos7.ForeColor = Color.Red
-        ButtonMenos7.Location = New Point(34, 231)
+        ButtonMenos7.Location = New Point(37, 231)
         ButtonMenos7.Name = "ButtonMenos7"
-        ButtonMenos7.Size = New Size(57, 23)
+        ButtonMenos7.Size = New Size(41, 23)
         ButtonMenos7.TabIndex = 30
         ButtonMenos7.Text = "-"
         ButtonMenos7.TextAlign = ContentAlignment.TopCenter
@@ -482,9 +482,9 @@ Partial Class Ticket
         ButtonMenos8.Dock = DockStyle.Fill
         ButtonMenos8.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos8.ForeColor = Color.Red
-        ButtonMenos8.Location = New Point(34, 264)
+        ButtonMenos8.Location = New Point(37, 264)
         ButtonMenos8.Name = "ButtonMenos8"
-        ButtonMenos8.Size = New Size(57, 23)
+        ButtonMenos8.Size = New Size(41, 23)
         ButtonMenos8.TabIndex = 35
         ButtonMenos8.Text = "-"
         ButtonMenos8.TextAlign = ContentAlignment.TopCenter
@@ -495,9 +495,9 @@ Partial Class Ticket
         ButtonMenos9.Dock = DockStyle.Fill
         ButtonMenos9.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos9.ForeColor = Color.Red
-        ButtonMenos9.Location = New Point(34, 297)
+        ButtonMenos9.Location = New Point(37, 297)
         ButtonMenos9.Name = "ButtonMenos9"
-        ButtonMenos9.Size = New Size(57, 23)
+        ButtonMenos9.Size = New Size(41, 23)
         ButtonMenos9.TabIndex = 40
         ButtonMenos9.Text = "-"
         ButtonMenos9.TextAlign = ContentAlignment.TopCenter
@@ -508,9 +508,9 @@ Partial Class Ticket
         ButtonMenos10.Dock = DockStyle.Fill
         ButtonMenos10.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos10.ForeColor = Color.Red
-        ButtonMenos10.Location = New Point(34, 330)
+        ButtonMenos10.Location = New Point(37, 330)
         ButtonMenos10.Name = "ButtonMenos10"
-        ButtonMenos10.Size = New Size(57, 23)
+        ButtonMenos10.Size = New Size(41, 23)
         ButtonMenos10.TabIndex = 45
         ButtonMenos10.Text = "-"
         ButtonMenos10.TextAlign = ContentAlignment.TopCenter
@@ -521,9 +521,9 @@ Partial Class Ticket
         ButtonMenos11.Dock = DockStyle.Fill
         ButtonMenos11.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos11.ForeColor = Color.Red
-        ButtonMenos11.Location = New Point(34, 363)
+        ButtonMenos11.Location = New Point(37, 363)
         ButtonMenos11.Name = "ButtonMenos11"
-        ButtonMenos11.Size = New Size(57, 23)
+        ButtonMenos11.Size = New Size(41, 23)
         ButtonMenos11.TabIndex = 50
         ButtonMenos11.Text = "-"
         ButtonMenos11.TextAlign = ContentAlignment.TopCenter
@@ -534,9 +534,9 @@ Partial Class Ticket
         ButtonMenos12.Dock = DockStyle.Fill
         ButtonMenos12.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos12.ForeColor = Color.Red
-        ButtonMenos12.Location = New Point(34, 396)
+        ButtonMenos12.Location = New Point(37, 396)
         ButtonMenos12.Name = "ButtonMenos12"
-        ButtonMenos12.Size = New Size(57, 23)
+        ButtonMenos12.Size = New Size(41, 23)
         ButtonMenos12.TabIndex = 55
         ButtonMenos12.Text = "-"
         ButtonMenos12.TextAlign = ContentAlignment.TopCenter
@@ -547,9 +547,9 @@ Partial Class Ticket
         ButtonMenos13.Dock = DockStyle.Fill
         ButtonMenos13.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos13.ForeColor = Color.Red
-        ButtonMenos13.Location = New Point(34, 429)
+        ButtonMenos13.Location = New Point(37, 429)
         ButtonMenos13.Name = "ButtonMenos13"
-        ButtonMenos13.Size = New Size(57, 23)
+        ButtonMenos13.Size = New Size(41, 23)
         ButtonMenos13.TabIndex = 60
         ButtonMenos13.Text = "-"
         ButtonMenos13.TextAlign = ContentAlignment.TopCenter
@@ -560,9 +560,9 @@ Partial Class Ticket
         ButtonMenos14.Dock = DockStyle.Fill
         ButtonMenos14.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos14.ForeColor = Color.Red
-        ButtonMenos14.Location = New Point(34, 462)
+        ButtonMenos14.Location = New Point(37, 462)
         ButtonMenos14.Name = "ButtonMenos14"
-        ButtonMenos14.Size = New Size(57, 23)
+        ButtonMenos14.Size = New Size(41, 23)
         ButtonMenos14.TabIndex = 65
         ButtonMenos14.Text = "-"
         ButtonMenos14.TextAlign = ContentAlignment.TopCenter
@@ -572,10 +572,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad3.Dock = DockStyle.Fill
         TextBoxCantidad3.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad3.Location = New Point(116, 99)
+        TextBoxCantidad3.Location = New Point(104, 99)
         TextBoxCantidad3.Name = "TextBoxCantidad3"
         TextBoxCantidad3.ReadOnly = True
-        TextBoxCantidad3.Size = New Size(90, 34)
+        TextBoxCantidad3.Size = New Size(50, 34)
         TextBoxCantidad3.TabIndex = 12
         TextBoxCantidad3.Text = "0"
         TextBoxCantidad3.TextAlign = HorizontalAlignment.Center
@@ -584,10 +584,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad4.Dock = DockStyle.Fill
         TextBoxCantidad4.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad4.Location = New Point(116, 132)
+        TextBoxCantidad4.Location = New Point(104, 132)
         TextBoxCantidad4.Name = "TextBoxCantidad4"
         TextBoxCantidad4.ReadOnly = True
-        TextBoxCantidad4.Size = New Size(90, 34)
+        TextBoxCantidad4.Size = New Size(50, 34)
         TextBoxCantidad4.TabIndex = 17
         TextBoxCantidad4.Text = "0"
         TextBoxCantidad4.TextAlign = HorizontalAlignment.Center
@@ -596,10 +596,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad5.Dock = DockStyle.Fill
         TextBoxCantidad5.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad5.Location = New Point(116, 165)
+        TextBoxCantidad5.Location = New Point(104, 165)
         TextBoxCantidad5.Name = "TextBoxCantidad5"
         TextBoxCantidad5.ReadOnly = True
-        TextBoxCantidad5.Size = New Size(90, 34)
+        TextBoxCantidad5.Size = New Size(50, 34)
         TextBoxCantidad5.TabIndex = 22
         TextBoxCantidad5.Text = "0"
         TextBoxCantidad5.TextAlign = HorizontalAlignment.Center
@@ -608,10 +608,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad6.Dock = DockStyle.Fill
         TextBoxCantidad6.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad6.Location = New Point(116, 198)
+        TextBoxCantidad6.Location = New Point(104, 198)
         TextBoxCantidad6.Name = "TextBoxCantidad6"
         TextBoxCantidad6.ReadOnly = True
-        TextBoxCantidad6.Size = New Size(90, 34)
+        TextBoxCantidad6.Size = New Size(50, 34)
         TextBoxCantidad6.TabIndex = 27
         TextBoxCantidad6.Text = "0"
         TextBoxCantidad6.TextAlign = HorizontalAlignment.Center
@@ -620,10 +620,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad7.Dock = DockStyle.Fill
         TextBoxCantidad7.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad7.Location = New Point(116, 231)
+        TextBoxCantidad7.Location = New Point(104, 231)
         TextBoxCantidad7.Name = "TextBoxCantidad7"
         TextBoxCantidad7.ReadOnly = True
-        TextBoxCantidad7.Size = New Size(90, 34)
+        TextBoxCantidad7.Size = New Size(50, 34)
         TextBoxCantidad7.TabIndex = 32
         TextBoxCantidad7.Text = "0"
         TextBoxCantidad7.TextAlign = HorizontalAlignment.Center
@@ -632,10 +632,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad8.Dock = DockStyle.Fill
         TextBoxCantidad8.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad8.Location = New Point(116, 264)
+        TextBoxCantidad8.Location = New Point(104, 264)
         TextBoxCantidad8.Name = "TextBoxCantidad8"
         TextBoxCantidad8.ReadOnly = True
-        TextBoxCantidad8.Size = New Size(90, 34)
+        TextBoxCantidad8.Size = New Size(50, 34)
         TextBoxCantidad8.TabIndex = 37
         TextBoxCantidad8.Text = "0"
         TextBoxCantidad8.TextAlign = HorizontalAlignment.Center
@@ -644,10 +644,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad9.Dock = DockStyle.Fill
         TextBoxCantidad9.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad9.Location = New Point(116, 297)
+        TextBoxCantidad9.Location = New Point(104, 297)
         TextBoxCantidad9.Name = "TextBoxCantidad9"
         TextBoxCantidad9.ReadOnly = True
-        TextBoxCantidad9.Size = New Size(90, 34)
+        TextBoxCantidad9.Size = New Size(50, 34)
         TextBoxCantidad9.TabIndex = 42
         TextBoxCantidad9.Text = "0"
         TextBoxCantidad9.TextAlign = HorizontalAlignment.Center
@@ -656,10 +656,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad10.Dock = DockStyle.Fill
         TextBoxCantidad10.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad10.Location = New Point(116, 330)
+        TextBoxCantidad10.Location = New Point(104, 330)
         TextBoxCantidad10.Name = "TextBoxCantidad10"
         TextBoxCantidad10.ReadOnly = True
-        TextBoxCantidad10.Size = New Size(90, 34)
+        TextBoxCantidad10.Size = New Size(50, 34)
         TextBoxCantidad10.TabIndex = 47
         TextBoxCantidad10.Text = "0"
         TextBoxCantidad10.TextAlign = HorizontalAlignment.Center
@@ -668,10 +668,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad11.Dock = DockStyle.Fill
         TextBoxCantidad11.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad11.Location = New Point(116, 363)
+        TextBoxCantidad11.Location = New Point(104, 363)
         TextBoxCantidad11.Name = "TextBoxCantidad11"
         TextBoxCantidad11.ReadOnly = True
-        TextBoxCantidad11.Size = New Size(90, 34)
+        TextBoxCantidad11.Size = New Size(50, 34)
         TextBoxCantidad11.TabIndex = 52
         TextBoxCantidad11.Text = "0"
         TextBoxCantidad11.TextAlign = HorizontalAlignment.Center
@@ -680,10 +680,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad12.Dock = DockStyle.Fill
         TextBoxCantidad12.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad12.Location = New Point(116, 396)
+        TextBoxCantidad12.Location = New Point(104, 396)
         TextBoxCantidad12.Name = "TextBoxCantidad12"
         TextBoxCantidad12.ReadOnly = True
-        TextBoxCantidad12.Size = New Size(90, 34)
+        TextBoxCantidad12.Size = New Size(50, 34)
         TextBoxCantidad12.TabIndex = 57
         TextBoxCantidad12.Text = "0"
         TextBoxCantidad12.TextAlign = HorizontalAlignment.Center
@@ -692,10 +692,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad13.Dock = DockStyle.Fill
         TextBoxCantidad13.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad13.Location = New Point(116, 429)
+        TextBoxCantidad13.Location = New Point(104, 429)
         TextBoxCantidad13.Name = "TextBoxCantidad13"
         TextBoxCantidad13.ReadOnly = True
-        TextBoxCantidad13.Size = New Size(90, 34)
+        TextBoxCantidad13.Size = New Size(50, 34)
         TextBoxCantidad13.TabIndex = 62
         TextBoxCantidad13.Text = "0"
         TextBoxCantidad13.TextAlign = HorizontalAlignment.Center
@@ -704,10 +704,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad14.Dock = DockStyle.Fill
         TextBoxCantidad14.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad14.Location = New Point(116, 462)
+        TextBoxCantidad14.Location = New Point(104, 462)
         TextBoxCantidad14.Name = "TextBoxCantidad14"
         TextBoxCantidad14.ReadOnly = True
-        TextBoxCantidad14.Size = New Size(90, 34)
+        TextBoxCantidad14.Size = New Size(50, 34)
         TextBoxCantidad14.TabIndex = 67
         TextBoxCantidad14.Text = "0"
         TextBoxCantidad14.TextAlign = HorizontalAlignment.Center
@@ -717,9 +717,9 @@ Partial Class Ticket
         ButtonMas3.Dock = DockStyle.Fill
         ButtonMas3.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas3.ForeColor = Color.Black
-        ButtonMas3.Location = New Point(231, 99)
+        ButtonMas3.Location = New Point(180, 99)
         ButtonMas3.Name = "ButtonMas3"
-        ButtonMas3.Size = New Size(283, 23)
+        ButtonMas3.Size = New Size(405, 23)
         ButtonMas3.TabIndex = 11
         ButtonMas3.TextAlign = ContentAlignment.TopCenter
         ButtonMas3.UseVisualStyleBackColor = True
@@ -729,9 +729,9 @@ Partial Class Ticket
         ButtonMas4.Dock = DockStyle.Fill
         ButtonMas4.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas4.ForeColor = Color.Black
-        ButtonMas4.Location = New Point(231, 132)
+        ButtonMas4.Location = New Point(180, 132)
         ButtonMas4.Name = "ButtonMas4"
-        ButtonMas4.Size = New Size(283, 23)
+        ButtonMas4.Size = New Size(405, 23)
         ButtonMas4.TabIndex = 16
         ButtonMas4.TextAlign = ContentAlignment.TopCenter
         ButtonMas4.UseVisualStyleBackColor = True
@@ -741,9 +741,9 @@ Partial Class Ticket
         ButtonMas5.Dock = DockStyle.Fill
         ButtonMas5.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas5.ForeColor = Color.Black
-        ButtonMas5.Location = New Point(231, 165)
+        ButtonMas5.Location = New Point(180, 165)
         ButtonMas5.Name = "ButtonMas5"
-        ButtonMas5.Size = New Size(283, 23)
+        ButtonMas5.Size = New Size(405, 23)
         ButtonMas5.TabIndex = 21
         ButtonMas5.TextAlign = ContentAlignment.TopCenter
         ButtonMas5.UseVisualStyleBackColor = True
@@ -753,9 +753,9 @@ Partial Class Ticket
         ButtonMas6.Dock = DockStyle.Fill
         ButtonMas6.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas6.ForeColor = Color.Black
-        ButtonMas6.Location = New Point(231, 198)
+        ButtonMas6.Location = New Point(180, 198)
         ButtonMas6.Name = "ButtonMas6"
-        ButtonMas6.Size = New Size(283, 23)
+        ButtonMas6.Size = New Size(405, 23)
         ButtonMas6.TabIndex = 26
         ButtonMas6.TextAlign = ContentAlignment.TopCenter
         ButtonMas6.UseVisualStyleBackColor = True
@@ -765,9 +765,9 @@ Partial Class Ticket
         ButtonMas7.Dock = DockStyle.Fill
         ButtonMas7.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas7.ForeColor = Color.Black
-        ButtonMas7.Location = New Point(231, 231)
+        ButtonMas7.Location = New Point(180, 231)
         ButtonMas7.Name = "ButtonMas7"
-        ButtonMas7.Size = New Size(283, 23)
+        ButtonMas7.Size = New Size(405, 23)
         ButtonMas7.TabIndex = 31
         ButtonMas7.TextAlign = ContentAlignment.TopCenter
         ButtonMas7.UseVisualStyleBackColor = True
@@ -777,9 +777,9 @@ Partial Class Ticket
         ButtonMas8.Dock = DockStyle.Fill
         ButtonMas8.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas8.ForeColor = Color.Black
-        ButtonMas8.Location = New Point(231, 264)
+        ButtonMas8.Location = New Point(180, 264)
         ButtonMas8.Name = "ButtonMas8"
-        ButtonMas8.Size = New Size(283, 23)
+        ButtonMas8.Size = New Size(405, 23)
         ButtonMas8.TabIndex = 36
         ButtonMas8.TextAlign = ContentAlignment.TopCenter
         ButtonMas8.UseVisualStyleBackColor = True
@@ -789,9 +789,9 @@ Partial Class Ticket
         ButtonMas9.Dock = DockStyle.Fill
         ButtonMas9.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas9.ForeColor = Color.Black
-        ButtonMas9.Location = New Point(231, 297)
+        ButtonMas9.Location = New Point(180, 297)
         ButtonMas9.Name = "ButtonMas9"
-        ButtonMas9.Size = New Size(283, 23)
+        ButtonMas9.Size = New Size(405, 23)
         ButtonMas9.TabIndex = 41
         ButtonMas9.TextAlign = ContentAlignment.TopCenter
         ButtonMas9.UseVisualStyleBackColor = True
@@ -801,9 +801,9 @@ Partial Class Ticket
         ButtonMas10.Dock = DockStyle.Fill
         ButtonMas10.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas10.ForeColor = Color.Black
-        ButtonMas10.Location = New Point(231, 330)
+        ButtonMas10.Location = New Point(180, 330)
         ButtonMas10.Name = "ButtonMas10"
-        ButtonMas10.Size = New Size(283, 23)
+        ButtonMas10.Size = New Size(405, 23)
         ButtonMas10.TabIndex = 46
         ButtonMas10.TextAlign = ContentAlignment.TopCenter
         ButtonMas10.UseVisualStyleBackColor = True
@@ -812,10 +812,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal14.Dock = DockStyle.Fill
         TextBoxSubTotal14.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal14.Location = New Point(541, 462)
+        TextBoxSubTotal14.Location = New Point(613, 462)
         TextBoxSubTotal14.Name = "TextBoxSubTotal14"
         TextBoxSubTotal14.ReadOnly = True
-        TextBoxSubTotal14.Size = New Size(183, 34)
+        TextBoxSubTotal14.Size = New Size(111, 34)
         TextBoxSubTotal14.TabIndex = 69
         TextBoxSubTotal14.Text = "0"
         TextBoxSubTotal14.TextAlign = HorizontalAlignment.Center
@@ -825,9 +825,9 @@ Partial Class Ticket
         ButtonMas11.Dock = DockStyle.Fill
         ButtonMas11.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas11.ForeColor = Color.Black
-        ButtonMas11.Location = New Point(231, 363)
+        ButtonMas11.Location = New Point(180, 363)
         ButtonMas11.Name = "ButtonMas11"
-        ButtonMas11.Size = New Size(283, 23)
+        ButtonMas11.Size = New Size(405, 23)
         ButtonMas11.TabIndex = 51
         ButtonMas11.TextAlign = ContentAlignment.TopCenter
         ButtonMas11.UseVisualStyleBackColor = True
@@ -836,10 +836,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal13.Dock = DockStyle.Fill
         TextBoxSubTotal13.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal13.Location = New Point(541, 429)
+        TextBoxSubTotal13.Location = New Point(613, 429)
         TextBoxSubTotal13.Name = "TextBoxSubTotal13"
         TextBoxSubTotal13.ReadOnly = True
-        TextBoxSubTotal13.Size = New Size(183, 34)
+        TextBoxSubTotal13.Size = New Size(111, 34)
         TextBoxSubTotal13.TabIndex = 64
         TextBoxSubTotal13.Text = "0"
         TextBoxSubTotal13.TextAlign = HorizontalAlignment.Center
@@ -849,9 +849,9 @@ Partial Class Ticket
         ButtonMas14.Dock = DockStyle.Fill
         ButtonMas14.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas14.ForeColor = Color.Black
-        ButtonMas14.Location = New Point(231, 462)
+        ButtonMas14.Location = New Point(180, 462)
         ButtonMas14.Name = "ButtonMas14"
-        ButtonMas14.Size = New Size(283, 23)
+        ButtonMas14.Size = New Size(405, 23)
         ButtonMas14.TabIndex = 66
         ButtonMas14.TextAlign = ContentAlignment.TopCenter
         ButtonMas14.UseVisualStyleBackColor = True
@@ -860,10 +860,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal12.Dock = DockStyle.Fill
         TextBoxSubTotal12.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal12.Location = New Point(541, 396)
+        TextBoxSubTotal12.Location = New Point(613, 396)
         TextBoxSubTotal12.Name = "TextBoxSubTotal12"
         TextBoxSubTotal12.ReadOnly = True
-        TextBoxSubTotal12.Size = New Size(183, 34)
+        TextBoxSubTotal12.Size = New Size(111, 34)
         TextBoxSubTotal12.TabIndex = 59
         TextBoxSubTotal12.Text = "0"
         TextBoxSubTotal12.TextAlign = HorizontalAlignment.Center
@@ -873,9 +873,9 @@ Partial Class Ticket
         ButtonMas12.Dock = DockStyle.Fill
         ButtonMas12.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas12.ForeColor = Color.Black
-        ButtonMas12.Location = New Point(231, 396)
+        ButtonMas12.Location = New Point(180, 396)
         ButtonMas12.Name = "ButtonMas12"
-        ButtonMas12.Size = New Size(283, 23)
+        ButtonMas12.Size = New Size(405, 23)
         ButtonMas12.TabIndex = 56
         ButtonMas12.TextAlign = ContentAlignment.TopCenter
         ButtonMas12.UseVisualStyleBackColor = True
@@ -884,10 +884,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal11.Dock = DockStyle.Fill
         TextBoxSubTotal11.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal11.Location = New Point(541, 363)
+        TextBoxSubTotal11.Location = New Point(613, 363)
         TextBoxSubTotal11.Name = "TextBoxSubTotal11"
         TextBoxSubTotal11.ReadOnly = True
-        TextBoxSubTotal11.Size = New Size(183, 34)
+        TextBoxSubTotal11.Size = New Size(111, 34)
         TextBoxSubTotal11.TabIndex = 54
         TextBoxSubTotal11.Text = "0"
         TextBoxSubTotal11.TextAlign = HorizontalAlignment.Center
@@ -897,9 +897,9 @@ Partial Class Ticket
         ButtonMas13.Dock = DockStyle.Fill
         ButtonMas13.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas13.ForeColor = Color.Black
-        ButtonMas13.Location = New Point(231, 429)
+        ButtonMas13.Location = New Point(180, 429)
         ButtonMas13.Name = "ButtonMas13"
-        ButtonMas13.Size = New Size(283, 23)
+        ButtonMas13.Size = New Size(405, 23)
         ButtonMas13.TabIndex = 61
         ButtonMas13.TextAlign = ContentAlignment.TopCenter
         ButtonMas13.UseVisualStyleBackColor = True
@@ -908,10 +908,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal10.Dock = DockStyle.Fill
         TextBoxSubTotal10.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal10.Location = New Point(541, 330)
+        TextBoxSubTotal10.Location = New Point(613, 330)
         TextBoxSubTotal10.Name = "TextBoxSubTotal10"
         TextBoxSubTotal10.ReadOnly = True
-        TextBoxSubTotal10.Size = New Size(183, 34)
+        TextBoxSubTotal10.Size = New Size(111, 34)
         TextBoxSubTotal10.TabIndex = 49
         TextBoxSubTotal10.Text = "0"
         TextBoxSubTotal10.TextAlign = HorizontalAlignment.Center
@@ -920,10 +920,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal2.Dock = DockStyle.Fill
         TextBoxSubTotal2.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal2.Location = New Point(541, 66)
+        TextBoxSubTotal2.Location = New Point(613, 66)
         TextBoxSubTotal2.Name = "TextBoxSubTotal2"
         TextBoxSubTotal2.ReadOnly = True
-        TextBoxSubTotal2.Size = New Size(183, 34)
+        TextBoxSubTotal2.Size = New Size(111, 34)
         TextBoxSubTotal2.TabIndex = 9
         TextBoxSubTotal2.Text = "0"
         TextBoxSubTotal2.TextAlign = HorizontalAlignment.Center
@@ -932,10 +932,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal9.Dock = DockStyle.Fill
         TextBoxSubTotal9.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal9.Location = New Point(541, 297)
+        TextBoxSubTotal9.Location = New Point(613, 297)
         TextBoxSubTotal9.Name = "TextBoxSubTotal9"
         TextBoxSubTotal9.ReadOnly = True
-        TextBoxSubTotal9.Size = New Size(183, 34)
+        TextBoxSubTotal9.Size = New Size(111, 34)
         TextBoxSubTotal9.TabIndex = 44
         TextBoxSubTotal9.Text = "0"
         TextBoxSubTotal9.TextAlign = HorizontalAlignment.Center
@@ -944,10 +944,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal3.Dock = DockStyle.Fill
         TextBoxSubTotal3.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal3.Location = New Point(541, 99)
+        TextBoxSubTotal3.Location = New Point(613, 99)
         TextBoxSubTotal3.Name = "TextBoxSubTotal3"
         TextBoxSubTotal3.ReadOnly = True
-        TextBoxSubTotal3.Size = New Size(183, 34)
+        TextBoxSubTotal3.Size = New Size(111, 34)
         TextBoxSubTotal3.TabIndex = 14
         TextBoxSubTotal3.Text = "0"
         TextBoxSubTotal3.TextAlign = HorizontalAlignment.Center
@@ -956,10 +956,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal8.Dock = DockStyle.Fill
         TextBoxSubTotal8.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal8.Location = New Point(541, 264)
+        TextBoxSubTotal8.Location = New Point(613, 264)
         TextBoxSubTotal8.Name = "TextBoxSubTotal8"
         TextBoxSubTotal8.ReadOnly = True
-        TextBoxSubTotal8.Size = New Size(183, 34)
+        TextBoxSubTotal8.Size = New Size(111, 34)
         TextBoxSubTotal8.TabIndex = 39
         TextBoxSubTotal8.Text = "0"
         TextBoxSubTotal8.TextAlign = HorizontalAlignment.Center
@@ -968,10 +968,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal4.Dock = DockStyle.Fill
         TextBoxSubTotal4.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal4.Location = New Point(541, 132)
+        TextBoxSubTotal4.Location = New Point(613, 132)
         TextBoxSubTotal4.Name = "TextBoxSubTotal4"
         TextBoxSubTotal4.ReadOnly = True
-        TextBoxSubTotal4.Size = New Size(183, 34)
+        TextBoxSubTotal4.Size = New Size(111, 34)
         TextBoxSubTotal4.TabIndex = 19
         TextBoxSubTotal4.Text = "0"
         TextBoxSubTotal4.TextAlign = HorizontalAlignment.Center
@@ -980,10 +980,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal7.Dock = DockStyle.Fill
         TextBoxSubTotal7.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal7.Location = New Point(541, 231)
+        TextBoxSubTotal7.Location = New Point(613, 231)
         TextBoxSubTotal7.Name = "TextBoxSubTotal7"
         TextBoxSubTotal7.ReadOnly = True
-        TextBoxSubTotal7.Size = New Size(183, 34)
+        TextBoxSubTotal7.Size = New Size(111, 34)
         TextBoxSubTotal7.TabIndex = 34
         TextBoxSubTotal7.Text = "0"
         TextBoxSubTotal7.TextAlign = HorizontalAlignment.Center
@@ -992,10 +992,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal5.Dock = DockStyle.Fill
         TextBoxSubTotal5.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal5.Location = New Point(541, 165)
+        TextBoxSubTotal5.Location = New Point(613, 165)
         TextBoxSubTotal5.Name = "TextBoxSubTotal5"
         TextBoxSubTotal5.ReadOnly = True
-        TextBoxSubTotal5.Size = New Size(183, 34)
+        TextBoxSubTotal5.Size = New Size(111, 34)
         TextBoxSubTotal5.TabIndex = 24
         TextBoxSubTotal5.Text = "0"
         TextBoxSubTotal5.TextAlign = HorizontalAlignment.Center
@@ -1004,10 +1004,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal6.Dock = DockStyle.Fill
         TextBoxSubTotal6.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal6.Location = New Point(541, 198)
+        TextBoxSubTotal6.Location = New Point(613, 198)
         TextBoxSubTotal6.Name = "TextBoxSubTotal6"
         TextBoxSubTotal6.ReadOnly = True
-        TextBoxSubTotal6.Size = New Size(183, 34)
+        TextBoxSubTotal6.Size = New Size(111, 34)
         TextBoxSubTotal6.TabIndex = 29
         TextBoxSubTotal6.Text = "0"
         TextBoxSubTotal6.TextAlign = HorizontalAlignment.Center
@@ -1017,9 +1017,9 @@ Partial Class Ticket
         ButtonMas2.Dock = DockStyle.Fill
         ButtonMas2.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas2.ForeColor = Color.Black
-        ButtonMas2.Location = New Point(231, 66)
+        ButtonMas2.Location = New Point(180, 66)
         ButtonMas2.Name = "ButtonMas2"
-        ButtonMas2.Size = New Size(283, 23)
+        ButtonMas2.Size = New Size(405, 23)
         ButtonMas2.TabIndex = 6
         ButtonMas2.TextAlign = ContentAlignment.TopCenter
         ButtonMas2.UseVisualStyleBackColor = True
@@ -1031,10 +1031,10 @@ Partial Class Ticket
         CheckBoxEfectivo.CheckState = CheckState.Checked
         CheckBoxEfectivo.Dock = DockStyle.Fill
         CheckBoxEfectivo.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
-        CheckBoxEfectivo.Location = New Point(945, 326)
+        CheckBoxEfectivo.Location = New Point(892, 326)
         CheckBoxEfectivo.Name = "CheckBoxEfectivo"
         tblBotones.SetRowSpan(CheckBoxEfectivo, 3)
-        CheckBoxEfectivo.Size = New Size(284, 31)
+        CheckBoxEfectivo.Size = New Size(405, 31)
         CheckBoxEfectivo.TabIndex = 116
         CheckBoxEfectivo.Text = "EFECTIVO"
         CheckBoxEfectivo.UseVisualStyleBackColor = True
@@ -1044,10 +1044,10 @@ Partial Class Ticket
         Label50.AutoSize = True
         Label50.Dock = DockStyle.Fill
         Label50.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
-        Label50.Location = New Point(231, 0)
+        Label50.Location = New Point(180, 0)
         Label50.Name = "Label50"
         tblBotones.SetRowSpan(Label50, 3)
-        Label50.Size = New Size(283, 30)
+        Label50.Size = New Size(405, 30)
         Label50.TabIndex = 114
         Label50.Text = "Ticket Nº"
         Label50.TextAlign = ContentAlignment.TopRight
@@ -1056,7 +1056,7 @@ Partial Class Ticket
         ' 
         LabelNumTicket.AutoSize = True
         LabelNumTicket.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
-        LabelNumTicket.Location = New Point(541, 0)
+        LabelNumTicket.Location = New Point(613, 0)
         LabelNumTicket.Name = "LabelNumTicket"
         tblBotones.SetRowSpan(LabelNumTicket, 3)
         LabelNumTicket.Size = New Size(0, 30)
@@ -1067,9 +1067,9 @@ Partial Class Ticket
         ButtonMenos15.Dock = DockStyle.Fill
         ButtonMenos15.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos15.ForeColor = Color.Red
-        ButtonMenos15.Location = New Point(34, 495)
+        ButtonMenos15.Location = New Point(37, 495)
         ButtonMenos15.Name = "ButtonMenos15"
-        ButtonMenos15.Size = New Size(57, 23)
+        ButtonMenos15.Size = New Size(41, 23)
         ButtonMenos15.TabIndex = 70
         ButtonMenos15.Text = "-"
         ButtonMenos15.TextAlign = ContentAlignment.TopCenter
@@ -1080,9 +1080,9 @@ Partial Class Ticket
         ButtonMenos16.Dock = DockStyle.Fill
         ButtonMenos16.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos16.ForeColor = Color.Red
-        ButtonMenos16.Location = New Point(34, 528)
+        ButtonMenos16.Location = New Point(37, 528)
         ButtonMenos16.Name = "ButtonMenos16"
-        ButtonMenos16.Size = New Size(57, 23)
+        ButtonMenos16.Size = New Size(41, 23)
         ButtonMenos16.TabIndex = 75
         ButtonMenos16.Text = "-"
         ButtonMenos16.TextAlign = ContentAlignment.TopCenter
@@ -1093,9 +1093,9 @@ Partial Class Ticket
         ButtonMenos17.Dock = DockStyle.Fill
         ButtonMenos17.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos17.ForeColor = Color.Red
-        ButtonMenos17.Location = New Point(34, 561)
+        ButtonMenos17.Location = New Point(37, 561)
         ButtonMenos17.Name = "ButtonMenos17"
-        ButtonMenos17.Size = New Size(57, 23)
+        ButtonMenos17.Size = New Size(41, 23)
         ButtonMenos17.TabIndex = 80
         ButtonMenos17.Text = "-"
         ButtonMenos17.TextAlign = ContentAlignment.TopCenter
@@ -1106,9 +1106,9 @@ Partial Class Ticket
         ButtonMenos18.Dock = DockStyle.Fill
         ButtonMenos18.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos18.ForeColor = Color.Red
-        ButtonMenos18.Location = New Point(34, 594)
+        ButtonMenos18.Location = New Point(37, 594)
         ButtonMenos18.Name = "ButtonMenos18"
-        ButtonMenos18.Size = New Size(57, 23)
+        ButtonMenos18.Size = New Size(41, 23)
         ButtonMenos18.TabIndex = 85
         ButtonMenos18.Text = "-"
         ButtonMenos18.TextAlign = ContentAlignment.TopCenter
@@ -1119,9 +1119,9 @@ Partial Class Ticket
         ButtonMenos19.Dock = DockStyle.Fill
         ButtonMenos19.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos19.ForeColor = Color.Red
-        ButtonMenos19.Location = New Point(34, 627)
+        ButtonMenos19.Location = New Point(37, 627)
         ButtonMenos19.Name = "ButtonMenos19"
-        ButtonMenos19.Size = New Size(57, 23)
+        ButtonMenos19.Size = New Size(41, 23)
         ButtonMenos19.TabIndex = 90
         ButtonMenos19.Text = "-"
         ButtonMenos19.TextAlign = ContentAlignment.TopCenter
@@ -1131,10 +1131,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad15.Dock = DockStyle.Fill
         TextBoxCantidad15.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad15.Location = New Point(116, 495)
+        TextBoxCantidad15.Location = New Point(104, 495)
         TextBoxCantidad15.Name = "TextBoxCantidad15"
         TextBoxCantidad15.ReadOnly = True
-        TextBoxCantidad15.Size = New Size(90, 34)
+        TextBoxCantidad15.Size = New Size(50, 34)
         TextBoxCantidad15.TabIndex = 72
         TextBoxCantidad15.Text = "0"
         TextBoxCantidad15.TextAlign = HorizontalAlignment.Center
@@ -1143,10 +1143,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad16.Dock = DockStyle.Fill
         TextBoxCantidad16.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad16.Location = New Point(116, 528)
+        TextBoxCantidad16.Location = New Point(104, 528)
         TextBoxCantidad16.Name = "TextBoxCantidad16"
         TextBoxCantidad16.ReadOnly = True
-        TextBoxCantidad16.Size = New Size(90, 34)
+        TextBoxCantidad16.Size = New Size(50, 34)
         TextBoxCantidad16.TabIndex = 77
         TextBoxCantidad16.Text = "0"
         TextBoxCantidad16.TextAlign = HorizontalAlignment.Center
@@ -1155,10 +1155,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad17.Dock = DockStyle.Fill
         TextBoxCantidad17.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad17.Location = New Point(116, 561)
+        TextBoxCantidad17.Location = New Point(104, 561)
         TextBoxCantidad17.Name = "TextBoxCantidad17"
         TextBoxCantidad17.ReadOnly = True
-        TextBoxCantidad17.Size = New Size(90, 34)
+        TextBoxCantidad17.Size = New Size(50, 34)
         TextBoxCantidad17.TabIndex = 82
         TextBoxCantidad17.Text = "0"
         TextBoxCantidad17.TextAlign = HorizontalAlignment.Center
@@ -1167,10 +1167,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad18.Dock = DockStyle.Fill
         TextBoxCantidad18.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad18.Location = New Point(116, 594)
+        TextBoxCantidad18.Location = New Point(104, 594)
         TextBoxCantidad18.Name = "TextBoxCantidad18"
         TextBoxCantidad18.ReadOnly = True
-        TextBoxCantidad18.Size = New Size(90, 34)
+        TextBoxCantidad18.Size = New Size(50, 34)
         TextBoxCantidad18.TabIndex = 87
         TextBoxCantidad18.Text = "0"
         TextBoxCantidad18.TextAlign = HorizontalAlignment.Center
@@ -1179,10 +1179,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad19.Dock = DockStyle.Fill
         TextBoxCantidad19.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad19.Location = New Point(116, 627)
+        TextBoxCantidad19.Location = New Point(104, 627)
         TextBoxCantidad19.Name = "TextBoxCantidad19"
         TextBoxCantidad19.ReadOnly = True
-        TextBoxCantidad19.Size = New Size(90, 34)
+        TextBoxCantidad19.Size = New Size(50, 34)
         TextBoxCantidad19.TabIndex = 92
         TextBoxCantidad19.Text = "0"
         TextBoxCantidad19.TextAlign = HorizontalAlignment.Center
@@ -1192,9 +1192,9 @@ Partial Class Ticket
         ButtonMas15.Dock = DockStyle.Fill
         ButtonMas15.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas15.ForeColor = Color.Black
-        ButtonMas15.Location = New Point(231, 495)
+        ButtonMas15.Location = New Point(180, 495)
         ButtonMas15.Name = "ButtonMas15"
-        ButtonMas15.Size = New Size(283, 23)
+        ButtonMas15.Size = New Size(405, 23)
         ButtonMas15.TabIndex = 71
         ButtonMas15.TextAlign = ContentAlignment.TopCenter
         ButtonMas15.UseVisualStyleBackColor = True
@@ -1204,9 +1204,9 @@ Partial Class Ticket
         ButtonMas16.Dock = DockStyle.Fill
         ButtonMas16.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas16.ForeColor = Color.Black
-        ButtonMas16.Location = New Point(231, 528)
+        ButtonMas16.Location = New Point(180, 528)
         ButtonMas16.Name = "ButtonMas16"
-        ButtonMas16.Size = New Size(283, 23)
+        ButtonMas16.Size = New Size(405, 23)
         ButtonMas16.TabIndex = 76
         ButtonMas16.TextAlign = ContentAlignment.TopCenter
         ButtonMas16.UseVisualStyleBackColor = True
@@ -1216,9 +1216,9 @@ Partial Class Ticket
         ButtonMas17.Dock = DockStyle.Fill
         ButtonMas17.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas17.ForeColor = Color.Black
-        ButtonMas17.Location = New Point(231, 561)
+        ButtonMas17.Location = New Point(180, 561)
         ButtonMas17.Name = "ButtonMas17"
-        ButtonMas17.Size = New Size(283, 23)
+        ButtonMas17.Size = New Size(405, 23)
         ButtonMas17.TabIndex = 81
         ButtonMas17.TextAlign = ContentAlignment.TopCenter
         ButtonMas17.UseVisualStyleBackColor = True
@@ -1228,9 +1228,9 @@ Partial Class Ticket
         ButtonMas18.Dock = DockStyle.Fill
         ButtonMas18.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas18.ForeColor = Color.Black
-        ButtonMas18.Location = New Point(231, 594)
+        ButtonMas18.Location = New Point(180, 594)
         ButtonMas18.Name = "ButtonMas18"
-        ButtonMas18.Size = New Size(283, 23)
+        ButtonMas18.Size = New Size(405, 23)
         ButtonMas18.TabIndex = 86
         ButtonMas18.TextAlign = ContentAlignment.TopCenter
         ButtonMas18.UseVisualStyleBackColor = True
@@ -1240,9 +1240,9 @@ Partial Class Ticket
         ButtonMas19.Dock = DockStyle.Fill
         ButtonMas19.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas19.ForeColor = Color.Black
-        ButtonMas19.Location = New Point(231, 627)
+        ButtonMas19.Location = New Point(180, 627)
         ButtonMas19.Name = "ButtonMas19"
-        ButtonMas19.Size = New Size(283, 23)
+        ButtonMas19.Size = New Size(405, 23)
         ButtonMas19.TabIndex = 91
         ButtonMas19.TextAlign = ContentAlignment.TopCenter
         ButtonMas19.UseVisualStyleBackColor = True
@@ -1251,10 +1251,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal15.Dock = DockStyle.Fill
         TextBoxSubTotal15.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal15.Location = New Point(541, 495)
+        TextBoxSubTotal15.Location = New Point(613, 495)
         TextBoxSubTotal15.Name = "TextBoxSubTotal15"
         TextBoxSubTotal15.ReadOnly = True
-        TextBoxSubTotal15.Size = New Size(183, 34)
+        TextBoxSubTotal15.Size = New Size(111, 34)
         TextBoxSubTotal15.TabIndex = 74
         TextBoxSubTotal15.Text = "0"
         TextBoxSubTotal15.TextAlign = HorizontalAlignment.Center
@@ -1263,10 +1263,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal16.Dock = DockStyle.Fill
         TextBoxSubTotal16.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal16.Location = New Point(541, 528)
+        TextBoxSubTotal16.Location = New Point(613, 528)
         TextBoxSubTotal16.Name = "TextBoxSubTotal16"
         TextBoxSubTotal16.ReadOnly = True
-        TextBoxSubTotal16.Size = New Size(183, 34)
+        TextBoxSubTotal16.Size = New Size(111, 34)
         TextBoxSubTotal16.TabIndex = 79
         TextBoxSubTotal16.Text = "0"
         TextBoxSubTotal16.TextAlign = HorizontalAlignment.Center
@@ -1275,10 +1275,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal17.Dock = DockStyle.Fill
         TextBoxSubTotal17.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal17.Location = New Point(541, 561)
+        TextBoxSubTotal17.Location = New Point(613, 561)
         TextBoxSubTotal17.Name = "TextBoxSubTotal17"
         TextBoxSubTotal17.ReadOnly = True
-        TextBoxSubTotal17.Size = New Size(183, 34)
+        TextBoxSubTotal17.Size = New Size(111, 34)
         TextBoxSubTotal17.TabIndex = 84
         TextBoxSubTotal17.Text = "0"
         TextBoxSubTotal17.TextAlign = HorizontalAlignment.Center
@@ -1287,10 +1287,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal18.Dock = DockStyle.Fill
         TextBoxSubTotal18.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal18.Location = New Point(541, 594)
+        TextBoxSubTotal18.Location = New Point(613, 594)
         TextBoxSubTotal18.Name = "TextBoxSubTotal18"
         TextBoxSubTotal18.ReadOnly = True
-        TextBoxSubTotal18.Size = New Size(183, 34)
+        TextBoxSubTotal18.Size = New Size(111, 34)
         TextBoxSubTotal18.TabIndex = 89
         TextBoxSubTotal18.Text = "0"
         TextBoxSubTotal18.TextAlign = HorizontalAlignment.Center
@@ -1299,10 +1299,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal19.Dock = DockStyle.Fill
         TextBoxSubTotal19.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal19.Location = New Point(541, 627)
+        TextBoxSubTotal19.Location = New Point(613, 627)
         TextBoxSubTotal19.Name = "TextBoxSubTotal19"
         TextBoxSubTotal19.ReadOnly = True
-        TextBoxSubTotal19.Size = New Size(183, 34)
+        TextBoxSubTotal19.Size = New Size(111, 34)
         TextBoxSubTotal19.TabIndex = 94
         TextBoxSubTotal19.Text = "0"
         TextBoxSubTotal19.TextAlign = HorizontalAlignment.Center
@@ -1312,9 +1312,9 @@ Partial Class Ticket
         ButtonMenos20.Dock = DockStyle.Fill
         ButtonMenos20.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos20.ForeColor = Color.Red
-        ButtonMenos20.Location = New Point(749, 33)
+        ButtonMenos20.Location = New Point(750, 33)
         ButtonMenos20.Name = "ButtonMenos20"
-        ButtonMenos20.Size = New Size(57, 23)
+        ButtonMenos20.Size = New Size(41, 23)
         ButtonMenos20.TabIndex = 95
         ButtonMenos20.Text = "-"
         ButtonMenos20.TextAlign = ContentAlignment.TopCenter
@@ -1325,9 +1325,9 @@ Partial Class Ticket
         ButtonMenos21.Dock = DockStyle.Fill
         ButtonMenos21.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos21.ForeColor = Color.Red
-        ButtonMenos21.Location = New Point(749, 66)
+        ButtonMenos21.Location = New Point(750, 66)
         ButtonMenos21.Name = "ButtonMenos21"
-        ButtonMenos21.Size = New Size(57, 23)
+        ButtonMenos21.Size = New Size(41, 23)
         ButtonMenos21.TabIndex = 100
         ButtonMenos21.Text = "-"
         ButtonMenos21.TextAlign = ContentAlignment.TopCenter
@@ -1338,9 +1338,9 @@ Partial Class Ticket
         ButtonMenos22.Dock = DockStyle.Fill
         ButtonMenos22.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos22.ForeColor = Color.Red
-        ButtonMenos22.Location = New Point(749, 99)
+        ButtonMenos22.Location = New Point(750, 99)
         ButtonMenos22.Name = "ButtonMenos22"
-        ButtonMenos22.Size = New Size(57, 23)
+        ButtonMenos22.Size = New Size(41, 23)
         ButtonMenos22.TabIndex = 105
         ButtonMenos22.Text = "-"
         ButtonMenos22.TextAlign = ContentAlignment.TopCenter
@@ -1350,10 +1350,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad20.Dock = DockStyle.Fill
         TextBoxCantidad20.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad20.Location = New Point(831, 33)
+        TextBoxCantidad20.Location = New Point(817, 33)
         TextBoxCantidad20.Name = "TextBoxCantidad20"
         TextBoxCantidad20.ReadOnly = True
-        TextBoxCantidad20.Size = New Size(90, 34)
+        TextBoxCantidad20.Size = New Size(50, 34)
         TextBoxCantidad20.TabIndex = 97
         TextBoxCantidad20.Text = "0"
         TextBoxCantidad20.TextAlign = HorizontalAlignment.Center
@@ -1362,10 +1362,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad21.Dock = DockStyle.Fill
         TextBoxCantidad21.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad21.Location = New Point(831, 66)
+        TextBoxCantidad21.Location = New Point(817, 66)
         TextBoxCantidad21.Name = "TextBoxCantidad21"
         TextBoxCantidad21.ReadOnly = True
-        TextBoxCantidad21.Size = New Size(90, 34)
+        TextBoxCantidad21.Size = New Size(50, 34)
         TextBoxCantidad21.TabIndex = 102
         TextBoxCantidad21.Text = "0"
         TextBoxCantidad21.TextAlign = HorizontalAlignment.Center
@@ -1374,10 +1374,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad22.Dock = DockStyle.Fill
         TextBoxCantidad22.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad22.Location = New Point(831, 99)
+        TextBoxCantidad22.Location = New Point(817, 99)
         TextBoxCantidad22.Name = "TextBoxCantidad22"
         TextBoxCantidad22.ReadOnly = True
-        TextBoxCantidad22.Size = New Size(90, 34)
+        TextBoxCantidad22.Size = New Size(50, 34)
         TextBoxCantidad22.TabIndex = 107
         TextBoxCantidad22.Text = "0"
         TextBoxCantidad22.TextAlign = HorizontalAlignment.Center
@@ -1387,9 +1387,9 @@ Partial Class Ticket
         ButtonMas20.Dock = DockStyle.Fill
         ButtonMas20.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas20.ForeColor = Color.Black
-        ButtonMas20.Location = New Point(945, 33)
+        ButtonMas20.Location = New Point(892, 33)
         ButtonMas20.Name = "ButtonMas20"
-        ButtonMas20.Size = New Size(284, 23)
+        ButtonMas20.Size = New Size(405, 23)
         ButtonMas20.TabIndex = 96
         ButtonMas20.TextAlign = ContentAlignment.TopCenter
         ButtonMas20.UseVisualStyleBackColor = True
@@ -1399,9 +1399,9 @@ Partial Class Ticket
         ButtonMas21.Dock = DockStyle.Fill
         ButtonMas21.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas21.ForeColor = Color.Black
-        ButtonMas21.Location = New Point(945, 66)
+        ButtonMas21.Location = New Point(892, 66)
         ButtonMas21.Name = "ButtonMas21"
-        ButtonMas21.Size = New Size(284, 23)
+        ButtonMas21.Size = New Size(405, 23)
         ButtonMas21.TabIndex = 101
         ButtonMas21.TextAlign = ContentAlignment.TopCenter
         ButtonMas21.UseVisualStyleBackColor = True
@@ -1411,9 +1411,9 @@ Partial Class Ticket
         ButtonMas22.Dock = DockStyle.Fill
         ButtonMas22.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas22.ForeColor = Color.Black
-        ButtonMas22.Location = New Point(945, 99)
+        ButtonMas22.Location = New Point(892, 99)
         ButtonMas22.Name = "ButtonMas22"
-        ButtonMas22.Size = New Size(284, 23)
+        ButtonMas22.Size = New Size(405, 23)
         ButtonMas22.TabIndex = 106
         ButtonMas22.TextAlign = ContentAlignment.TopCenter
         ButtonMas22.UseVisualStyleBackColor = True
@@ -1422,10 +1422,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal20.Dock = DockStyle.Fill
         TextBoxSubTotal20.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal20.Location = New Point(1254, 33)
+        TextBoxSubTotal20.Location = New Point(1323, 33)
         TextBoxSubTotal20.Name = "TextBoxSubTotal20"
         TextBoxSubTotal20.ReadOnly = True
-        TextBoxSubTotal20.Size = New Size(186, 34)
+        TextBoxSubTotal20.Size = New Size(111, 34)
         TextBoxSubTotal20.TabIndex = 99
         TextBoxSubTotal20.Text = "0"
         TextBoxSubTotal20.TextAlign = HorizontalAlignment.Center
@@ -1434,10 +1434,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal21.Dock = DockStyle.Fill
         TextBoxSubTotal21.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal21.Location = New Point(1254, 66)
+        TextBoxSubTotal21.Location = New Point(1323, 66)
         TextBoxSubTotal21.Name = "TextBoxSubTotal21"
         TextBoxSubTotal21.ReadOnly = True
-        TextBoxSubTotal21.Size = New Size(186, 34)
+        TextBoxSubTotal21.Size = New Size(111, 34)
         TextBoxSubTotal21.TabIndex = 104
         TextBoxSubTotal21.Text = "0"
         TextBoxSubTotal21.TextAlign = HorizontalAlignment.Center
@@ -1446,10 +1446,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal22.Dock = DockStyle.Fill
         TextBoxSubTotal22.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal22.Location = New Point(1254, 99)
+        TextBoxSubTotal22.Location = New Point(1323, 99)
         TextBoxSubTotal22.Name = "TextBoxSubTotal22"
         TextBoxSubTotal22.ReadOnly = True
-        TextBoxSubTotal22.Size = New Size(186, 34)
+        TextBoxSubTotal22.Size = New Size(111, 34)
         TextBoxSubTotal22.TabIndex = 109
         TextBoxSubTotal22.Text = "0"
         TextBoxSubTotal22.TextAlign = HorizontalAlignment.Center
@@ -1459,9 +1459,9 @@ Partial Class Ticket
         ButtonMenos23.Dock = DockStyle.Fill
         ButtonMenos23.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos23.ForeColor = Color.Red
-        ButtonMenos23.Location = New Point(749, 132)
+        ButtonMenos23.Location = New Point(750, 132)
         ButtonMenos23.Name = "ButtonMenos23"
-        ButtonMenos23.Size = New Size(57, 23)
+        ButtonMenos23.Size = New Size(41, 23)
         ButtonMenos23.TabIndex = 118
         ButtonMenos23.Text = "-"
         ButtonMenos23.TextAlign = ContentAlignment.TopCenter
@@ -1472,9 +1472,9 @@ Partial Class Ticket
         ButtonMenos24.Dock = DockStyle.Fill
         ButtonMenos24.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos24.ForeColor = Color.Red
-        ButtonMenos24.Location = New Point(749, 165)
+        ButtonMenos24.Location = New Point(750, 165)
         ButtonMenos24.Name = "ButtonMenos24"
-        ButtonMenos24.Size = New Size(57, 23)
+        ButtonMenos24.Size = New Size(41, 23)
         ButtonMenos24.TabIndex = 119
         ButtonMenos24.Text = "-"
         ButtonMenos24.TextAlign = ContentAlignment.TopCenter
@@ -1485,9 +1485,9 @@ Partial Class Ticket
         ButtonMenos25.Dock = DockStyle.Fill
         ButtonMenos25.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos25.ForeColor = Color.Red
-        ButtonMenos25.Location = New Point(749, 198)
+        ButtonMenos25.Location = New Point(750, 198)
         ButtonMenos25.Name = "ButtonMenos25"
-        ButtonMenos25.Size = New Size(57, 23)
+        ButtonMenos25.Size = New Size(41, 23)
         ButtonMenos25.TabIndex = 120
         ButtonMenos25.Text = "-"
         ButtonMenos25.TextAlign = ContentAlignment.TopCenter
@@ -1498,9 +1498,9 @@ Partial Class Ticket
         ButtonMenos26.Dock = DockStyle.Fill
         ButtonMenos26.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos26.ForeColor = Color.Red
-        ButtonMenos26.Location = New Point(749, 231)
+        ButtonMenos26.Location = New Point(750, 231)
         ButtonMenos26.Name = "ButtonMenos26"
-        ButtonMenos26.Size = New Size(57, 23)
+        ButtonMenos26.Size = New Size(41, 23)
         ButtonMenos26.TabIndex = 121
         ButtonMenos26.Text = "-"
         ButtonMenos26.TextAlign = ContentAlignment.TopCenter
@@ -1511,9 +1511,9 @@ Partial Class Ticket
         ButtonMenos27.Dock = DockStyle.Fill
         ButtonMenos27.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
         ButtonMenos27.ForeColor = Color.Red
-        ButtonMenos27.Location = New Point(749, 264)
+        ButtonMenos27.Location = New Point(750, 264)
         ButtonMenos27.Name = "ButtonMenos27"
-        ButtonMenos27.Size = New Size(57, 23)
+        ButtonMenos27.Size = New Size(41, 23)
         ButtonMenos27.TabIndex = 122
         ButtonMenos27.Text = "-"
         ButtonMenos27.TextAlign = ContentAlignment.TopCenter
@@ -1523,10 +1523,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad23.Dock = DockStyle.Fill
         TextBoxCantidad23.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad23.Location = New Point(831, 132)
+        TextBoxCantidad23.Location = New Point(817, 132)
         TextBoxCantidad23.Name = "TextBoxCantidad23"
         TextBoxCantidad23.ReadOnly = True
-        TextBoxCantidad23.Size = New Size(90, 34)
+        TextBoxCantidad23.Size = New Size(50, 34)
         TextBoxCantidad23.TabIndex = 123
         TextBoxCantidad23.Text = "0"
         TextBoxCantidad23.TextAlign = HorizontalAlignment.Center
@@ -1535,10 +1535,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad24.Dock = DockStyle.Fill
         TextBoxCantidad24.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad24.Location = New Point(831, 165)
+        TextBoxCantidad24.Location = New Point(817, 165)
         TextBoxCantidad24.Name = "TextBoxCantidad24"
         TextBoxCantidad24.ReadOnly = True
-        TextBoxCantidad24.Size = New Size(90, 34)
+        TextBoxCantidad24.Size = New Size(50, 34)
         TextBoxCantidad24.TabIndex = 124
         TextBoxCantidad24.Text = "0"
         TextBoxCantidad24.TextAlign = HorizontalAlignment.Center
@@ -1547,10 +1547,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad25.Dock = DockStyle.Fill
         TextBoxCantidad25.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad25.Location = New Point(831, 198)
+        TextBoxCantidad25.Location = New Point(817, 198)
         TextBoxCantidad25.Name = "TextBoxCantidad25"
         TextBoxCantidad25.ReadOnly = True
-        TextBoxCantidad25.Size = New Size(90, 34)
+        TextBoxCantidad25.Size = New Size(50, 34)
         TextBoxCantidad25.TabIndex = 125
         TextBoxCantidad25.Text = "0"
         TextBoxCantidad25.TextAlign = HorizontalAlignment.Center
@@ -1559,10 +1559,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad26.Dock = DockStyle.Fill
         TextBoxCantidad26.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad26.Location = New Point(831, 231)
+        TextBoxCantidad26.Location = New Point(817, 231)
         TextBoxCantidad26.Name = "TextBoxCantidad26"
         TextBoxCantidad26.ReadOnly = True
-        TextBoxCantidad26.Size = New Size(90, 34)
+        TextBoxCantidad26.Size = New Size(50, 34)
         TextBoxCantidad26.TabIndex = 126
         TextBoxCantidad26.Text = "0"
         TextBoxCantidad26.TextAlign = HorizontalAlignment.Center
@@ -1571,10 +1571,10 @@ Partial Class Ticket
         ' 
         TextBoxCantidad27.Dock = DockStyle.Fill
         TextBoxCantidad27.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxCantidad27.Location = New Point(831, 264)
+        TextBoxCantidad27.Location = New Point(817, 264)
         TextBoxCantidad27.Name = "TextBoxCantidad27"
         TextBoxCantidad27.ReadOnly = True
-        TextBoxCantidad27.Size = New Size(90, 34)
+        TextBoxCantidad27.Size = New Size(50, 34)
         TextBoxCantidad27.TabIndex = 127
         TextBoxCantidad27.Text = "0"
         TextBoxCantidad27.TextAlign = HorizontalAlignment.Center
@@ -1584,9 +1584,9 @@ Partial Class Ticket
         ButtonMas23.Dock = DockStyle.Fill
         ButtonMas23.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas23.ForeColor = Color.Black
-        ButtonMas23.Location = New Point(945, 132)
+        ButtonMas23.Location = New Point(892, 132)
         ButtonMas23.Name = "ButtonMas23"
-        ButtonMas23.Size = New Size(284, 23)
+        ButtonMas23.Size = New Size(405, 23)
         ButtonMas23.TabIndex = 128
         ButtonMas23.TextAlign = ContentAlignment.TopCenter
         ButtonMas23.UseVisualStyleBackColor = True
@@ -1596,9 +1596,9 @@ Partial Class Ticket
         ButtonMas24.Dock = DockStyle.Fill
         ButtonMas24.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas24.ForeColor = Color.Black
-        ButtonMas24.Location = New Point(945, 165)
+        ButtonMas24.Location = New Point(892, 165)
         ButtonMas24.Name = "ButtonMas24"
-        ButtonMas24.Size = New Size(284, 23)
+        ButtonMas24.Size = New Size(405, 23)
         ButtonMas24.TabIndex = 129
         ButtonMas24.TextAlign = ContentAlignment.TopCenter
         ButtonMas24.UseVisualStyleBackColor = True
@@ -1608,9 +1608,9 @@ Partial Class Ticket
         ButtonMas25.Dock = DockStyle.Fill
         ButtonMas25.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas25.ForeColor = Color.Black
-        ButtonMas25.Location = New Point(945, 198)
+        ButtonMas25.Location = New Point(892, 198)
         ButtonMas25.Name = "ButtonMas25"
-        ButtonMas25.Size = New Size(284, 23)
+        ButtonMas25.Size = New Size(405, 23)
         ButtonMas25.TabIndex = 130
         ButtonMas25.TextAlign = ContentAlignment.TopCenter
         ButtonMas25.UseVisualStyleBackColor = True
@@ -1620,9 +1620,9 @@ Partial Class Ticket
         ButtonMas26.Dock = DockStyle.Fill
         ButtonMas26.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas26.ForeColor = Color.Black
-        ButtonMas26.Location = New Point(945, 231)
+        ButtonMas26.Location = New Point(892, 231)
         ButtonMas26.Name = "ButtonMas26"
-        ButtonMas26.Size = New Size(284, 23)
+        ButtonMas26.Size = New Size(405, 23)
         ButtonMas26.TabIndex = 131
         ButtonMas26.TextAlign = ContentAlignment.TopCenter
         ButtonMas26.UseVisualStyleBackColor = True
@@ -1632,9 +1632,9 @@ Partial Class Ticket
         ButtonMas27.Dock = DockStyle.Fill
         ButtonMas27.Font = New Font("Arial Rounded MT Bold", 15F)
         ButtonMas27.ForeColor = Color.Black
-        ButtonMas27.Location = New Point(945, 264)
+        ButtonMas27.Location = New Point(892, 264)
         ButtonMas27.Name = "ButtonMas27"
-        ButtonMas27.Size = New Size(284, 23)
+        ButtonMas27.Size = New Size(405, 23)
         ButtonMas27.TabIndex = 132
         ButtonMas27.TextAlign = ContentAlignment.TopCenter
         ButtonMas27.UseVisualStyleBackColor = True
@@ -1643,10 +1643,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal23.Dock = DockStyle.Fill
         TextBoxSubTotal23.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal23.Location = New Point(1254, 132)
+        TextBoxSubTotal23.Location = New Point(1323, 132)
         TextBoxSubTotal23.Name = "TextBoxSubTotal23"
         TextBoxSubTotal23.ReadOnly = True
-        TextBoxSubTotal23.Size = New Size(186, 34)
+        TextBoxSubTotal23.Size = New Size(111, 34)
         TextBoxSubTotal23.TabIndex = 133
         TextBoxSubTotal23.Text = "0"
         TextBoxSubTotal23.TextAlign = HorizontalAlignment.Center
@@ -1655,10 +1655,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal24.Dock = DockStyle.Fill
         TextBoxSubTotal24.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal24.Location = New Point(1254, 165)
+        TextBoxSubTotal24.Location = New Point(1323, 165)
         TextBoxSubTotal24.Name = "TextBoxSubTotal24"
         TextBoxSubTotal24.ReadOnly = True
-        TextBoxSubTotal24.Size = New Size(186, 34)
+        TextBoxSubTotal24.Size = New Size(111, 34)
         TextBoxSubTotal24.TabIndex = 134
         TextBoxSubTotal24.Text = "0"
         TextBoxSubTotal24.TextAlign = HorizontalAlignment.Center
@@ -1667,10 +1667,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal25.Dock = DockStyle.Fill
         TextBoxSubTotal25.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal25.Location = New Point(1254, 198)
+        TextBoxSubTotal25.Location = New Point(1323, 198)
         TextBoxSubTotal25.Name = "TextBoxSubTotal25"
         TextBoxSubTotal25.ReadOnly = True
-        TextBoxSubTotal25.Size = New Size(186, 34)
+        TextBoxSubTotal25.Size = New Size(111, 34)
         TextBoxSubTotal25.TabIndex = 135
         TextBoxSubTotal25.Text = "0"
         TextBoxSubTotal25.TextAlign = HorizontalAlignment.Center
@@ -1679,10 +1679,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal26.Dock = DockStyle.Fill
         TextBoxSubTotal26.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal26.Location = New Point(1254, 231)
+        TextBoxSubTotal26.Location = New Point(1323, 231)
         TextBoxSubTotal26.Name = "TextBoxSubTotal26"
         TextBoxSubTotal26.ReadOnly = True
-        TextBoxSubTotal26.Size = New Size(186, 34)
+        TextBoxSubTotal26.Size = New Size(111, 34)
         TextBoxSubTotal26.TabIndex = 136
         TextBoxSubTotal26.Text = "0"
         TextBoxSubTotal26.TextAlign = HorizontalAlignment.Center
@@ -1691,10 +1691,10 @@ Partial Class Ticket
         ' 
         TextBoxSubTotal27.Dock = DockStyle.Fill
         TextBoxSubTotal27.Font = New Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold)
-        TextBoxSubTotal27.Location = New Point(1254, 264)
+        TextBoxSubTotal27.Location = New Point(1323, 264)
         TextBoxSubTotal27.Name = "TextBoxSubTotal27"
         TextBoxSubTotal27.ReadOnly = True
-        TextBoxSubTotal27.Size = New Size(186, 34)
+        TextBoxSubTotal27.Size = New Size(111, 34)
         TextBoxSubTotal27.TabIndex = 137
         TextBoxSubTotal27.Text = "0"
         TextBoxSubTotal27.TextAlign = HorizontalAlignment.Center
@@ -1702,13 +1702,13 @@ Partial Class Ticket
         ' Label1000
         ' 
         Label1000.AutoSize = True
-        tblBotones.SetColumnSpan(Label1000, 3)
+        tblBotones.SetColumnSpan(Label1000, 4)
         Label1000.Dock = DockStyle.Fill
-        Label1000.Font = New Font("Segoe UI", 33F, FontStyle.Bold)
-        Label1000.Location = New Point(749, 492)
+        Label1000.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label1000.Location = New Point(750, 492)
         Label1000.Name = "Label1000"
         tblBotones.SetRowSpan(Label1000, 3)
-        Label1000.Size = New Size(172, 62)
+        Label1000.Size = New Size(136, 62)
         Label1000.TabIndex = 110
         Label1000.Text = "Total"
         ' 
@@ -1716,10 +1716,10 @@ Partial Class Ticket
         ' 
         TextBoxTotal.Dock = DockStyle.Fill
         TextBoxTotal.Font = New Font("Segoe UI", 28.2F, FontStyle.Bold)
-        TextBoxTotal.Location = New Point(945, 491)
+        TextBoxTotal.Location = New Point(892, 491)
         TextBoxTotal.Name = "TextBoxTotal"
         TextBoxTotal.ReadOnly = True
-        TextBoxTotal.Size = New Size(284, 70)
+        TextBoxTotal.Size = New Size(405, 70)
         TextBoxTotal.TabIndex = 111
         TextBoxTotal.Text = "0"
         TextBoxTotal.TextAlign = HorizontalAlignment.Center
@@ -1729,10 +1729,10 @@ Partial Class Ticket
         CheckBoxtTransferencia.AutoSize = True
         CheckBoxtTransferencia.Dock = DockStyle.Fill
         CheckBoxtTransferencia.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
-        CheckBoxtTransferencia.Location = New Point(945, 392)
+        CheckBoxtTransferencia.Location = New Point(892, 392)
         CheckBoxtTransferencia.Name = "CheckBoxtTransferencia"
         tblBotones.SetRowSpan(CheckBoxtTransferencia, 3)
-        CheckBoxtTransferencia.Size = New Size(284, 31)
+        CheckBoxtTransferencia.Size = New Size(405, 31)
         CheckBoxtTransferencia.TabIndex = 117
         CheckBoxtTransferencia.Text = "TRANSFERENCIA"
         CheckBoxtTransferencia.UseVisualStyleBackColor = True
@@ -1742,10 +1742,10 @@ Partial Class Ticket
         tblBotones.SetColumnSpan(Salir, 2)
         Salir.Dock = DockStyle.Fill
         Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
-        Salir.Location = New Point(1235, 594)
+        Salir.Location = New Point(1303, 594)
         Salir.Name = "Salir"
         tblBotones.SetRowSpan(Salir, 3)
-        Salir.Size = New Size(205, 56)
+        Salir.Size = New Size(131, 56)
         Salir.TabIndex = 113
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
@@ -1754,10 +1754,10 @@ Partial Class Ticket
         ' 
         Imprimir.Dock = DockStyle.Fill
         Imprimir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold)
-        Imprimir.Location = New Point(945, 594)
+        Imprimir.Location = New Point(892, 594)
         Imprimir.Name = "Imprimir"
         tblBotones.SetRowSpan(Imprimir, 3)
-        Imprimir.Size = New Size(284, 56)
+        Imprimir.Size = New Size(405, 56)
         Imprimir.TabIndex = 112
         Imprimir.Text = "IMPRIMIR"
         Imprimir.UseVisualStyleBackColor = True

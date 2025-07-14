@@ -37,22 +37,27 @@ Public Class Menu
         DatosGlobales.ListaVentas = DatosGlobales.ObtenerVentas()   ' Método que consulta la BD y actualiza el DataGridView
         DataGridView1.DataSource = Nothing
         DataGridView1.DataSource = DatosGlobales.ListaVentas
+
         ' Ocultar columnas innecesarias
         With DataGridView1
             .Columns("ID").HeaderText = "ID"
             .Columns("ID").ReadOnly = True
-            .Columns("ID").Width = 110
+            .Columns("ID").Width = 100
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("TotalVentas").HeaderText = "Monto Total"
             .Columns("TotalVentas").ReadOnly = True
-            .Columns("TotalVentas").Width = 220
-            .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("TotalVentas").Width = 200
+            .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+
+            .Columns("TotalVentas").DefaultCellStyle.Format = "N0"
+
             .Columns("Anulado").HeaderText = "Anulado"
-            .Columns("Anulado").Width = 150
+            .Columns("Anulado").Width = 140
             .Columns("Anulado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("MetodoPago").HeaderText = "Efectivo"
-            .Columns("MetodoPago").Width = 150
+            .Columns("MetodoPago").Width = 140
             .Columns("MetodoPago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
             ' Asegurar que solo se muestren las columnas necesarias
             For Each col As DataGridViewColumn In .Columns
                 If col.Name <> "ID" AndAlso col.Name <> "TotalVentas" AndAlso col.Name <> "Anulado" AndAlso col.Name <> "MetodoPago" Then
@@ -60,11 +65,13 @@ Public Class Menu
                 End If
             Next
         End With
+
         For i = 1 To DataGridView1.Rows.Count
             If DataGridView1.Rows(DataGridView1.Rows.Count - i).Cells("Anulado").Value Then
                 DataGridView1.Rows(DataGridView1.Rows.Count - i).DefaultCellStyle.BackColor = Color.Red
             End If
         Next
+        ' Ajustar el ancho de las columnas automáticamente
         If DataGridView1.Rows.Count > 0 Then
 
             DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.Rows.Count - 1
@@ -112,9 +119,10 @@ Public Class Menu
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
         ' Verificar que la fila seleccionada no sea la fila de encabezado
 
-        If e.ColumnIndex = -1 Or e.ColumnIndex = 0 Or e.ColumnIndex = 23 And e.RowIndex >= 0 Then
+        If e.ColumnIndex = -1 Or e.ColumnIndex = 0 Or e.ColumnIndex = 28 And e.RowIndex >= 0 Then
             Reimprimir.Enabled = True
 
         Else

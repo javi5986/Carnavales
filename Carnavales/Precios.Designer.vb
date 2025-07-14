@@ -28,6 +28,7 @@ Partial Class Precios
         DataGridView1 = New DataGridView()
         Guardar = New Button()
         Salir = New Button()
+        LimpiarTabla = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -73,9 +74,9 @@ Partial Class Precios
         ' Guardar
         ' 
         Guardar.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Guardar.Location = New Point(383, 670)
+        Guardar.Location = New Point(248, 670)
         Guardar.Name = "Guardar"
-        Guardar.Size = New Size(183, 57)
+        Guardar.Size = New Size(252, 57)
         Guardar.TabIndex = 2
         Guardar.Text = "GUARDAR"
         Guardar.UseVisualStyleBackColor = True
@@ -83,18 +84,29 @@ Partial Class Precios
         ' Salir
         ' 
         Salir.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Salir.Location = New Point(704, 670)
+        Salir.Location = New Point(821, 670)
         Salir.Name = "Salir"
-        Salir.Size = New Size(183, 57)
+        Salir.Size = New Size(252, 57)
         Salir.TabIndex = 3
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
+        ' 
+        ' LimpiarTabla
+        ' 
+        LimpiarTabla.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LimpiarTabla.Location = New Point(530, 670)
+        LimpiarTabla.Name = "LimpiarTabla"
+        LimpiarTabla.Size = New Size(252, 57)
+        LimpiarTabla.TabIndex = 4
+        LimpiarTabla.Text = "LIMPIAR TABLA"
+        LimpiarTabla.UseVisualStyleBackColor = True
         ' 
         ' Precios
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1260, 739)
+        Controls.Add(LimpiarTabla)
         Controls.Add(Salir)
         Controls.Add(Guardar)
         Controls.Add(DataGridView1)
@@ -112,4 +124,5 @@ Partial Class Precios
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Guardar As Button
     Friend WithEvents Salir As Button
+    Friend WithEvents LimpiarTabla As Button
 End Class

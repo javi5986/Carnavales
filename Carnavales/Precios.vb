@@ -16,6 +16,8 @@ Public Class Precios
         DataGridView1.DataSource = copiaProductos
 
         ConfigurarDataGridView()
+
+
     End Sub
 
 
@@ -157,6 +159,15 @@ Public Class Precios
         Return True ' ✅ Todo válido
     End Function
 
-
+    Private Sub LimpiarTabla_Click(sender As Object, e As EventArgs) Handles LimpiarTabla.Click
+        ' Recorre cada fila del DataGridView
+        For Each fila As DataGridViewRow In DataGridView1.Rows
+            ' Evita procesar la fila nueva (vacía para entrada)
+            If Not fila.IsNewRow Then
+                fila.Cells("Nombre").Value = ""     ' Borra el nombre
+                fila.Cells("Precio").Value = ""      ' Borra el precio (pone 0)
+            End If
+        Next
+    End Sub
 
 End Class

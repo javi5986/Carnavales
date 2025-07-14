@@ -106,7 +106,7 @@ Partial Class Menu
         ' 
         ' ConfigurarImpresora
         ' 
-        ConfigurarImpresora.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ConfigurarImpresora.Font = New Font("Segoe UI", 17F, FontStyle.Bold)
         ConfigurarImpresora.Location = New Point(85, 393)
         ConfigurarImpresora.Name = "ConfigurarImpresora"
         ConfigurarImpresora.Size = New Size(270, 95)
