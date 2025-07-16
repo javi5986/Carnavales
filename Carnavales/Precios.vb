@@ -6,30 +6,7 @@ Public Class Precios
 
     Private Sub Precios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Cargar una copia profunda de los productos
-        copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
-        .ID = p.ID,
-        .Nombre = p.Nombre,
-        .Precio = p.Precio
-    }).ToList()
 
-        ' Reiniciar completamente el DataGridView
-        DataGridView1.DataSource = Nothing
-        DataGridView1.Rows.Clear()
-        DataGridView1.Columns.Clear()
-
-        ' Limpiar la fuente de datos antes de asignar
-        'DataGridView1.DataSource = Nothing
-        ' Asignar la copia a DataGridView
-        DataGridView1.DataSource = copiaProductos
-        ' Configurar las columnas del DataGridView
-        ConfigurarDataGridView()
-
-
-        If ListaVentas.Count > 0 Then
-
-            LimpiarTabla.Enabled = False
-        End If
     End Sub
 
 
@@ -219,4 +196,30 @@ Public Class Precios
         Next
     End Sub
 
+    Private Sub Precios_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ' Cargar una copia profunda de los productos
+        copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
+        .ID = p.ID,
+        .Nombre = p.Nombre,
+        .Precio = p.Precio
+    }).ToList()
+
+        ' Reiniciar completamente el DataGridView
+        DataGridView1.DataSource = Nothing
+        DataGridView1.Rows.Clear()
+        DataGridView1.Columns.Clear()
+
+        ' Limpiar la fuente de datos antes de asignar
+        'DataGridView1.DataSource = Nothing
+        ' Asignar la copia a DataGridView
+        DataGridView1.DataSource = copiaProductos
+        ' Configurar las columnas del DataGridView
+        ConfigurarDataGridView()
+
+
+        If ListaVentas.Count > 0 Then
+
+            LimpiarTabla.Enabled = False
+        End If
+    End Sub
 End Class
