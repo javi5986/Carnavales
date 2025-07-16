@@ -5,6 +5,7 @@ Public Class Precios
     Private copiaProductos As List(Of Producto)
 
     Private Sub Precios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Cargar una copia profunda de los productos
         copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
         .ID = p.ID,
@@ -12,16 +13,59 @@ Public Class Precios
         .Precio = p.Precio
     }).ToList()
 
+        ' Reiniciar completamente el DataGridView
         DataGridView1.DataSource = Nothing
-        DataGridView1.DataSource = copiaProductos
+        DataGridView1.Rows.Clear()
+        DataGridView1.Columns.Clear()
 
+        ' Limpiar la fuente de datos antes de asignar
+        'DataGridView1.DataSource = Nothing
+        ' Asignar la copia a DataGridView
+        DataGridView1.DataSource = copiaProductos
+        ' Configurar las columnas del DataGridView
         ConfigurarDataGridView()
 
 
+        If ListaVentas.Count > 0 Then
+
+            LimpiarTabla.Enabled = False
+        End If
     End Sub
 
 
     Private Sub ConfigurarDataGridView()
+
+        'validar elementos sin ventas para habilitar o bloquear filas del DataGridView
+        Dim ventas As New List(Of Ventas)
+        ventas = ObtenerVentas()
+
+        ' Contamos los tickets (IDs únicos)
+        Dim cantidadTickets = ventas.Count
+
+        ' Sumamos las cantidades vendidas de cada elemento
+        Dim cantidades(copiaProductos.Count - 1) As Integer
+
+        For Each venta In ventas
+
+            For i = 0 To copiaProductos.Count - 1
+
+                cantidades(i) += CInt(CallByName(venta, "Cantidad" & i + 1, CallType.Get))
+
+            Next
+
+        Next
+
+        ' Recorremos los productos y bloqueamos las filas que no tienen ventas
+        For i = 0 To copiaProductos.Count - 1
+            Dim producto As Producto = copiaProductos(i)
+            ' Si  hay ventas para este producto, bloqueamos la fila
+            If cantidades(i) > 0 Then
+                DataGridView1.Rows(i).ReadOnly = True
+                DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.LightGray ' Cambia el color de fondo para indicar que está bloqueado
+
+            End If
+        Next
+        ' Configurar las columnas del DataGridView
         With DataGridView1
             .Columns("ID").ReadOnly = True
             .Columns("ID").Width = 80
@@ -33,6 +77,8 @@ Public Class Precios
             .Columns("Precio").Width = 200
             .Columns("Precio").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         End With
+
+
     End Sub
 
 
@@ -74,7 +120,10 @@ Public Class Precios
 
 
     Private Sub Guardar_Click(sender As Object, e As EventArgs) Handles Guardar.Click
+
         If ValidarDatosAntesDeGuardar() Then
+
+            ' Guardar los cambios en la copia de productos
             DataBase.ActualizarListadoProductos(DataGridView1, Me)
             ' También podés copiar los cambios a DatosGlobales si querés
             DatosGlobales.ListaProductos = copiaProductos.Select(Function(p) New Producto With {

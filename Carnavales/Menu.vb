@@ -48,9 +48,7 @@ Public Class Menu
             .Columns("TotalVentas").ReadOnly = True
             .Columns("TotalVentas").Width = 200
             .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-
             .Columns("TotalVentas").DefaultCellStyle.Format = "N0"
-
             .Columns("Anulado").HeaderText = "Anulado"
             .Columns("Anulado").Width = 140
             .Columns("Anulado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -87,24 +85,24 @@ Public Class Menu
         Dim montoTotal As Double = ventasValidas.Sum(Function(v) v.TotalVentas)
         TxtTotalVentas.Text = montoTotal.ToString("N0")
 
-        If DatosGlobales.ListaVentas IsNot Nothing AndAlso DatosGlobales.ListaVentas.Count > 0 Then
-            ' Simula desactivación
-            ConfigurarProductos.Enabled = True
-            ConfigurarProductos.ForeColor = Color.Gray
-            ConfigurarProductos.BackColor = Color.LightGray
-            ConfigurarProductos.Cursor = Cursors.No
-            ConfigurarProductos.Tag = "Bloqueado"
+        ' If DatosGlobales.ListaVentas IsNot Nothing AndAlso DatosGlobales.ListaVentas.Count > 0 Then
+        ' Simula desactivación
+        'ConfigurarProductos.Enabled = True
+        'ConfigurarProductos.ForeColor = Color.Gray
+        'ConfigurarProductos.BackColor = Color.LightGray
+        'ConfigurarProductos.Cursor = Cursors.No
+        'ConfigurarProductos.Tag = "Bloqueado"
 
-            ToolTipConfigurar.SetToolTip(ConfigurarProductos, "No se pueden cambiar los precios si ya tiene ventas realizadas." & vbCrLf & "Para modificar precios debe Cerrar Caja y luego eliminar todas las Ventas.")
-        Else
-            ConfigurarProductos.Enabled = True
-            ConfigurarProductos.ForeColor = SystemColors.ControlText
-            ConfigurarProductos.BackColor = SystemColors.Control
-            ConfigurarProductos.Cursor = Cursors.Default
-            ConfigurarProductos.Tag = ""
+        'ToolTipConfigurar.SetToolTip(ConfigurarProductos, "No se pueden cambiar los precios si ya tiene ventas realizadas." & vbCrLf & "Para modificar precios debe Cerrar Caja y luego eliminar todas las Ventas.")
+        'Else
+        'ConfigurarProductos.Enabled = True
+        'ConfigurarProductos.ForeColor = SystemColors.ControlText
+        'ConfigurarProductos.BackColor = SystemColors.Control
+        'ConfigurarProductos.Cursor = Cursors.Default
+        'ConfigurarProductos.Tag = ""
 
-            ToolTipConfigurar.SetToolTip(ConfigurarProductos, "")
-        End If
+        'ToolTipConfigurar.SetToolTip(ConfigurarProductos, "")
+        'End If
 
 
 
@@ -467,10 +465,10 @@ Public Class Menu
     Private Sub ConfigurarProductos_Click(sender As Object, e As EventArgs) Handles ConfigurarProductos.Click
 
 
-        If ConfigurarProductos.Tag = "Bloqueado" Then
-            ' No hacer nada
-            Return
-        End If
+        'If ConfigurarProductos.Tag = "Bloqueado" Then
+        ' No hacer nada
+        'Return
+        'End If
 
         ' Abrís el formulario solo si está permitido
         Precios.ShowDialog()
