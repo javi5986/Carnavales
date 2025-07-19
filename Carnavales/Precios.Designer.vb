@@ -38,14 +38,15 @@ Partial Class Precios
         Titulo.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Titulo.Location = New Point(189, 36)
         Titulo.Name = "Titulo"
-        Titulo.Size = New Size(785, 54)
+        Titulo.Size = New Size(874, 54)
         Titulo.TabIndex = 0
-        Titulo.Text = "CONFIGURACION DE VENTAS Y PRECIOS"
+        Titulo.Text = "CONFIGURACION DE PRODUCTOS Y PRECIOS"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = SystemColors.Control
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))

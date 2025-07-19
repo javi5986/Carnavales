@@ -1,5 +1,6 @@
 ﻿Public Class Ventas
 
+    ' Clase para manejar las ventas 
     Public Property ID As Integer
     Public Property Cantidad1 As Integer
     Public Property Cantidad2 As Integer
