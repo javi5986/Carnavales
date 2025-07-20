@@ -32,5 +32,6 @@
     Public Property TotalVentas As Double
     Public Property Anulado As Boolean
     Public Property MetodoPago As Boolean
+    Public Property Fecha As Date
 
 End Class

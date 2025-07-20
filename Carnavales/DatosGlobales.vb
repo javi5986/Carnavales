@@ -60,8 +60,9 @@
                     .Cantidad27 = Convert.ToInt32(lector("Cantidad27")),
                     .TotalVentas = Convert.ToDouble(lector("TotalVentas")),
                     .Anulado = Convert.ToBoolean(lector("Anulado")),
-                    .MetodoPago = Convert.ToBoolean(lector("Efectivo"))
-                })
+                    .MetodoPago = Convert.ToBoolean(lector("Efectivo")),
+                    .Fecha = Convert.ToDateTime(lector("Fecha"))
+                    })
             End While
 
             ' Cerrar el lector de datos

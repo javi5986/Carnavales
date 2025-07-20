@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Drawing.Printing
 Imports System.Text
+Imports Windows.Media.Casting
 
 Public Class Ticket
 
@@ -21,7 +22,7 @@ Public Class Ticket
     End Sub
 
 
-    Private Sub Ticket_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Ticket_Shown(sender As Object, e As EventArgs) Handles Me.Load
 
         ' Detectar tamaño del monitor
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
@@ -234,8 +235,12 @@ Public Class Ticket
 
                 ' Definir la tabla y la consulta SQL para insertar el registro
                 Dim tabla As String = "Ventas"
-                Dim sql As String = "INSERT INTO Ventas (Cantidad1,Cantidad2,Cantidad3,Cantidad4,Cantidad5,Cantidad6,Cantidad7,Cantidad8,Cantidad9,Cantidad10,Cantidad11,Cantidad12,Cantidad13,Cantidad14,Cantidad15,Cantidad16,Cantidad17,Cantidad18,Cantidad19,Cantidad20,Cantidad21,Cantidad22,Cantidad23,Cantidad24,Cantidad25,Cantidad26,Cantidad27,TotalVentas,Efectivo) VALUES (" & venta.Cantidad1 & "," & venta.Cantidad2 & "," & venta.Cantidad3 & "," & venta.Cantidad4 & "," & venta.Cantidad5 & "," & venta.Cantidad6 & "," & venta.Cantidad7 & "," & venta.Cantidad8 & "," & venta.Cantidad9 & "," & venta.Cantidad10 & "," & venta.Cantidad11 & "," & venta.Cantidad12 & "," & venta.Cantidad13 & "," & venta.Cantidad14 & "," & venta.Cantidad15 & "," & venta.Cantidad16 & "," & venta.Cantidad17 & "," & venta.Cantidad18 & "," & venta.Cantidad19 & "," & venta.Cantidad20 & "," & venta.Cantidad21 & "," & venta.Cantidad22 & "," & venta.Cantidad23 & "," & venta.Cantidad24 & "," & venta.Cantidad25 & "," & venta.Cantidad26 & "," & venta.Cantidad27 & "," & venta.TotalVentas & "," & venta.MetodoPago & ")"
 
+                ' Definimos la fecha actual
+                venta.Fecha = Now
+                Dim fechaHoraActual As String = venta.Fecha.ToString("MM/dd/yyyy HH:mm:ss")
+
+                Dim sql As String = "INSERT INTO Ventas (Cantidad1,Cantidad2,Cantidad3,Cantidad4,Cantidad5,Cantidad6,Cantidad7,Cantidad8,Cantidad9,Cantidad10,Cantidad11,Cantidad12,Cantidad13,Cantidad14,Cantidad15,Cantidad16,Cantidad17,Cantidad18,Cantidad19,Cantidad20,Cantidad21,Cantidad22,Cantidad23,Cantidad24,Cantidad25,Cantidad26,Cantidad27,TotalVentas,Efectivo,Fecha) VALUES (" & venta.Cantidad1 & "," & venta.Cantidad2 & "," & venta.Cantidad3 & "," & venta.Cantidad4 & "," & venta.Cantidad5 & "," & venta.Cantidad6 & "," & venta.Cantidad7 & "," & venta.Cantidad8 & "," & venta.Cantidad9 & "," & venta.Cantidad10 & "," & venta.Cantidad11 & "," & venta.Cantidad12 & "," & venta.Cantidad13 & "," & venta.Cantidad14 & "," & venta.Cantidad15 & "," & venta.Cantidad16 & "," & venta.Cantidad17 & "," & venta.Cantidad18 & "," & venta.Cantidad19 & "," & venta.Cantidad20 & "," & venta.Cantidad21 & "," & venta.Cantidad22 & "," & venta.Cantidad23 & "," & venta.Cantidad24 & "," & venta.Cantidad25 & "," & venta.Cantidad26 & "," & venta.Cantidad27 & "," & venta.TotalVentas & "," & venta.MetodoPago & ",#" & fechaHoraActual & "#)"
                 ' Llamar a la función e insertar el registro
                 If InsertarRegistro(tabla, sql) Then
 
@@ -279,7 +284,7 @@ Public Class Ticket
             Finally
 
                 ' Limpiar el Label de Número de Ticket
-                LabelNumTicket.Text = CInt(LabelNumTicket.Text) + 1
+                LabelNumTicket.Text = (Convert.ToInt32(LabelNumTicket.Text) + 1).ToString
             End Try
 
         End If
@@ -305,8 +310,8 @@ Public Class Ticket
             texto = texto & "================================================" & vbCrLf
             texto = texto & "                     ADJC                       " & vbCrLf
             texto = texto & "================================================" & vbCrLf
-            texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
-            texto = texto & "Ticket Nº: " & LabelNumTicket.Text - 1 & "  " & vbCrLf
+            texto = texto & "Fecha: " & venta.Fecha & " " & vbCrLf
+            texto = texto & "Ticket Nº: " & LabelNumTicket.Text & "  " & vbCrLf
             texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
             texto = texto & "Cant Detalle                             Monto  " & vbCrLf
             texto = texto & "------------------------------------------------" & vbCrLf

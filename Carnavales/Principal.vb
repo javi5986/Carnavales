@@ -7,8 +7,11 @@
             ' Inicializar la lista de cajeros
             Dim cajero As New Cajeros
 
-            ' Mostrar el formulario Cajeros
-            cajero = ObtenerCajeros()
+            ' Consultamos la lista de cajeros desde la base de datos y guardamos el resultado en DatosGlobales
+            DatosGlobales.cajeros = ObtenerCajeros()
+
+            ' Asignamos la lista de cajeros a la variable cajero
+            cajero = DatosGlobales.cajeros
 
             ' Verificar si la lista de cajeros tiene elementos
             If cajero.Apellidos IsNot Nothing Then
@@ -20,7 +23,7 @@
             End If
 
         Catch ex As Exception
-
+            ' Manejar cualquier error que ocurra al cargar los cajeros
             MessageBox.Show("Error al cargar CAJEROS: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Application.Exit()
         End Try

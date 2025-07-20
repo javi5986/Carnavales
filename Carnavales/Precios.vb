@@ -6,6 +6,34 @@ Public Class Precios
     ' Se carga una copia de los productos para evitar modificar la lista original directamente
     Private copiaProductos As List(Of Producto)
 
+    Private Sub Precios_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
+        ' Cargar una copia profunda de los productos
+        copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
+        .ID = p.ID,
+        .Nombre = p.Nombre,
+        .Precio = p.Precio
+    }).ToList()
+
+        ' Reiniciar completamente el DataGridView
+        DataGridView1.DataSource = Nothing
+        ' Limpiar las filas y columnas del DataGridView
+        DataGridView1.Rows.Clear()
+        ' Limpiar las columnas del DataGridView
+        DataGridView1.Columns.Clear()
+        ' Asignar la copia a DataGridView
+        DataGridView1.DataSource = copiaProductos
+        ' Configurar las columnas del DataGridView
+        ConfigurarDataGridView()
+
+        ' Verificar si hay ventas en DatosGlobales
+        If DatosGlobales.ListaVentas.Count > 0 Then
+            ' Habilitar el botón LimpiarTabla si hay ventas
+            LimpiarTabla.Enabled = False
+        End If
+
+    End Sub
+
     Private Sub ConfigurarDataGridView()
 
         ' Primero, obtenemos la lista de productos desde DatosGlobales
@@ -20,9 +48,6 @@ Public Class Precios
             ventas = DatosGlobales.ObtenerVentas()
 
         End If
-
-        ' Contamos los tickets (IDs únicos)
-        Dim cantidadTickets = ventas.Count
 
         ' Sumamos las cantidades vendidas de cada elemento
         ' copiaproductos esta inicializado con los productos de DatosGlobales cuando se muestra el formulario shown
@@ -256,34 +281,6 @@ Public Class Precios
                 fila.Cells("Precio").Value = ""
             End If
         Next
-    End Sub
-
-    Private Sub Precios_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-
-        ' Cargar una copia profunda de los productos
-        copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
-        .ID = p.ID,
-        .Nombre = p.Nombre,
-        .Precio = p.Precio
-    }).ToList()
-
-        ' Reiniciar completamente el DataGridView
-        DataGridView1.DataSource = Nothing
-        ' Limpiar las filas y columnas del DataGridView
-        DataGridView1.Rows.Clear()
-        ' Limpiar las columnas del DataGridView
-        DataGridView1.Columns.Clear()
-        ' Asignar la copia a DataGridView
-        DataGridView1.DataSource = copiaProductos
-        ' Configurar las columnas del DataGridView
-        ConfigurarDataGridView()
-
-        ' Verificar si hay ventas en DatosGlobales
-        If ListaVentas.Count > 0 Then
-            ' Habilitar el botón LimpiarTabla si hay ventas
-            LimpiarTabla.Enabled = False
-        End If
-
     End Sub
 
 End Class
