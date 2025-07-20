@@ -43,6 +43,8 @@ Public Class Ticket
             ' Crear los controles dinámicamente si no existen
             Dim btnMas As Button = tblBotones.Controls("ButtonMas" & i)
             Dim btnMenos As Button = tblBotones.Controls("ButtonMenos" & i)
+            Dim textCantidad As TextBox = tblBotones.Controls("TextBoxCantidad" & i)
+            Dim textSubTotal As TextBox = tblBotones.Controls("TextBoxSubTotal" & i)
 
             ' Crear los TextBox para Cantidad y SubTotal si no existen
             If btnMas IsNot Nothing Then
@@ -220,11 +222,10 @@ Public Class Ticket
 
                     ' Si la propiedad existe, asignamos el valor del TextBox convertido a entero
                     If propiedad IsNot Nothing Then
-
-                        ' Verificamos que el texto del TextBox no sea vacío o nulo
-                        propiedad.SetValue(venta, Convert.ToInt32(txt.Text))
-
+                        Dim valor = If(String.IsNullOrWhiteSpace(txt.Text) OrElse Not IsNumeric(txt.Text), 0, Convert.ToInt32(txt.Text))
+                        propiedad.SetValue(venta, valor)
                     End If
+
 
                 End If
 
@@ -283,8 +284,14 @@ Public Class Ticket
 
             Finally
 
-                ' Limpiar el Label de Número de Ticket
-                LabelNumTicket.Text = (Convert.ToInt32(LabelNumTicket.Text) + 1).ToString
+                ' Aumentar el número de ticket en el Label
+                If LabelNumTicket.Text IsNot Nothing Then
+                    ' Verificar si el LabelNumTicket tiene un valor numérico válido
+                    Dim valor = If(String.IsNullOrWhiteSpace(LabelNumTicket.Text) OrElse Not IsNumeric(LabelNumTicket.Text), 0, Convert.ToInt32(LabelNumTicket.Text))
+                    ' Aumentar el valor en 1
+                    LabelNumTicket.Text = (valor + 1).ToString
+                End If
+
             End Try
 
         End If
