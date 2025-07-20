@@ -47,17 +47,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Escudo.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.OleDb" Version="9.0.2" />
+    <PackageReference Include="System.Data.OleDb" Version="9.0.7" />
   </ItemGroup>
 
   <ItemGroup>

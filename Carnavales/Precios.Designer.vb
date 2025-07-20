@@ -22,6 +22,7 @@ Partial Class Precios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Titulo = New Label()
@@ -29,6 +30,7 @@ Partial Class Precios
         Guardar = New Button()
         Salir = New Button()
         LimpiarTabla = New Button()
+        ToolTip1 = New ToolTip(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -40,7 +42,7 @@ Partial Class Precios
         Titulo.Name = "Titulo"
         Titulo.Size = New Size(874, 54)
         Titulo.TabIndex = 0
-        Titulo.Text = "CONFIGURACION DE PRODUCTOS Y PRECIOS"
+        Titulo.Text = "CONFIGURACIÓN DE PRODUCTOS Y PRECIOS"
         ' 
         ' DataGridView1
         ' 
@@ -126,4 +128,5 @@ Partial Class Precios
     Friend WithEvents Guardar As Button
     Friend WithEvents Salir As Button
     Friend WithEvents LimpiarTabla As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

@@ -41,7 +41,7 @@ Public Class Precios
 
         Next
 
-        ' Recorremos los productos y bloqueamos las filas que no tienen ventas
+        ' Recorremos los productos y bloqueamos las filas que tienen ventas
         For i = 0 To copiaProductos.Count - 1
 
             ' Obtenemos el producto actual
@@ -55,6 +55,18 @@ Public Class Precios
                 ' Cambiamos el color de fondo para indicar que está bloqueado
                 DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.LightGray
 
+            End If
+        Next
+
+        ' Mensaje de tooltip para las celdas bloqueadas
+        For i = 0 To DataGridView1.Rows.Count - 1
+            ' Si la fila está bloqueada, asignamos un tooltip a cada celda
+            If DataGridView1.Rows(i).ReadOnly Then
+                ' Asignamos un tooltip a cada celda de la fila bloqueada
+                For Each celda As DataGridViewCell In DataGridView1.Rows(i).Cells
+                    ' Asignamos el tooltip a la celda
+                    celda.ToolTipText = "No se puede editar porque registra ventas."
+                Next
             End If
         Next
 
