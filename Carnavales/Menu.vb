@@ -271,11 +271,11 @@ Public Class Menu
 
                 ' Obtener la propiedad de cantidad del producto
                 Dim propiedad As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
-                Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
-                Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
 
                 ' Verificar si la cantidad del producto es mayor que 0
                 If propiedad.GetValue(venta) > 0 Then
+                    Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
+                    Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
 
                     ' Agregar la línea al texto de impresión
                     texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
@@ -325,9 +325,6 @@ Public Class Menu
 
         ' Verificamos si el usuario confirma el cierre de caja
         If respuesta = DialogResult.Yes Then
-
-            ' Obtenemos la lista de ventas
-            'Dim ventas As List(Of Ventas) = ListaVentas()
 
             ' Filtramos solo las ventas no anuladas
             Dim ventasValidas = DatosGlobales.ListaVentas.Where(Function(v) Not v.Anulado)
@@ -555,6 +552,43 @@ Public Class Menu
         Dim respuesta As DialogResult = MessageBox.Show("¿Está seguro de que desea resetear la tabla Ventas?" & vbCrLf & "Este proceso no puede revertirse y elimina todos los registros", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         ' Verificar si el usuario confirma el reset de la tabla
         If respuesta = DialogResult.Yes Then
+
+            ' Antes de resetear, hacemos una copia de seguridad de la base de datos
+
+            ' 1. Ruta del directorio donde está la app
+            Dim rutaApp As String = AppDomain.CurrentDomain.BaseDirectory
+
+            ' 2. Ruta de la carpeta de cierres de caja
+            Dim rutaCierres As String = System.IO.Path.Combine(rutaApp, "CierresDeCaja")
+
+            ' 3. Nombre único de subcarpeta según fecha y hora
+            Dim nombreSubcarpeta As String = "ReseteoPrograma_" & Now.ToString("yyyyMMdd_HHmmss")
+
+            ' 4. Ruta completa de la subcarpeta de este cierre
+            Dim rutaCierreActual As String = System.IO.Path.Combine(rutaCierres, nombreSubcarpeta)
+
+            ' 5. Crear la carpeta si no existe
+            If Not System.IO.Directory.Exists(rutaCierres) Then
+                System.IO.Directory.CreateDirectory(rutaCierres)
+            End If
+
+            If Not System.IO.Directory.Exists(rutaCierreActual) Then
+                System.IO.Directory.CreateDirectory(rutaCierreActual)
+            End If
+
+            ' 6. Ruta de la base de datos actual (ajustala si tu variable es distinta)
+            Dim rutaBaseDatos As String = System.IO.Path.Combine(rutaApp, "Carnavales.accdb")
+            ' Si tu variable es diferente, usá esa: Ej: Dim rutaBaseDatos As String = Configuraciones.rutaDB
+
+            ' 7. Ruta de la copia que vas a guardar
+            Dim rutaCopia As String = System.IO.Path.Combine(rutaCierreActual, "Carnavales.accdb")
+
+            ' 8. Copiar la base de datos
+            System.IO.File.Copy(rutaBaseDatos, rutaCopia, True) ' True para sobreescribir si existe
+
+            ' 9. (Opcional) Podés guardar un log, resumen, o lo que quieras también en esa carpeta
+
+            MessageBox.Show("Respaldo BD guardado en: " & rutaCopia, "Información")
 
             ' Eliminar todos los datos de la tabla Ventas
             ResetearTabla()

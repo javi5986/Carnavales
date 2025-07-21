@@ -24,6 +24,9 @@ Public Class Ticket
 
     Private Sub Ticket_Shown(sender As Object, e As EventArgs) Handles Me.Load
 
+        ' Cargar los datos globales y la lista de productos
+        DatosGlobales.cajeros = DatosGlobales.ObtenerCajeros()
+
         ' Detectar tamaño del monitor
         Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
 
@@ -292,6 +295,10 @@ Public Class Ticket
                     LabelNumTicket.Text = (valor + 1).ToString
                 End If
 
+                ' Volvemos a setear el check efectivo como seleccionado
+                CheckBoxEfectivo.Checked = True
+                CheckBoxtTransferencia.Checked = False
+
             End Try
 
         End If
@@ -327,11 +334,12 @@ Public Class Ticket
 
                 ' Obtenemos la propiedad de cantidad del objeto venta
                 Dim propiedad As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
-                Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
-                Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
 
                 ' Verificamos si la propiedad tiene un valor mayor a 0
                 If propiedad.GetValue(venta) > 0 Then
+
+                    Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
+                    Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
 
                     texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
 
