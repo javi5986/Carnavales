@@ -327,7 +327,7 @@ Public Class Ticket
             texto = texto & "Fecha: " & venta.Fecha & " " & vbCrLf
             texto = texto & "Ticket Nº: " & LabelNumTicket.Text & "  " & vbCrLf
             texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
-            texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+            texto = texto & "Cant    Detalle                          Monto  " & vbCrLf
             texto = texto & "------------------------------------------------" & vbCrLf
             ' Recorremos los productos y sus cantidades para armar el ticket
             For i = 1 To DatosGlobales.ListaProductos.Count
@@ -340,8 +340,9 @@ Public Class Ticket
 
                     Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
                     Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
+                    Dim subTotal As Double = precio * propiedad.GetValue(venta)
 
-                    texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
+                    texto = texto & propiedad.GetValue(venta).ToString.PadLeft(4) & " " & nombre.ToString.PadRight(33) & "$" & subTotal.ToString("N0").PadLeft(9) & vbCrLf
 
                     texto = texto & "------------------------------------------------" & vbCrLf
                 End If

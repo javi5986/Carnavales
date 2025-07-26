@@ -263,7 +263,7 @@ Public Class Menu
             texto = texto & "Fecha: " & venta.Fecha.ToString & " " & vbCrLf
             texto = texto & "Ticket Nº: " & venta.ID.ToString & "  " & vbCrLf
             texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
-            texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+            texto = texto & "Cant    Detalle                          Monto  " & vbCrLf
             texto = texto & "------------------------------------------------" & vbCrLf
 
             ' Iterar sobre los productos vendidos en la venta
@@ -276,9 +276,10 @@ Public Class Menu
                 If propiedad.GetValue(venta) > 0 Then
                     Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
                     Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
+                    Dim subtotal As Double = precio * propiedad.GetValue(venta)
 
                     ' Agregar la línea al texto de impresión
-                    texto = texto & " " & propiedad.GetValue(venta).ToString.PadLeft(4) & "  " & nombre.ToString.PadRight(34) & "$" & precio * propiedad.GetValue(venta).ToString.PadLeft(6) & vbCrLf
+                    texto = texto & propiedad.GetValue(venta).ToString.PadLeft(4) & " " & nombre.ToString.PadRight(33) & "$" & subtotal.ToString("N0").PadLeft(9) & vbCrLf
                     texto = texto & "------------------------------------------------" & vbCrLf
                 End If
             Next
@@ -377,7 +378,7 @@ Public Class Menu
                 texto = texto & "CIERRE DE CAJA " & vbCrLf
                 texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
                 texto = texto & "Cant de ticket: " & cantidadTickets & "  " & vbCrLf
-                texto = texto & "Cant Detalle                             Monto  " & vbCrLf
+                texto = texto & "Cant    Detalle                          Monto  " & vbCrLf
                 texto = texto & "------------------------------------------------" & vbCrLf
 
                 ' Iterar sobre los productos vendidos
@@ -390,9 +391,9 @@ Public Class Menu
                     End If
 
                     ' Calcular el monto total por producto
-                    Dim montoTotalCant = cantidades(i - 1) * DatosGlobales.ListaProductos(i - 1).Precio
+                    Dim montoTotalCant As Decimal = cantidades(i - 1) * DatosGlobales.ListaProductos(i - 1).Precio
                     ' Agregar la línea al texto de impresión
-                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(33) & "$" & montoTotalCant.ToString.PadLeft(8) & vbCrLf
+                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(32) & "$" & montoTotalCant.ToString("N0").PadLeft(9) & vbCrLf
                     texto = texto & "------------------------------------------------" & vbCrLf
 
                 Next i

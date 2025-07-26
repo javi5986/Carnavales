@@ -126,10 +126,10 @@ Public Class Precios
             Dim textoIngresado As String = e.FormattedValue.ToString()
 
             ' Si el texto ingresado es nulo o vacío, no hacemos nada
-            If textoIngresado.Length > 33 Then
+            If textoIngresado.Length > 32 Then
 
                 ' Si el texto ingresado supera los 33 caracteres, mostramos un mensaje y cancelamos el cambio
-                MessageBox.Show("El nombre no puede tener más de 33 caracteres.", "Límite excedido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show("El nombre no puede tener más de 32 caracteres.", "Límite excedido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 ' Cancela el cambio si supera el límite
                 e.Cancel = True
 
