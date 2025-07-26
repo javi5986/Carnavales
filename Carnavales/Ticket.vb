@@ -319,7 +319,10 @@ Public Class Ticket
 
             Dim FechaHora As Date = Now
 
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
+            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)            
+            ' LOS TICKET DE VENTA PUEDEN TENER HASTA 9999 UNIDADES DE CADA PRODUCTO
+            ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
+            ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
 
             texto = texto & "================================================" & vbCrLf
             texto = texto & "                     ADJC                       " & vbCrLf

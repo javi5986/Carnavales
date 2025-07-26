@@ -254,7 +254,9 @@ Public Class Menu
             Dim FechaHora As Date = Now
 
             ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
-
+            ' LOS TICKET DE VENTA PUEDEN TENER HASTA 9999 UNIDADES DE CADA PRODUCTO
+            ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
+            ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
 
             texto = texto & "================================================" & vbCrLf
             texto = texto & "                     ADJC                       " & vbCrLf
@@ -370,7 +372,11 @@ Public Class Menu
                 ' Obtener la fecha y hora actual
                 Dim FechaHora = Now
 
-                ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)
+                ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)                
+                ' EL TICKET DE CIERRE PUEDEN TENER HASTA 9999 UNIDADES DE CADA PRODUCTO
+                ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
+                ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $99.999.999
+
                 texto = texto & "================================================" & vbCrLf
                 texto = texto & "                     ADJC                       " & vbCrLf
                 texto = texto & "================================================" & vbCrLf
@@ -393,7 +399,7 @@ Public Class Menu
                     ' Calcular el monto total por producto
                     Dim montoTotalCant As Decimal = cantidades(i - 1) * DatosGlobales.ListaProductos(i - 1).Precio
                     ' Agregar la línea al texto de impresión
-                    texto = texto & cantidades(i - 1).ToString.PadLeft(5) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(32) & "$" & montoTotalCant.ToString("N0").PadLeft(9) & vbCrLf
+                    texto = texto & cantidades(i - 1).ToString.PadLeft(4) & " " & DatosGlobales.ListaProductos(i - 1).Nombre.ToString.PadRight(32) & "$" & montoTotalCant.ToString("N0").PadLeft(10) & vbCrLf
                     texto = texto & "------------------------------------------------" & vbCrLf
 
                 Next i
