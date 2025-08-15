@@ -68,7 +68,7 @@ Partial Class Principal
         Apellidos.MaxLength = 32
         Apellidos.Name = "Apellidos"
         Apellidos.Size = New Size(670, 51)
-        Apellidos.TabIndex = 4
+        Apellidos.TabIndex = 1
         Apellidos.TextAlign = HorizontalAlignment.Center
         ' 
         ' Aceptar
@@ -77,7 +77,7 @@ Partial Class Principal
         Aceptar.Location = New Point(165, 374)
         Aceptar.Name = "Aceptar"
         Aceptar.Size = New Size(189, 56)
-        Aceptar.TabIndex = 5
+        Aceptar.TabIndex = 2
         Aceptar.Text = "ACEPTAR"
         Aceptar.UseVisualStyleBackColor = True
         ' 
@@ -87,7 +87,7 @@ Partial Class Principal
         Salir.Location = New Point(410, 374)
         Salir.Name = "Salir"
         Salir.Size = New Size(189, 56)
-        Salir.TabIndex = 6
+        Salir.TabIndex = 3
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
         ' 

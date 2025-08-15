@@ -86,6 +86,12 @@
         ' Pasar a mayúsculas la letra ingresada en el campo Apellidos
         e.KeyChar = Char.ToUpper(e.KeyChar)
 
+        ' Si se presiona Enter (Chr(13)), ir al siguiente control por TabIndex
+        If Asc(e.KeyChar) = 13 Then
+            e.Handled = True ' Evita el beep
+            Me.SelectNextControl(CType(sender, Control), True, True, True, True)
+        End If
+
     End Sub
 
 End Class

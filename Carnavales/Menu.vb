@@ -3,6 +3,7 @@ Imports System.ComponentModel
 Imports System.Data.OleDb
 Imports System.Drawing.Printing
 Imports System.IO
+Imports System.Reflection.Metadata
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Menu
@@ -46,7 +47,7 @@ Public Class Menu
         DataGridView1.DataSource = Nothing
 
         ' Asignar la fuente de datos al DataGridView
-        DataGridView1.DataSource = ListaVentas
+        DataGridView1.DataSource = listaVentas
 
         ' Ocultar columnas innecesarias
         With DataGridView1
@@ -94,7 +95,7 @@ Public Class Menu
         ' ACTUALIZAMOS EL TOTAL DE VENTAS
 
         ' Filtramos solo las ventas no anuladas
-        Dim ventasValidas As IEnumerable(Of Ventas) = ListaVentas.Where(Function(v) Not v.Anulado)
+        Dim ventasValidas As IEnumerable(Of Ventas) = listaVentas.Where(Function(v) Not v.Anulado)
 
         ' Sumamos el total vendido
         Dim montoTotal As Double = ventasValidas.Sum(Function(v) v.TotalVentas)
