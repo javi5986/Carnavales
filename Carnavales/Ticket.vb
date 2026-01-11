@@ -298,14 +298,12 @@ Public Class Ticket
                 ' Volvemos a setear el check efectivo como seleccionado
                 CheckBoxEfectivo.Checked = True
                 CheckBoxtTransferencia.Checked = False
-
+                ButtonMas1.Focus() ' Poner el foco en el primer botón para agilizar la venta
             End Try
 
         End If
 
     End Sub
-
-
 
     Private Sub Impresion(venta As Ventas)
         Try
@@ -400,6 +398,20 @@ Public Class Ticket
             CheckBoxtTransferencia.Checked = True
             CheckBoxtTransferencia.ForeColor = Color.Blue
             CheckBoxEfectivo.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub Ticket_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        ' Detecta I o i (no distingue mayúsculas)
+        If e.KeyCode = Keys.I Then
+            Call Imprimir_Click(sender, e)
+            e.Handled = True
+        End If
+        ' Detecta S o s (no distingue mayúsculas)
+        If e.KeyCode = Keys.S Then
+            ' Cerrar el formulario y mostrar el menú principal
+            Menu.Show()
+            Me.Close()
         End If
     End Sub
 

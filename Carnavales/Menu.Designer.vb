@@ -63,7 +63,7 @@ Partial Class Menu
         Salir.Location = New Point(85, 630)
         Salir.Name = "Salir"
         Salir.Size = New Size(270, 95)
-        Salir.TabIndex = 2
+        Salir.TabIndex = 5
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
         ' 
@@ -91,7 +91,7 @@ Partial Class Menu
         DataGridView1.RowHeadersWidth = 70
         DataGridView1.ScrollBars = ScrollBars.Vertical
         DataGridView1.Size = New Size(780, 549)
-        DataGridView1.TabIndex = 3
+        DataGridView1.TabIndex = 7
         ' 
         ' Reimprimir
         ' 
@@ -100,7 +100,7 @@ Partial Class Menu
         Reimprimir.Location = New Point(537, 630)
         Reimprimir.Name = "Reimprimir"
         Reimprimir.Size = New Size(270, 95)
-        Reimprimir.TabIndex = 4
+        Reimprimir.TabIndex = 6
         Reimprimir.Text = "IMPRIMIR"
         Reimprimir.UseVisualStyleBackColor = True
         ' 
@@ -110,7 +110,7 @@ Partial Class Menu
         ConfigurarImpresora.Location = New Point(85, 393)
         ConfigurarImpresora.Name = "ConfigurarImpresora"
         ConfigurarImpresora.Size = New Size(270, 95)
-        ConfigurarImpresora.TabIndex = 5
+        ConfigurarImpresora.TabIndex = 3
         ConfigurarImpresora.Text = "CONFIGURAR IMPRESORA"
         ConfigurarImpresora.UseVisualStyleBackColor = True
         ' 
@@ -120,7 +120,7 @@ Partial Class Menu
         ResetTabla.Location = New Point(85, 511)
         ResetTabla.Name = "ResetTabla"
         ResetTabla.Size = New Size(270, 95)
-        ResetTabla.TabIndex = 6
+        ResetTabla.TabIndex = 4
         ResetTabla.Text = "ELIMINAR  TODAS LAS VENTAS"
         ResetTabla.UseVisualStyleBackColor = True
         ' 
@@ -131,7 +131,7 @@ Partial Class Menu
         Label1.Location = New Point(917, 617)
         Label1.Name = "Label1"
         Label1.Size = New Size(207, 31)
-        Label1.TabIndex = 7
+        Label1.TabIndex = 8
         Label1.Text = "TOTAL DE VENTAS"
         ' 
         ' TxtTotalVentas
@@ -141,7 +141,7 @@ Partial Class Menu
         TxtTotalVentas.Location = New Point(890, 663)
         TxtTotalVentas.Name = "TxtTotalVentas"
         TxtTotalVentas.Size = New Size(266, 62)
-        TxtTotalVentas.TabIndex = 8
+        TxtTotalVentas.TabIndex = 9
         TxtTotalVentas.TextAlign = HorizontalAlignment.Center
         ' 
         ' ConfigurarProductos
@@ -150,7 +150,7 @@ Partial Class Menu
         ConfigurarProductos.Location = New Point(85, 268)
         ConfigurarProductos.Name = "ConfigurarProductos"
         ConfigurarProductos.Size = New Size(270, 107)
-        ConfigurarProductos.TabIndex = 9
+        ConfigurarProductos.TabIndex = 2
         ConfigurarProductos.Text = "CONFIGURAR" & vbCrLf & "PRECIOS"
         ConfigurarProductos.UseVisualStyleBackColor = True
         ' 

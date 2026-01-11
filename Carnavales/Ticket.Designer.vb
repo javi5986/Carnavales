@@ -155,6 +155,7 @@ Partial Class Ticket
         ' 
         ' tblBotones
         ' 
+        tblBotones.BackColor = SystemColors.Control
         tblBotones.ColumnCount = 17
         tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 2.30927229F))
         tblBotones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 3.23869538F))
@@ -290,6 +291,7 @@ Partial Class Ticket
         tblBotones.Controls.Add(Salir, 14, 37)
         tblBotones.Controls.Add(Imprimir, 13, 37)
         tblBotones.Dock = DockStyle.Fill
+        tblBotones.ForeColor = SystemColors.ControlText
         tblBotones.GrowStyle = TableLayoutPanelGrowStyle.FixedSize
         tblBotones.Location = New Point(0, 0)
         tblBotones.Name = "tblBotones"
@@ -346,7 +348,8 @@ Partial Class Ticket
         ButtonMenos1.Location = New Point(37, 33)
         ButtonMenos1.Name = "ButtonMenos1"
         ButtonMenos1.Size = New Size(41, 23)
-        ButtonMenos1.TabIndex = 0
+        ButtonMenos1.TabIndex = 101
+        ButtonMenos1.TabStop = False
         ButtonMenos1.Text = "-"
         ButtonMenos1.TextAlign = ContentAlignment.TopCenter
         ButtonMenos1.UseVisualStyleBackColor = True
@@ -359,7 +362,7 @@ Partial Class Ticket
         ButtonMas1.Location = New Point(180, 33)
         ButtonMas1.Name = "ButtonMas1"
         ButtonMas1.Size = New Size(405, 23)
-        ButtonMas1.TabIndex = 1
+        ButtonMas1.TabIndex = 0
         ButtonMas1.TextAlign = ContentAlignment.TopCenter
         ButtonMas1.UseVisualStyleBackColor = True
         ' 
@@ -371,7 +374,8 @@ Partial Class Ticket
         TextBoxCantidad1.Name = "TextBoxCantidad1"
         TextBoxCantidad1.ReadOnly = True
         TextBoxCantidad1.Size = New Size(50, 34)
-        TextBoxCantidad1.TabIndex = 2
+        TextBoxCantidad1.TabIndex = 200
+        TextBoxCantidad1.TabStop = False
         TextBoxCantidad1.Text = "0"
         TextBoxCantidad1.TextAlign = HorizontalAlignment.Center
         ' 
@@ -383,7 +387,8 @@ Partial Class Ticket
         TextBoxSubTotal1.Name = "TextBoxSubTotal1"
         TextBoxSubTotal1.ReadOnly = True
         TextBoxSubTotal1.Size = New Size(111, 34)
-        TextBoxSubTotal1.TabIndex = 4
+        TextBoxSubTotal1.TabIndex = 301
+        TextBoxSubTotal1.TabStop = False
         TextBoxSubTotal1.Text = "0"
         TextBoxSubTotal1.TextAlign = HorizontalAlignment.Center
         ' 
@@ -395,7 +400,8 @@ Partial Class Ticket
         TextBoxCantidad2.Name = "TextBoxCantidad2"
         TextBoxCantidad2.ReadOnly = True
         TextBoxCantidad2.Size = New Size(50, 34)
-        TextBoxCantidad2.TabIndex = 7
+        TextBoxCantidad2.TabIndex = 201
+        TextBoxCantidad2.TabStop = False
         TextBoxCantidad2.Text = "0"
         TextBoxCantidad2.TextAlign = HorizontalAlignment.Center
         ' 
@@ -407,7 +413,8 @@ Partial Class Ticket
         ButtonMenos2.Location = New Point(37, 66)
         ButtonMenos2.Name = "ButtonMenos2"
         ButtonMenos2.Size = New Size(41, 23)
-        ButtonMenos2.TabIndex = 5
+        ButtonMenos2.TabIndex = 102
+        ButtonMenos2.TabStop = False
         ButtonMenos2.Text = "-"
         ButtonMenos2.TextAlign = ContentAlignment.TopCenter
         ButtonMenos2.UseVisualStyleBackColor = True
@@ -420,7 +427,8 @@ Partial Class Ticket
         ButtonMenos3.Location = New Point(37, 99)
         ButtonMenos3.Name = "ButtonMenos3"
         ButtonMenos3.Size = New Size(41, 23)
-        ButtonMenos3.TabIndex = 10
+        ButtonMenos3.TabIndex = 103
+        ButtonMenos3.TabStop = False
         ButtonMenos3.Text = "-"
         ButtonMenos3.TextAlign = ContentAlignment.TopCenter
         ButtonMenos3.UseVisualStyleBackColor = True
@@ -433,7 +441,8 @@ Partial Class Ticket
         ButtonMenos4.Location = New Point(37, 132)
         ButtonMenos4.Name = "ButtonMenos4"
         ButtonMenos4.Size = New Size(41, 23)
-        ButtonMenos4.TabIndex = 15
+        ButtonMenos4.TabIndex = 103
+        ButtonMenos4.TabStop = False
         ButtonMenos4.Text = "-"
         ButtonMenos4.TextAlign = ContentAlignment.TopCenter
         ButtonMenos4.UseVisualStyleBackColor = True
@@ -446,7 +455,8 @@ Partial Class Ticket
         ButtonMenos5.Location = New Point(37, 165)
         ButtonMenos5.Name = "ButtonMenos5"
         ButtonMenos5.Size = New Size(41, 23)
-        ButtonMenos5.TabIndex = 20
+        ButtonMenos5.TabIndex = 104
+        ButtonMenos5.TabStop = False
         ButtonMenos5.Text = "-"
         ButtonMenos5.TextAlign = ContentAlignment.TopCenter
         ButtonMenos5.UseVisualStyleBackColor = True
@@ -459,7 +469,8 @@ Partial Class Ticket
         ButtonMenos6.Location = New Point(37, 198)
         ButtonMenos6.Name = "ButtonMenos6"
         ButtonMenos6.Size = New Size(41, 23)
-        ButtonMenos6.TabIndex = 25
+        ButtonMenos6.TabIndex = 105
+        ButtonMenos6.TabStop = False
         ButtonMenos6.Text = "-"
         ButtonMenos6.TextAlign = ContentAlignment.TopCenter
         ButtonMenos6.UseVisualStyleBackColor = True
@@ -472,7 +483,8 @@ Partial Class Ticket
         ButtonMenos7.Location = New Point(37, 231)
         ButtonMenos7.Name = "ButtonMenos7"
         ButtonMenos7.Size = New Size(41, 23)
-        ButtonMenos7.TabIndex = 30
+        ButtonMenos7.TabIndex = 106
+        ButtonMenos7.TabStop = False
         ButtonMenos7.Text = "-"
         ButtonMenos7.TextAlign = ContentAlignment.TopCenter
         ButtonMenos7.UseVisualStyleBackColor = True
@@ -485,7 +497,8 @@ Partial Class Ticket
         ButtonMenos8.Location = New Point(37, 264)
         ButtonMenos8.Name = "ButtonMenos8"
         ButtonMenos8.Size = New Size(41, 23)
-        ButtonMenos8.TabIndex = 35
+        ButtonMenos8.TabIndex = 107
+        ButtonMenos8.TabStop = False
         ButtonMenos8.Text = "-"
         ButtonMenos8.TextAlign = ContentAlignment.TopCenter
         ButtonMenos8.UseVisualStyleBackColor = True
@@ -498,7 +511,8 @@ Partial Class Ticket
         ButtonMenos9.Location = New Point(37, 297)
         ButtonMenos9.Name = "ButtonMenos9"
         ButtonMenos9.Size = New Size(41, 23)
-        ButtonMenos9.TabIndex = 40
+        ButtonMenos9.TabIndex = 109
+        ButtonMenos9.TabStop = False
         ButtonMenos9.Text = "-"
         ButtonMenos9.TextAlign = ContentAlignment.TopCenter
         ButtonMenos9.UseVisualStyleBackColor = True
@@ -511,7 +525,8 @@ Partial Class Ticket
         ButtonMenos10.Location = New Point(37, 330)
         ButtonMenos10.Name = "ButtonMenos10"
         ButtonMenos10.Size = New Size(41, 23)
-        ButtonMenos10.TabIndex = 45
+        ButtonMenos10.TabIndex = 110
+        ButtonMenos10.TabStop = False
         ButtonMenos10.Text = "-"
         ButtonMenos10.TextAlign = ContentAlignment.TopCenter
         ButtonMenos10.UseVisualStyleBackColor = True
@@ -524,7 +539,8 @@ Partial Class Ticket
         ButtonMenos11.Location = New Point(37, 363)
         ButtonMenos11.Name = "ButtonMenos11"
         ButtonMenos11.Size = New Size(41, 23)
-        ButtonMenos11.TabIndex = 50
+        ButtonMenos11.TabIndex = 111
+        ButtonMenos11.TabStop = False
         ButtonMenos11.Text = "-"
         ButtonMenos11.TextAlign = ContentAlignment.TopCenter
         ButtonMenos11.UseVisualStyleBackColor = True
@@ -537,7 +553,8 @@ Partial Class Ticket
         ButtonMenos12.Location = New Point(37, 396)
         ButtonMenos12.Name = "ButtonMenos12"
         ButtonMenos12.Size = New Size(41, 23)
-        ButtonMenos12.TabIndex = 55
+        ButtonMenos12.TabIndex = 112
+        ButtonMenos12.TabStop = False
         ButtonMenos12.Text = "-"
         ButtonMenos12.TextAlign = ContentAlignment.TopCenter
         ButtonMenos12.UseVisualStyleBackColor = True
@@ -550,7 +567,8 @@ Partial Class Ticket
         ButtonMenos13.Location = New Point(37, 429)
         ButtonMenos13.Name = "ButtonMenos13"
         ButtonMenos13.Size = New Size(41, 23)
-        ButtonMenos13.TabIndex = 60
+        ButtonMenos13.TabIndex = 113
+        ButtonMenos13.TabStop = False
         ButtonMenos13.Text = "-"
         ButtonMenos13.TextAlign = ContentAlignment.TopCenter
         ButtonMenos13.UseVisualStyleBackColor = True
@@ -563,7 +581,8 @@ Partial Class Ticket
         ButtonMenos14.Location = New Point(37, 462)
         ButtonMenos14.Name = "ButtonMenos14"
         ButtonMenos14.Size = New Size(41, 23)
-        ButtonMenos14.TabIndex = 65
+        ButtonMenos14.TabIndex = 114
+        ButtonMenos14.TabStop = False
         ButtonMenos14.Text = "-"
         ButtonMenos14.TextAlign = ContentAlignment.TopCenter
         ButtonMenos14.UseVisualStyleBackColor = True
@@ -576,7 +595,8 @@ Partial Class Ticket
         TextBoxCantidad3.Name = "TextBoxCantidad3"
         TextBoxCantidad3.ReadOnly = True
         TextBoxCantidad3.Size = New Size(50, 34)
-        TextBoxCantidad3.TabIndex = 12
+        TextBoxCantidad3.TabIndex = 202
+        TextBoxCantidad3.TabStop = False
         TextBoxCantidad3.Text = "0"
         TextBoxCantidad3.TextAlign = HorizontalAlignment.Center
         ' 
@@ -588,7 +608,8 @@ Partial Class Ticket
         TextBoxCantidad4.Name = "TextBoxCantidad4"
         TextBoxCantidad4.ReadOnly = True
         TextBoxCantidad4.Size = New Size(50, 34)
-        TextBoxCantidad4.TabIndex = 17
+        TextBoxCantidad4.TabIndex = 203
+        TextBoxCantidad4.TabStop = False
         TextBoxCantidad4.Text = "0"
         TextBoxCantidad4.TextAlign = HorizontalAlignment.Center
         ' 
@@ -600,7 +621,8 @@ Partial Class Ticket
         TextBoxCantidad5.Name = "TextBoxCantidad5"
         TextBoxCantidad5.ReadOnly = True
         TextBoxCantidad5.Size = New Size(50, 34)
-        TextBoxCantidad5.TabIndex = 22
+        TextBoxCantidad5.TabIndex = 204
+        TextBoxCantidad5.TabStop = False
         TextBoxCantidad5.Text = "0"
         TextBoxCantidad5.TextAlign = HorizontalAlignment.Center
         ' 
@@ -612,7 +634,8 @@ Partial Class Ticket
         TextBoxCantidad6.Name = "TextBoxCantidad6"
         TextBoxCantidad6.ReadOnly = True
         TextBoxCantidad6.Size = New Size(50, 34)
-        TextBoxCantidad6.TabIndex = 27
+        TextBoxCantidad6.TabIndex = 205
+        TextBoxCantidad6.TabStop = False
         TextBoxCantidad6.Text = "0"
         TextBoxCantidad6.TextAlign = HorizontalAlignment.Center
         ' 
@@ -624,7 +647,8 @@ Partial Class Ticket
         TextBoxCantidad7.Name = "TextBoxCantidad7"
         TextBoxCantidad7.ReadOnly = True
         TextBoxCantidad7.Size = New Size(50, 34)
-        TextBoxCantidad7.TabIndex = 32
+        TextBoxCantidad7.TabIndex = 206
+        TextBoxCantidad7.TabStop = False
         TextBoxCantidad7.Text = "0"
         TextBoxCantidad7.TextAlign = HorizontalAlignment.Center
         ' 
@@ -636,7 +660,8 @@ Partial Class Ticket
         TextBoxCantidad8.Name = "TextBoxCantidad8"
         TextBoxCantidad8.ReadOnly = True
         TextBoxCantidad8.Size = New Size(50, 34)
-        TextBoxCantidad8.TabIndex = 37
+        TextBoxCantidad8.TabIndex = 207
+        TextBoxCantidad8.TabStop = False
         TextBoxCantidad8.Text = "0"
         TextBoxCantidad8.TextAlign = HorizontalAlignment.Center
         ' 
@@ -648,7 +673,8 @@ Partial Class Ticket
         TextBoxCantidad9.Name = "TextBoxCantidad9"
         TextBoxCantidad9.ReadOnly = True
         TextBoxCantidad9.Size = New Size(50, 34)
-        TextBoxCantidad9.TabIndex = 42
+        TextBoxCantidad9.TabIndex = 208
+        TextBoxCantidad9.TabStop = False
         TextBoxCantidad9.Text = "0"
         TextBoxCantidad9.TextAlign = HorizontalAlignment.Center
         ' 
@@ -660,7 +686,8 @@ Partial Class Ticket
         TextBoxCantidad10.Name = "TextBoxCantidad10"
         TextBoxCantidad10.ReadOnly = True
         TextBoxCantidad10.Size = New Size(50, 34)
-        TextBoxCantidad10.TabIndex = 47
+        TextBoxCantidad10.TabIndex = 209
+        TextBoxCantidad10.TabStop = False
         TextBoxCantidad10.Text = "0"
         TextBoxCantidad10.TextAlign = HorizontalAlignment.Center
         ' 
@@ -672,7 +699,8 @@ Partial Class Ticket
         TextBoxCantidad11.Name = "TextBoxCantidad11"
         TextBoxCantidad11.ReadOnly = True
         TextBoxCantidad11.Size = New Size(50, 34)
-        TextBoxCantidad11.TabIndex = 52
+        TextBoxCantidad11.TabIndex = 210
+        TextBoxCantidad11.TabStop = False
         TextBoxCantidad11.Text = "0"
         TextBoxCantidad11.TextAlign = HorizontalAlignment.Center
         ' 
@@ -684,7 +712,8 @@ Partial Class Ticket
         TextBoxCantidad12.Name = "TextBoxCantidad12"
         TextBoxCantidad12.ReadOnly = True
         TextBoxCantidad12.Size = New Size(50, 34)
-        TextBoxCantidad12.TabIndex = 57
+        TextBoxCantidad12.TabIndex = 211
+        TextBoxCantidad12.TabStop = False
         TextBoxCantidad12.Text = "0"
         TextBoxCantidad12.TextAlign = HorizontalAlignment.Center
         ' 
@@ -696,7 +725,8 @@ Partial Class Ticket
         TextBoxCantidad13.Name = "TextBoxCantidad13"
         TextBoxCantidad13.ReadOnly = True
         TextBoxCantidad13.Size = New Size(50, 34)
-        TextBoxCantidad13.TabIndex = 62
+        TextBoxCantidad13.TabIndex = 212
+        TextBoxCantidad13.TabStop = False
         TextBoxCantidad13.Text = "0"
         TextBoxCantidad13.TextAlign = HorizontalAlignment.Center
         ' 
@@ -708,7 +738,8 @@ Partial Class Ticket
         TextBoxCantidad14.Name = "TextBoxCantidad14"
         TextBoxCantidad14.ReadOnly = True
         TextBoxCantidad14.Size = New Size(50, 34)
-        TextBoxCantidad14.TabIndex = 67
+        TextBoxCantidad14.TabIndex = 213
+        TextBoxCantidad14.TabStop = False
         TextBoxCantidad14.Text = "0"
         TextBoxCantidad14.TextAlign = HorizontalAlignment.Center
         ' 
@@ -720,7 +751,7 @@ Partial Class Ticket
         ButtonMas3.Location = New Point(180, 99)
         ButtonMas3.Name = "ButtonMas3"
         ButtonMas3.Size = New Size(405, 23)
-        ButtonMas3.TabIndex = 11
+        ButtonMas3.TabIndex = 2
         ButtonMas3.TextAlign = ContentAlignment.TopCenter
         ButtonMas3.UseVisualStyleBackColor = True
         ' 
@@ -732,7 +763,7 @@ Partial Class Ticket
         ButtonMas4.Location = New Point(180, 132)
         ButtonMas4.Name = "ButtonMas4"
         ButtonMas4.Size = New Size(405, 23)
-        ButtonMas4.TabIndex = 16
+        ButtonMas4.TabIndex = 3
         ButtonMas4.TextAlign = ContentAlignment.TopCenter
         ButtonMas4.UseVisualStyleBackColor = True
         ' 
@@ -744,7 +775,7 @@ Partial Class Ticket
         ButtonMas5.Location = New Point(180, 165)
         ButtonMas5.Name = "ButtonMas5"
         ButtonMas5.Size = New Size(405, 23)
-        ButtonMas5.TabIndex = 21
+        ButtonMas5.TabIndex = 4
         ButtonMas5.TextAlign = ContentAlignment.TopCenter
         ButtonMas5.UseVisualStyleBackColor = True
         ' 
@@ -756,7 +787,7 @@ Partial Class Ticket
         ButtonMas6.Location = New Point(180, 198)
         ButtonMas6.Name = "ButtonMas6"
         ButtonMas6.Size = New Size(405, 23)
-        ButtonMas6.TabIndex = 26
+        ButtonMas6.TabIndex = 5
         ButtonMas6.TextAlign = ContentAlignment.TopCenter
         ButtonMas6.UseVisualStyleBackColor = True
         ' 
@@ -768,7 +799,7 @@ Partial Class Ticket
         ButtonMas7.Location = New Point(180, 231)
         ButtonMas7.Name = "ButtonMas7"
         ButtonMas7.Size = New Size(405, 23)
-        ButtonMas7.TabIndex = 31
+        ButtonMas7.TabIndex = 6
         ButtonMas7.TextAlign = ContentAlignment.TopCenter
         ButtonMas7.UseVisualStyleBackColor = True
         ' 
@@ -780,7 +811,7 @@ Partial Class Ticket
         ButtonMas8.Location = New Point(180, 264)
         ButtonMas8.Name = "ButtonMas8"
         ButtonMas8.Size = New Size(405, 23)
-        ButtonMas8.TabIndex = 36
+        ButtonMas8.TabIndex = 7
         ButtonMas8.TextAlign = ContentAlignment.TopCenter
         ButtonMas8.UseVisualStyleBackColor = True
         ' 
@@ -792,7 +823,7 @@ Partial Class Ticket
         ButtonMas9.Location = New Point(180, 297)
         ButtonMas9.Name = "ButtonMas9"
         ButtonMas9.Size = New Size(405, 23)
-        ButtonMas9.TabIndex = 41
+        ButtonMas9.TabIndex = 8
         ButtonMas9.TextAlign = ContentAlignment.TopCenter
         ButtonMas9.UseVisualStyleBackColor = True
         ' 
@@ -804,7 +835,7 @@ Partial Class Ticket
         ButtonMas10.Location = New Point(180, 330)
         ButtonMas10.Name = "ButtonMas10"
         ButtonMas10.Size = New Size(405, 23)
-        ButtonMas10.TabIndex = 46
+        ButtonMas10.TabIndex = 9
         ButtonMas10.TextAlign = ContentAlignment.TopCenter
         ButtonMas10.UseVisualStyleBackColor = True
         ' 
@@ -816,7 +847,8 @@ Partial Class Ticket
         TextBoxSubTotal14.Name = "TextBoxSubTotal14"
         TextBoxSubTotal14.ReadOnly = True
         TextBoxSubTotal14.Size = New Size(111, 34)
-        TextBoxSubTotal14.TabIndex = 69
+        TextBoxSubTotal14.TabIndex = 314
+        TextBoxSubTotal14.TabStop = False
         TextBoxSubTotal14.Text = "0"
         TextBoxSubTotal14.TextAlign = HorizontalAlignment.Center
         ' 
@@ -828,7 +860,7 @@ Partial Class Ticket
         ButtonMas11.Location = New Point(180, 363)
         ButtonMas11.Name = "ButtonMas11"
         ButtonMas11.Size = New Size(405, 23)
-        ButtonMas11.TabIndex = 51
+        ButtonMas11.TabIndex = 10
         ButtonMas11.TextAlign = ContentAlignment.TopCenter
         ButtonMas11.UseVisualStyleBackColor = True
         ' 
@@ -840,7 +872,8 @@ Partial Class Ticket
         TextBoxSubTotal13.Name = "TextBoxSubTotal13"
         TextBoxSubTotal13.ReadOnly = True
         TextBoxSubTotal13.Size = New Size(111, 34)
-        TextBoxSubTotal13.TabIndex = 64
+        TextBoxSubTotal13.TabIndex = 313
+        TextBoxSubTotal13.TabStop = False
         TextBoxSubTotal13.Text = "0"
         TextBoxSubTotal13.TextAlign = HorizontalAlignment.Center
         ' 
@@ -852,7 +885,7 @@ Partial Class Ticket
         ButtonMas14.Location = New Point(180, 462)
         ButtonMas14.Name = "ButtonMas14"
         ButtonMas14.Size = New Size(405, 23)
-        ButtonMas14.TabIndex = 66
+        ButtonMas14.TabIndex = 13
         ButtonMas14.TextAlign = ContentAlignment.TopCenter
         ButtonMas14.UseVisualStyleBackColor = True
         ' 
@@ -864,7 +897,8 @@ Partial Class Ticket
         TextBoxSubTotal12.Name = "TextBoxSubTotal12"
         TextBoxSubTotal12.ReadOnly = True
         TextBoxSubTotal12.Size = New Size(111, 34)
-        TextBoxSubTotal12.TabIndex = 59
+        TextBoxSubTotal12.TabIndex = 312
+        TextBoxSubTotal12.TabStop = False
         TextBoxSubTotal12.Text = "0"
         TextBoxSubTotal12.TextAlign = HorizontalAlignment.Center
         ' 
@@ -876,7 +910,7 @@ Partial Class Ticket
         ButtonMas12.Location = New Point(180, 396)
         ButtonMas12.Name = "ButtonMas12"
         ButtonMas12.Size = New Size(405, 23)
-        ButtonMas12.TabIndex = 56
+        ButtonMas12.TabIndex = 11
         ButtonMas12.TextAlign = ContentAlignment.TopCenter
         ButtonMas12.UseVisualStyleBackColor = True
         ' 
@@ -888,7 +922,8 @@ Partial Class Ticket
         TextBoxSubTotal11.Name = "TextBoxSubTotal11"
         TextBoxSubTotal11.ReadOnly = True
         TextBoxSubTotal11.Size = New Size(111, 34)
-        TextBoxSubTotal11.TabIndex = 54
+        TextBoxSubTotal11.TabIndex = 311
+        TextBoxSubTotal11.TabStop = False
         TextBoxSubTotal11.Text = "0"
         TextBoxSubTotal11.TextAlign = HorizontalAlignment.Center
         ' 
@@ -900,7 +935,7 @@ Partial Class Ticket
         ButtonMas13.Location = New Point(180, 429)
         ButtonMas13.Name = "ButtonMas13"
         ButtonMas13.Size = New Size(405, 23)
-        ButtonMas13.TabIndex = 61
+        ButtonMas13.TabIndex = 12
         ButtonMas13.TextAlign = ContentAlignment.TopCenter
         ButtonMas13.UseVisualStyleBackColor = True
         ' 
@@ -912,7 +947,8 @@ Partial Class Ticket
         TextBoxSubTotal10.Name = "TextBoxSubTotal10"
         TextBoxSubTotal10.ReadOnly = True
         TextBoxSubTotal10.Size = New Size(111, 34)
-        TextBoxSubTotal10.TabIndex = 49
+        TextBoxSubTotal10.TabIndex = 310
+        TextBoxSubTotal10.TabStop = False
         TextBoxSubTotal10.Text = "0"
         TextBoxSubTotal10.TextAlign = HorizontalAlignment.Center
         ' 
@@ -924,7 +960,8 @@ Partial Class Ticket
         TextBoxSubTotal2.Name = "TextBoxSubTotal2"
         TextBoxSubTotal2.ReadOnly = True
         TextBoxSubTotal2.Size = New Size(111, 34)
-        TextBoxSubTotal2.TabIndex = 9
+        TextBoxSubTotal2.TabIndex = 302
+        TextBoxSubTotal2.TabStop = False
         TextBoxSubTotal2.Text = "0"
         TextBoxSubTotal2.TextAlign = HorizontalAlignment.Center
         ' 
@@ -936,7 +973,8 @@ Partial Class Ticket
         TextBoxSubTotal9.Name = "TextBoxSubTotal9"
         TextBoxSubTotal9.ReadOnly = True
         TextBoxSubTotal9.Size = New Size(111, 34)
-        TextBoxSubTotal9.TabIndex = 44
+        TextBoxSubTotal9.TabIndex = 309
+        TextBoxSubTotal9.TabStop = False
         TextBoxSubTotal9.Text = "0"
         TextBoxSubTotal9.TextAlign = HorizontalAlignment.Center
         ' 
@@ -948,7 +986,8 @@ Partial Class Ticket
         TextBoxSubTotal3.Name = "TextBoxSubTotal3"
         TextBoxSubTotal3.ReadOnly = True
         TextBoxSubTotal3.Size = New Size(111, 34)
-        TextBoxSubTotal3.TabIndex = 14
+        TextBoxSubTotal3.TabIndex = 303
+        TextBoxSubTotal3.TabStop = False
         TextBoxSubTotal3.Text = "0"
         TextBoxSubTotal3.TextAlign = HorizontalAlignment.Center
         ' 
@@ -960,7 +999,8 @@ Partial Class Ticket
         TextBoxSubTotal8.Name = "TextBoxSubTotal8"
         TextBoxSubTotal8.ReadOnly = True
         TextBoxSubTotal8.Size = New Size(111, 34)
-        TextBoxSubTotal8.TabIndex = 39
+        TextBoxSubTotal8.TabIndex = 308
+        TextBoxSubTotal8.TabStop = False
         TextBoxSubTotal8.Text = "0"
         TextBoxSubTotal8.TextAlign = HorizontalAlignment.Center
         ' 
@@ -972,7 +1012,8 @@ Partial Class Ticket
         TextBoxSubTotal4.Name = "TextBoxSubTotal4"
         TextBoxSubTotal4.ReadOnly = True
         TextBoxSubTotal4.Size = New Size(111, 34)
-        TextBoxSubTotal4.TabIndex = 19
+        TextBoxSubTotal4.TabIndex = 304
+        TextBoxSubTotal4.TabStop = False
         TextBoxSubTotal4.Text = "0"
         TextBoxSubTotal4.TextAlign = HorizontalAlignment.Center
         ' 
@@ -984,7 +1025,8 @@ Partial Class Ticket
         TextBoxSubTotal7.Name = "TextBoxSubTotal7"
         TextBoxSubTotal7.ReadOnly = True
         TextBoxSubTotal7.Size = New Size(111, 34)
-        TextBoxSubTotal7.TabIndex = 34
+        TextBoxSubTotal7.TabIndex = 307
+        TextBoxSubTotal7.TabStop = False
         TextBoxSubTotal7.Text = "0"
         TextBoxSubTotal7.TextAlign = HorizontalAlignment.Center
         ' 
@@ -996,7 +1038,8 @@ Partial Class Ticket
         TextBoxSubTotal5.Name = "TextBoxSubTotal5"
         TextBoxSubTotal5.ReadOnly = True
         TextBoxSubTotal5.Size = New Size(111, 34)
-        TextBoxSubTotal5.TabIndex = 24
+        TextBoxSubTotal5.TabIndex = 305
+        TextBoxSubTotal5.TabStop = False
         TextBoxSubTotal5.Text = "0"
         TextBoxSubTotal5.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1008,7 +1051,8 @@ Partial Class Ticket
         TextBoxSubTotal6.Name = "TextBoxSubTotal6"
         TextBoxSubTotal6.ReadOnly = True
         TextBoxSubTotal6.Size = New Size(111, 34)
-        TextBoxSubTotal6.TabIndex = 29
+        TextBoxSubTotal6.TabIndex = 306
+        TextBoxSubTotal6.TabStop = False
         TextBoxSubTotal6.Text = "0"
         TextBoxSubTotal6.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1020,7 +1064,7 @@ Partial Class Ticket
         ButtonMas2.Location = New Point(180, 66)
         ButtonMas2.Name = "ButtonMas2"
         ButtonMas2.Size = New Size(405, 23)
-        ButtonMas2.TabIndex = 6
+        ButtonMas2.TabIndex = 1
         ButtonMas2.TextAlign = ContentAlignment.TopCenter
         ButtonMas2.UseVisualStyleBackColor = True
         ' 
@@ -1035,7 +1079,7 @@ Partial Class Ticket
         CheckBoxEfectivo.Name = "CheckBoxEfectivo"
         tblBotones.SetRowSpan(CheckBoxEfectivo, 3)
         CheckBoxEfectivo.Size = New Size(405, 31)
-        CheckBoxEfectivo.TabIndex = 116
+        CheckBoxEfectivo.TabIndex = 27
         CheckBoxEfectivo.Text = "EFECTIVO"
         CheckBoxEfectivo.UseVisualStyleBackColor = True
         ' 
@@ -1048,7 +1092,7 @@ Partial Class Ticket
         Label50.Name = "Label50"
         tblBotones.SetRowSpan(Label50, 3)
         Label50.Size = New Size(405, 30)
-        Label50.TabIndex = 114
+        Label50.TabIndex = 400
         Label50.Text = "Ticket Nº"
         Label50.TextAlign = ContentAlignment.TopRight
         ' 
@@ -1070,7 +1114,8 @@ Partial Class Ticket
         ButtonMenos15.Location = New Point(37, 495)
         ButtonMenos15.Name = "ButtonMenos15"
         ButtonMenos15.Size = New Size(41, 23)
-        ButtonMenos15.TabIndex = 70
+        ButtonMenos15.TabIndex = 115
+        ButtonMenos15.TabStop = False
         ButtonMenos15.Text = "-"
         ButtonMenos15.TextAlign = ContentAlignment.TopCenter
         ButtonMenos15.UseVisualStyleBackColor = True
@@ -1083,7 +1128,8 @@ Partial Class Ticket
         ButtonMenos16.Location = New Point(37, 528)
         ButtonMenos16.Name = "ButtonMenos16"
         ButtonMenos16.Size = New Size(41, 23)
-        ButtonMenos16.TabIndex = 75
+        ButtonMenos16.TabIndex = 116
+        ButtonMenos16.TabStop = False
         ButtonMenos16.Text = "-"
         ButtonMenos16.TextAlign = ContentAlignment.TopCenter
         ButtonMenos16.UseVisualStyleBackColor = True
@@ -1096,7 +1142,8 @@ Partial Class Ticket
         ButtonMenos17.Location = New Point(37, 561)
         ButtonMenos17.Name = "ButtonMenos17"
         ButtonMenos17.Size = New Size(41, 23)
-        ButtonMenos17.TabIndex = 80
+        ButtonMenos17.TabIndex = 117
+        ButtonMenos17.TabStop = False
         ButtonMenos17.Text = "-"
         ButtonMenos17.TextAlign = ContentAlignment.TopCenter
         ButtonMenos17.UseVisualStyleBackColor = True
@@ -1109,7 +1156,8 @@ Partial Class Ticket
         ButtonMenos18.Location = New Point(37, 594)
         ButtonMenos18.Name = "ButtonMenos18"
         ButtonMenos18.Size = New Size(41, 23)
-        ButtonMenos18.TabIndex = 85
+        ButtonMenos18.TabIndex = 118
+        ButtonMenos18.TabStop = False
         ButtonMenos18.Text = "-"
         ButtonMenos18.TextAlign = ContentAlignment.TopCenter
         ButtonMenos18.UseVisualStyleBackColor = True
@@ -1122,7 +1170,8 @@ Partial Class Ticket
         ButtonMenos19.Location = New Point(37, 627)
         ButtonMenos19.Name = "ButtonMenos19"
         ButtonMenos19.Size = New Size(41, 23)
-        ButtonMenos19.TabIndex = 90
+        ButtonMenos19.TabIndex = 119
+        ButtonMenos19.TabStop = False
         ButtonMenos19.Text = "-"
         ButtonMenos19.TextAlign = ContentAlignment.TopCenter
         ButtonMenos19.UseVisualStyleBackColor = True
@@ -1135,7 +1184,8 @@ Partial Class Ticket
         TextBoxCantidad15.Name = "TextBoxCantidad15"
         TextBoxCantidad15.ReadOnly = True
         TextBoxCantidad15.Size = New Size(50, 34)
-        TextBoxCantidad15.TabIndex = 72
+        TextBoxCantidad15.TabIndex = 214
+        TextBoxCantidad15.TabStop = False
         TextBoxCantidad15.Text = "0"
         TextBoxCantidad15.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1147,7 +1197,8 @@ Partial Class Ticket
         TextBoxCantidad16.Name = "TextBoxCantidad16"
         TextBoxCantidad16.ReadOnly = True
         TextBoxCantidad16.Size = New Size(50, 34)
-        TextBoxCantidad16.TabIndex = 77
+        TextBoxCantidad16.TabIndex = 215
+        TextBoxCantidad16.TabStop = False
         TextBoxCantidad16.Text = "0"
         TextBoxCantidad16.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1159,7 +1210,8 @@ Partial Class Ticket
         TextBoxCantidad17.Name = "TextBoxCantidad17"
         TextBoxCantidad17.ReadOnly = True
         TextBoxCantidad17.Size = New Size(50, 34)
-        TextBoxCantidad17.TabIndex = 82
+        TextBoxCantidad17.TabIndex = 216
+        TextBoxCantidad17.TabStop = False
         TextBoxCantidad17.Text = "0"
         TextBoxCantidad17.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1171,7 +1223,8 @@ Partial Class Ticket
         TextBoxCantidad18.Name = "TextBoxCantidad18"
         TextBoxCantidad18.ReadOnly = True
         TextBoxCantidad18.Size = New Size(50, 34)
-        TextBoxCantidad18.TabIndex = 87
+        TextBoxCantidad18.TabIndex = 217
+        TextBoxCantidad18.TabStop = False
         TextBoxCantidad18.Text = "0"
         TextBoxCantidad18.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1183,7 +1236,7 @@ Partial Class Ticket
         TextBoxCantidad19.Name = "TextBoxCantidad19"
         TextBoxCantidad19.ReadOnly = True
         TextBoxCantidad19.Size = New Size(50, 34)
-        TextBoxCantidad19.TabIndex = 92
+        TextBoxCantidad19.TabIndex = 218
         TextBoxCantidad19.Text = "0"
         TextBoxCantidad19.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1195,7 +1248,7 @@ Partial Class Ticket
         ButtonMas15.Location = New Point(180, 495)
         ButtonMas15.Name = "ButtonMas15"
         ButtonMas15.Size = New Size(405, 23)
-        ButtonMas15.TabIndex = 71
+        ButtonMas15.TabIndex = 14
         ButtonMas15.TextAlign = ContentAlignment.TopCenter
         ButtonMas15.UseVisualStyleBackColor = True
         ' 
@@ -1207,7 +1260,7 @@ Partial Class Ticket
         ButtonMas16.Location = New Point(180, 528)
         ButtonMas16.Name = "ButtonMas16"
         ButtonMas16.Size = New Size(405, 23)
-        ButtonMas16.TabIndex = 76
+        ButtonMas16.TabIndex = 15
         ButtonMas16.TextAlign = ContentAlignment.TopCenter
         ButtonMas16.UseVisualStyleBackColor = True
         ' 
@@ -1219,7 +1272,7 @@ Partial Class Ticket
         ButtonMas17.Location = New Point(180, 561)
         ButtonMas17.Name = "ButtonMas17"
         ButtonMas17.Size = New Size(405, 23)
-        ButtonMas17.TabIndex = 81
+        ButtonMas17.TabIndex = 16
         ButtonMas17.TextAlign = ContentAlignment.TopCenter
         ButtonMas17.UseVisualStyleBackColor = True
         ' 
@@ -1231,7 +1284,7 @@ Partial Class Ticket
         ButtonMas18.Location = New Point(180, 594)
         ButtonMas18.Name = "ButtonMas18"
         ButtonMas18.Size = New Size(405, 23)
-        ButtonMas18.TabIndex = 86
+        ButtonMas18.TabIndex = 17
         ButtonMas18.TextAlign = ContentAlignment.TopCenter
         ButtonMas18.UseVisualStyleBackColor = True
         ' 
@@ -1243,7 +1296,7 @@ Partial Class Ticket
         ButtonMas19.Location = New Point(180, 627)
         ButtonMas19.Name = "ButtonMas19"
         ButtonMas19.Size = New Size(405, 23)
-        ButtonMas19.TabIndex = 91
+        ButtonMas19.TabIndex = 18
         ButtonMas19.TextAlign = ContentAlignment.TopCenter
         ButtonMas19.UseVisualStyleBackColor = True
         ' 
@@ -1255,7 +1308,8 @@ Partial Class Ticket
         TextBoxSubTotal15.Name = "TextBoxSubTotal15"
         TextBoxSubTotal15.ReadOnly = True
         TextBoxSubTotal15.Size = New Size(111, 34)
-        TextBoxSubTotal15.TabIndex = 74
+        TextBoxSubTotal15.TabIndex = 315
+        TextBoxSubTotal15.TabStop = False
         TextBoxSubTotal15.Text = "0"
         TextBoxSubTotal15.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1267,7 +1321,8 @@ Partial Class Ticket
         TextBoxSubTotal16.Name = "TextBoxSubTotal16"
         TextBoxSubTotal16.ReadOnly = True
         TextBoxSubTotal16.Size = New Size(111, 34)
-        TextBoxSubTotal16.TabIndex = 79
+        TextBoxSubTotal16.TabIndex = 316
+        TextBoxSubTotal16.TabStop = False
         TextBoxSubTotal16.Text = "0"
         TextBoxSubTotal16.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1279,7 +1334,8 @@ Partial Class Ticket
         TextBoxSubTotal17.Name = "TextBoxSubTotal17"
         TextBoxSubTotal17.ReadOnly = True
         TextBoxSubTotal17.Size = New Size(111, 34)
-        TextBoxSubTotal17.TabIndex = 84
+        TextBoxSubTotal17.TabIndex = 317
+        TextBoxSubTotal17.TabStop = False
         TextBoxSubTotal17.Text = "0"
         TextBoxSubTotal17.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1291,7 +1347,8 @@ Partial Class Ticket
         TextBoxSubTotal18.Name = "TextBoxSubTotal18"
         TextBoxSubTotal18.ReadOnly = True
         TextBoxSubTotal18.Size = New Size(111, 34)
-        TextBoxSubTotal18.TabIndex = 89
+        TextBoxSubTotal18.TabIndex = 318
+        TextBoxSubTotal18.TabStop = False
         TextBoxSubTotal18.Text = "0"
         TextBoxSubTotal18.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1303,7 +1360,7 @@ Partial Class Ticket
         TextBoxSubTotal19.Name = "TextBoxSubTotal19"
         TextBoxSubTotal19.ReadOnly = True
         TextBoxSubTotal19.Size = New Size(111, 34)
-        TextBoxSubTotal19.TabIndex = 94
+        TextBoxSubTotal19.TabIndex = 319
         TextBoxSubTotal19.Text = "0"
         TextBoxSubTotal19.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1315,7 +1372,8 @@ Partial Class Ticket
         ButtonMenos20.Location = New Point(750, 33)
         ButtonMenos20.Name = "ButtonMenos20"
         ButtonMenos20.Size = New Size(41, 23)
-        ButtonMenos20.TabIndex = 95
+        ButtonMenos20.TabIndex = 120
+        ButtonMenos20.TabStop = False
         ButtonMenos20.Text = "-"
         ButtonMenos20.TextAlign = ContentAlignment.TopCenter
         ButtonMenos20.UseVisualStyleBackColor = True
@@ -1328,7 +1386,8 @@ Partial Class Ticket
         ButtonMenos21.Location = New Point(750, 66)
         ButtonMenos21.Name = "ButtonMenos21"
         ButtonMenos21.Size = New Size(41, 23)
-        ButtonMenos21.TabIndex = 100
+        ButtonMenos21.TabIndex = 121
+        ButtonMenos21.TabStop = False
         ButtonMenos21.Text = "-"
         ButtonMenos21.TextAlign = ContentAlignment.TopCenter
         ButtonMenos21.UseVisualStyleBackColor = True
@@ -1341,7 +1400,8 @@ Partial Class Ticket
         ButtonMenos22.Location = New Point(750, 99)
         ButtonMenos22.Name = "ButtonMenos22"
         ButtonMenos22.Size = New Size(41, 23)
-        ButtonMenos22.TabIndex = 105
+        ButtonMenos22.TabIndex = 122
+        ButtonMenos22.TabStop = False
         ButtonMenos22.Text = "-"
         ButtonMenos22.TextAlign = ContentAlignment.TopCenter
         ButtonMenos22.UseVisualStyleBackColor = True
@@ -1354,7 +1414,8 @@ Partial Class Ticket
         TextBoxCantidad20.Name = "TextBoxCantidad20"
         TextBoxCantidad20.ReadOnly = True
         TextBoxCantidad20.Size = New Size(50, 34)
-        TextBoxCantidad20.TabIndex = 97
+        TextBoxCantidad20.TabIndex = 219
+        TextBoxCantidad20.TabStop = False
         TextBoxCantidad20.Text = "0"
         TextBoxCantidad20.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1366,7 +1427,8 @@ Partial Class Ticket
         TextBoxCantidad21.Name = "TextBoxCantidad21"
         TextBoxCantidad21.ReadOnly = True
         TextBoxCantidad21.Size = New Size(50, 34)
-        TextBoxCantidad21.TabIndex = 102
+        TextBoxCantidad21.TabIndex = 220
+        TextBoxCantidad21.TabStop = False
         TextBoxCantidad21.Text = "0"
         TextBoxCantidad21.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1378,7 +1440,8 @@ Partial Class Ticket
         TextBoxCantidad22.Name = "TextBoxCantidad22"
         TextBoxCantidad22.ReadOnly = True
         TextBoxCantidad22.Size = New Size(50, 34)
-        TextBoxCantidad22.TabIndex = 107
+        TextBoxCantidad22.TabIndex = 221
+        TextBoxCantidad22.TabStop = False
         TextBoxCantidad22.Text = "0"
         TextBoxCantidad22.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1390,7 +1453,7 @@ Partial Class Ticket
         ButtonMas20.Location = New Point(892, 33)
         ButtonMas20.Name = "ButtonMas20"
         ButtonMas20.Size = New Size(405, 23)
-        ButtonMas20.TabIndex = 96
+        ButtonMas20.TabIndex = 19
         ButtonMas20.TextAlign = ContentAlignment.TopCenter
         ButtonMas20.UseVisualStyleBackColor = True
         ' 
@@ -1402,7 +1465,7 @@ Partial Class Ticket
         ButtonMas21.Location = New Point(892, 66)
         ButtonMas21.Name = "ButtonMas21"
         ButtonMas21.Size = New Size(405, 23)
-        ButtonMas21.TabIndex = 101
+        ButtonMas21.TabIndex = 20
         ButtonMas21.TextAlign = ContentAlignment.TopCenter
         ButtonMas21.UseVisualStyleBackColor = True
         ' 
@@ -1414,7 +1477,7 @@ Partial Class Ticket
         ButtonMas22.Location = New Point(892, 99)
         ButtonMas22.Name = "ButtonMas22"
         ButtonMas22.Size = New Size(405, 23)
-        ButtonMas22.TabIndex = 106
+        ButtonMas22.TabIndex = 21
         ButtonMas22.TextAlign = ContentAlignment.TopCenter
         ButtonMas22.UseVisualStyleBackColor = True
         ' 
@@ -1426,7 +1489,8 @@ Partial Class Ticket
         TextBoxSubTotal20.Name = "TextBoxSubTotal20"
         TextBoxSubTotal20.ReadOnly = True
         TextBoxSubTotal20.Size = New Size(111, 34)
-        TextBoxSubTotal20.TabIndex = 99
+        TextBoxSubTotal20.TabIndex = 320
+        TextBoxSubTotal20.TabStop = False
         TextBoxSubTotal20.Text = "0"
         TextBoxSubTotal20.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1438,7 +1502,8 @@ Partial Class Ticket
         TextBoxSubTotal21.Name = "TextBoxSubTotal21"
         TextBoxSubTotal21.ReadOnly = True
         TextBoxSubTotal21.Size = New Size(111, 34)
-        TextBoxSubTotal21.TabIndex = 104
+        TextBoxSubTotal21.TabIndex = 321
+        TextBoxSubTotal21.TabStop = False
         TextBoxSubTotal21.Text = "0"
         TextBoxSubTotal21.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1450,7 +1515,8 @@ Partial Class Ticket
         TextBoxSubTotal22.Name = "TextBoxSubTotal22"
         TextBoxSubTotal22.ReadOnly = True
         TextBoxSubTotal22.Size = New Size(111, 34)
-        TextBoxSubTotal22.TabIndex = 109
+        TextBoxSubTotal22.TabIndex = 322
+        TextBoxSubTotal22.TabStop = False
         TextBoxSubTotal22.Text = "0"
         TextBoxSubTotal22.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1462,7 +1528,8 @@ Partial Class Ticket
         ButtonMenos23.Location = New Point(750, 132)
         ButtonMenos23.Name = "ButtonMenos23"
         ButtonMenos23.Size = New Size(41, 23)
-        ButtonMenos23.TabIndex = 118
+        ButtonMenos23.TabIndex = 123
+        ButtonMenos23.TabStop = False
         ButtonMenos23.Text = "-"
         ButtonMenos23.TextAlign = ContentAlignment.TopCenter
         ButtonMenos23.UseVisualStyleBackColor = True
@@ -1475,7 +1542,8 @@ Partial Class Ticket
         ButtonMenos24.Location = New Point(750, 165)
         ButtonMenos24.Name = "ButtonMenos24"
         ButtonMenos24.Size = New Size(41, 23)
-        ButtonMenos24.TabIndex = 119
+        ButtonMenos24.TabIndex = 124
+        ButtonMenos24.TabStop = False
         ButtonMenos24.Text = "-"
         ButtonMenos24.TextAlign = ContentAlignment.TopCenter
         ButtonMenos24.UseVisualStyleBackColor = True
@@ -1488,7 +1556,8 @@ Partial Class Ticket
         ButtonMenos25.Location = New Point(750, 198)
         ButtonMenos25.Name = "ButtonMenos25"
         ButtonMenos25.Size = New Size(41, 23)
-        ButtonMenos25.TabIndex = 120
+        ButtonMenos25.TabIndex = 125
+        ButtonMenos25.TabStop = False
         ButtonMenos25.Text = "-"
         ButtonMenos25.TextAlign = ContentAlignment.TopCenter
         ButtonMenos25.UseVisualStyleBackColor = True
@@ -1501,7 +1570,8 @@ Partial Class Ticket
         ButtonMenos26.Location = New Point(750, 231)
         ButtonMenos26.Name = "ButtonMenos26"
         ButtonMenos26.Size = New Size(41, 23)
-        ButtonMenos26.TabIndex = 121
+        ButtonMenos26.TabIndex = 126
+        ButtonMenos26.TabStop = False
         ButtonMenos26.Text = "-"
         ButtonMenos26.TextAlign = ContentAlignment.TopCenter
         ButtonMenos26.UseVisualStyleBackColor = True
@@ -1514,7 +1584,8 @@ Partial Class Ticket
         ButtonMenos27.Location = New Point(750, 264)
         ButtonMenos27.Name = "ButtonMenos27"
         ButtonMenos27.Size = New Size(41, 23)
-        ButtonMenos27.TabIndex = 122
+        ButtonMenos27.TabIndex = 127
+        ButtonMenos27.TabStop = False
         ButtonMenos27.Text = "-"
         ButtonMenos27.TextAlign = ContentAlignment.TopCenter
         ButtonMenos27.UseVisualStyleBackColor = True
@@ -1527,7 +1598,8 @@ Partial Class Ticket
         TextBoxCantidad23.Name = "TextBoxCantidad23"
         TextBoxCantidad23.ReadOnly = True
         TextBoxCantidad23.Size = New Size(50, 34)
-        TextBoxCantidad23.TabIndex = 123
+        TextBoxCantidad23.TabIndex = 222
+        TextBoxCantidad23.TabStop = False
         TextBoxCantidad23.Text = "0"
         TextBoxCantidad23.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1539,7 +1611,8 @@ Partial Class Ticket
         TextBoxCantidad24.Name = "TextBoxCantidad24"
         TextBoxCantidad24.ReadOnly = True
         TextBoxCantidad24.Size = New Size(50, 34)
-        TextBoxCantidad24.TabIndex = 124
+        TextBoxCantidad24.TabIndex = 223
+        TextBoxCantidad24.TabStop = False
         TextBoxCantidad24.Text = "0"
         TextBoxCantidad24.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1551,7 +1624,8 @@ Partial Class Ticket
         TextBoxCantidad25.Name = "TextBoxCantidad25"
         TextBoxCantidad25.ReadOnly = True
         TextBoxCantidad25.Size = New Size(50, 34)
-        TextBoxCantidad25.TabIndex = 125
+        TextBoxCantidad25.TabIndex = 224
+        TextBoxCantidad25.TabStop = False
         TextBoxCantidad25.Text = "0"
         TextBoxCantidad25.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1563,7 +1637,8 @@ Partial Class Ticket
         TextBoxCantidad26.Name = "TextBoxCantidad26"
         TextBoxCantidad26.ReadOnly = True
         TextBoxCantidad26.Size = New Size(50, 34)
-        TextBoxCantidad26.TabIndex = 126
+        TextBoxCantidad26.TabIndex = 225
+        TextBoxCantidad26.TabStop = False
         TextBoxCantidad26.Text = "0"
         TextBoxCantidad26.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1575,7 +1650,8 @@ Partial Class Ticket
         TextBoxCantidad27.Name = "TextBoxCantidad27"
         TextBoxCantidad27.ReadOnly = True
         TextBoxCantidad27.Size = New Size(50, 34)
-        TextBoxCantidad27.TabIndex = 127
+        TextBoxCantidad27.TabIndex = 226
+        TextBoxCantidad27.TabStop = False
         TextBoxCantidad27.Text = "0"
         TextBoxCantidad27.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1587,7 +1663,7 @@ Partial Class Ticket
         ButtonMas23.Location = New Point(892, 132)
         ButtonMas23.Name = "ButtonMas23"
         ButtonMas23.Size = New Size(405, 23)
-        ButtonMas23.TabIndex = 128
+        ButtonMas23.TabIndex = 22
         ButtonMas23.TextAlign = ContentAlignment.TopCenter
         ButtonMas23.UseVisualStyleBackColor = True
         ' 
@@ -1599,7 +1675,7 @@ Partial Class Ticket
         ButtonMas24.Location = New Point(892, 165)
         ButtonMas24.Name = "ButtonMas24"
         ButtonMas24.Size = New Size(405, 23)
-        ButtonMas24.TabIndex = 129
+        ButtonMas24.TabIndex = 23
         ButtonMas24.TextAlign = ContentAlignment.TopCenter
         ButtonMas24.UseVisualStyleBackColor = True
         ' 
@@ -1611,7 +1687,7 @@ Partial Class Ticket
         ButtonMas25.Location = New Point(892, 198)
         ButtonMas25.Name = "ButtonMas25"
         ButtonMas25.Size = New Size(405, 23)
-        ButtonMas25.TabIndex = 130
+        ButtonMas25.TabIndex = 24
         ButtonMas25.TextAlign = ContentAlignment.TopCenter
         ButtonMas25.UseVisualStyleBackColor = True
         ' 
@@ -1623,7 +1699,7 @@ Partial Class Ticket
         ButtonMas26.Location = New Point(892, 231)
         ButtonMas26.Name = "ButtonMas26"
         ButtonMas26.Size = New Size(405, 23)
-        ButtonMas26.TabIndex = 131
+        ButtonMas26.TabIndex = 25
         ButtonMas26.TextAlign = ContentAlignment.TopCenter
         ButtonMas26.UseVisualStyleBackColor = True
         ' 
@@ -1635,7 +1711,7 @@ Partial Class Ticket
         ButtonMas27.Location = New Point(892, 264)
         ButtonMas27.Name = "ButtonMas27"
         ButtonMas27.Size = New Size(405, 23)
-        ButtonMas27.TabIndex = 132
+        ButtonMas27.TabIndex = 26
         ButtonMas27.TextAlign = ContentAlignment.TopCenter
         ButtonMas27.UseVisualStyleBackColor = True
         ' 
@@ -1647,7 +1723,8 @@ Partial Class Ticket
         TextBoxSubTotal23.Name = "TextBoxSubTotal23"
         TextBoxSubTotal23.ReadOnly = True
         TextBoxSubTotal23.Size = New Size(111, 34)
-        TextBoxSubTotal23.TabIndex = 133
+        TextBoxSubTotal23.TabIndex = 323
+        TextBoxSubTotal23.TabStop = False
         TextBoxSubTotal23.Text = "0"
         TextBoxSubTotal23.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1659,7 +1736,8 @@ Partial Class Ticket
         TextBoxSubTotal24.Name = "TextBoxSubTotal24"
         TextBoxSubTotal24.ReadOnly = True
         TextBoxSubTotal24.Size = New Size(111, 34)
-        TextBoxSubTotal24.TabIndex = 134
+        TextBoxSubTotal24.TabIndex = 324
+        TextBoxSubTotal24.TabStop = False
         TextBoxSubTotal24.Text = "0"
         TextBoxSubTotal24.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1671,7 +1749,8 @@ Partial Class Ticket
         TextBoxSubTotal25.Name = "TextBoxSubTotal25"
         TextBoxSubTotal25.ReadOnly = True
         TextBoxSubTotal25.Size = New Size(111, 34)
-        TextBoxSubTotal25.TabIndex = 135
+        TextBoxSubTotal25.TabIndex = 325
+        TextBoxSubTotal25.TabStop = False
         TextBoxSubTotal25.Text = "0"
         TextBoxSubTotal25.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1683,7 +1762,8 @@ Partial Class Ticket
         TextBoxSubTotal26.Name = "TextBoxSubTotal26"
         TextBoxSubTotal26.ReadOnly = True
         TextBoxSubTotal26.Size = New Size(111, 34)
-        TextBoxSubTotal26.TabIndex = 136
+        TextBoxSubTotal26.TabIndex = 326
+        TextBoxSubTotal26.TabStop = False
         TextBoxSubTotal26.Text = "0"
         TextBoxSubTotal26.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1695,7 +1775,8 @@ Partial Class Ticket
         TextBoxSubTotal27.Name = "TextBoxSubTotal27"
         TextBoxSubTotal27.ReadOnly = True
         TextBoxSubTotal27.Size = New Size(111, 34)
-        TextBoxSubTotal27.TabIndex = 137
+        TextBoxSubTotal27.TabIndex = 327
+        TextBoxSubTotal27.TabStop = False
         TextBoxSubTotal27.Text = "0"
         TextBoxSubTotal27.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1709,7 +1790,7 @@ Partial Class Ticket
         Label1000.Name = "Label1000"
         tblBotones.SetRowSpan(Label1000, 3)
         Label1000.Size = New Size(136, 62)
-        Label1000.TabIndex = 110
+        Label1000.TabIndex = 401
         Label1000.Text = "Total"
         ' 
         ' TextBoxTotal
@@ -1720,7 +1801,8 @@ Partial Class Ticket
         TextBoxTotal.Name = "TextBoxTotal"
         TextBoxTotal.ReadOnly = True
         TextBoxTotal.Size = New Size(405, 70)
-        TextBoxTotal.TabIndex = 111
+        TextBoxTotal.TabIndex = 402
+        TextBoxTotal.TabStop = False
         TextBoxTotal.Text = "0"
         TextBoxTotal.TextAlign = HorizontalAlignment.Center
         ' 
@@ -1733,7 +1815,7 @@ Partial Class Ticket
         CheckBoxtTransferencia.Name = "CheckBoxtTransferencia"
         tblBotones.SetRowSpan(CheckBoxtTransferencia, 3)
         CheckBoxtTransferencia.Size = New Size(405, 31)
-        CheckBoxtTransferencia.TabIndex = 117
+        CheckBoxtTransferencia.TabIndex = 500
         CheckBoxtTransferencia.Text = "TRANSFERENCIA"
         CheckBoxtTransferencia.UseVisualStyleBackColor = True
         ' 
@@ -1746,7 +1828,7 @@ Partial Class Ticket
         Salir.Name = "Salir"
         tblBotones.SetRowSpan(Salir, 3)
         Salir.Size = New Size(131, 56)
-        Salir.TabIndex = 113
+        Salir.TabIndex = 29
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
         ' 
@@ -1758,7 +1840,7 @@ Partial Class Ticket
         Imprimir.Name = "Imprimir"
         tblBotones.SetRowSpan(Imprimir, 3)
         Imprimir.Size = New Size(405, 56)
-        Imprimir.TabIndex = 112
+        Imprimir.TabIndex = 28
         Imprimir.Text = "IMPRIMIR"
         Imprimir.UseVisualStyleBackColor = True
         ' 
@@ -1770,6 +1852,7 @@ Partial Class Ticket
         ClientSize = New Size(1477, 667)
         Controls.Add(PanelBotones)
         FormBorderStyle = FormBorderStyle.FixedSingle
+        KeyPreview = True
         MaximizeBox = False
         Name = "Ticket"
         StartPosition = FormStartPosition.CenterScreen
