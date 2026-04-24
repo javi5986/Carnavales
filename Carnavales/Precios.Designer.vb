@@ -31,6 +31,7 @@ Partial Class Precios
         Salir = New Button()
         LimpiarTabla = New Button()
         ToolTip1 = New ToolTip(components)
+        Label1 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -38,7 +39,7 @@ Partial Class Precios
         ' 
         Titulo.AutoSize = True
         Titulo.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Titulo.Location = New Point(189, 36)
+        Titulo.Location = New Point(199, 9)
         Titulo.Name = "Titulo"
         Titulo.Size = New Size(874, 54)
         Titulo.TabIndex = 0
@@ -104,11 +105,23 @@ Partial Class Precios
         LimpiarTabla.Text = "LIMPIAR TABLA"
         LimpiarTabla.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = SystemColors.MenuHighlight
+        Label1.Location = New Point(70, 63)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(1072, 38)
+        Label1.TabIndex = 5
+        Label1.Text = "CARGAR COMIDAS EN LOS ITEMS DEL 1 AL 4 PARA IMPRESION POR SEPARADO"
+        ' 
         ' Precios
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1260, 739)
+        Controls.Add(Label1)
         Controls.Add(LimpiarTabla)
         Controls.Add(Salir)
         Controls.Add(Guardar)
@@ -129,4 +142,5 @@ Partial Class Precios
     Friend WithEvents Salir As Button
     Friend WithEvents LimpiarTabla As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Label1 As Label
 End Class

@@ -248,6 +248,9 @@ Public Class Ticket
                 ' Llamar a la función e insertar el registro
                 If InsertarRegistro(tabla, sql) Then
 
+                    ' impresión del ticket
+                    Impresion(venta)
+
                     ' Limpiar los controles
                     For i As Integer = 1 To DatosGlobales.ListaProductos.Count
 
@@ -274,15 +277,13 @@ Public Class Ticket
 
                 End If
 
-                ' impresión del ticket
-                Impresion(venta)
 
                 ' Borrar el objeto venta
                 venta = Nothing
 
             Catch ex As Exception
                 ' Si ocurre un error al ejecutar la consulta SQL, mostrar un mensaje de error
-                MessageBox.Show("Error al ejecutar SQL: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al guardar la venta: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Application.Exit()
 
             Finally
@@ -307,67 +308,137 @@ Public Class Ticket
 
     Private Sub Impresion(venta As Ventas)
         Try
-            ' Crear un objeto de tipo String para almacenar el texto a imprimir
-            Dim texto As String = ""
-            ' Reset de la impresora
-            texto &= Chr(&H1B) & "@"
-            ' Fuente A (12pt), con negrita
-            texto &= Chr(&H1B) & "!" & Chr(16)
 
+            ' =========================
+            ' TICKETS DE COMIDA (1 a 4)
+            ' =========================
 
-            Dim FechaHora As Date = Now
+            ' RECORRER LOS PRIMEROS 4 PRODUCTOS QUE SON COMIDAS PARA IMPRESION POR SEPARADO
+            For i = 1 To 4
 
-            ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)            
-            ' LOS TICKET DE VENTA PUEDEN TENER HASTA 9999 UNIDADES DE CADA PRODUCTO
-            ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
-            ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
+                '   Obtener la propiedad "CantidadX" del objeto venta usando reflexión
+                Dim prop As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
 
-            texto = texto & "================================================" & vbCrLf
-            texto = texto & "                     ADJC                       " & vbCrLf
-            texto = texto & "================================================" & vbCrLf
-            texto = texto & "Fecha: " & venta.Fecha & " " & vbCrLf
-            texto = texto & "Ticket Nº: " & LabelNumTicket.Text & "  " & vbCrLf
-            texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
-            texto = texto & "Cant    Detalle                          Monto  " & vbCrLf
-            texto = texto & "------------------------------------------------" & vbCrLf
-            ' Recorremos los productos y sus cantidades para armar el ticket
-            For i = 1 To DatosGlobales.ListaProductos.Count
+                '   Obtener el valor de la propiedad (cantidad vendida)
+                Dim cantidad As Integer = prop.GetValue(venta)
 
-                ' Obtenemos la propiedad de cantidad del objeto venta
-                Dim propiedad As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
+                '   Si la cantidad vendida es mayor a 0, imprimir un ticket por cada unidad vendida
+                If cantidad > 0 Then
 
-                ' Verificamos si la propiedad tiene un valor mayor a 0
-                If propiedad.GetValue(venta) > 0 Then
-
-                    Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre.ToString
+                    ' Obtener el nombre y precio del producto desde la lista global
+                    Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre
                     Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
-                    Dim subTotal As Double = precio * propiedad.GetValue(venta)
 
-                    texto = texto & propiedad.GetValue(venta).ToString.PadLeft(4) & " " & nombre.ToString.PadRight(33) & "$" & subTotal.ToString("N0").PadLeft(9) & vbCrLf
+                    ' 1 ticket por unidad
+                    For x = 1 To cantidad
 
-                    texto = texto & "------------------------------------------------" & vbCrLf
+                        ' Crear un objeto de tipo String para almacenar el texto a imprimir
+                        Dim texto As String = ""
+                        ' Reset de la impresora
+                        texto &= Chr(&H1B) & "@"
+                        ' Fuente A (12pt), con negrita
+                        texto &= Chr(&H1B) & "!" & Chr(16)
+
+                        ' Texto a imprimir (asegurarse de que cada línea tenga hasta 48 caracteres)            
+                        ' LOS TICKET DE VENTA PUEDEN TENER HASTA 9999 UNIDADES DE CADA PRODUCTO
+                        ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
+                        ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
+
+                        texto &= "================================================" & vbCrLf
+                        ' Tamaño grande (doble ancho + doble alto)
+                        texto &= Chr(&H1D) & "!" & Chr(&H11)
+                        texto &= "        A D J C  " & vbCrLf
+                        ' Volver a tamaño normal
+                        texto &= Chr(&H1B) & "!" & Chr(16)
+                        texto &= "================================================" & vbCrLf
+                        texto &= "Fecha: " & venta.Fecha & vbCrLf
+                        texto &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+                        texto &= "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos & vbCrLf
+                        texto &= "Cant    Detalle                          Monto  " & vbCrLf
+                        texto &= "------------------------------------------------" & vbCrLf
+
+                        texto &= "   1 " & nombre.PadRight(33) &
+                             "$" & precio.ToString("N0").PadLeft(9) & vbCrLf
+
+                        texto &= "================================================" & vbCrLf
+                        texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0)
+
+                        RawPrinterHelper.SendStringToPrinter(
+                        Configuraciones.nombreImpresora, texto)
+
+                    Next
                 End If
             Next
-            texto = texto & "================================================" & vbCrLf
+
+            ' =========================
+            ' TICKET RESTO (5 en adelante)
+            ' =========================
+
+            ' contador para ver si solo tenemos comidas, no imprima ticket vacio de bebidas
+            Dim cantBebidas As Integer = 0
+            ' Crear un objeto de tipo String para almacenar el texto a imprimir
+            Dim textoFinal As String = ""
+            ' Reset de la impresora
+            textoFinal &= Chr(&H1B) & "@"
+            ' Fuente A (12pt), con negrita
+            textoFinal &= Chr(&H1B) & "!" & Chr(16)
+
+            textoFinal &= "================================================" & vbCrLf
+            ' Tamaño grande (doble ancho + doble alto)
+            textoFinal &= Chr(&H1D) & "!" & Chr(&H11)
+            textoFinal &= "        A D J C  " & vbCrLf
+            ' Volver a tamaño normal
+            textoFinal &= Chr(&H1B) & "!" & Chr(16)
+            textoFinal &= "================================================" & vbCrLf
+            textoFinal &= "Fecha: " & venta.Fecha & vbCrLf
+            textoFinal &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+            textoFinal &= "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos & vbCrLf
+            textoFinal &= "Cant    Detalle                          Monto  " & vbCrLf
+            textoFinal &= "------------------------------------------------" & vbCrLf
+
+            ' Recorremos los productos y sus cantidades para armar el ticket
+            For i = 5 To DatosGlobales.ListaProductos.Count
+                ' Obtenemos la propiedad de cantidad del objeto venta
+                Dim prop As System.Reflection.PropertyInfo = venta.GetType().GetProperty("Cantidad" & i)
+                ' sumamos la cantidad total de bebidas
+                cantBebidas += prop.GetValue(venta)
+                ' Verificamos si la propiedad tiene un valor mayor a 0
+                If prop.GetValue(venta) > 0 Then
+
+                    Dim nombre As String = DatosGlobales.ListaProductos(i - 1).Nombre
+                    Dim precio As Double = DatosGlobales.ListaProductos(i - 1).Precio
+                    Dim subtotal As Double = precio * prop.GetValue(venta)
+
+                    textoFinal &= prop.GetValue(venta).ToString.PadLeft(4) & " " &
+                              nombre.PadRight(33) & "$" &
+                              subtotal.ToString("N0").PadLeft(9) & vbCrLf
+
+                    textoFinal &= "------------------------------------------------" & vbCrLf
+                End If
+            Next
+
+            textoFinal &= "================================================" & vbCrLf
             ' Agregar el total del ticket
-            Dim propiedad2 As System.Reflection.PropertyInfo = venta.GetType().GetProperty("TotalVentas")
-            Dim totalTicket As Double = Convert.ToDouble(propiedad2.GetValue(venta))
-            texto = texto & "TOTAL DEL TICKET             $" & totalTicket.ToString("N0") & vbCrLf
-            texto = texto & "================================================" & vbCrLf
+            Dim totalTicket As Double = venta.TotalVentas
+            textoFinal &= "TOTAL DEL TICKET             $" &
+                      totalTicket.ToString("N0") & vbCrLf
+            textoFinal &= "================================================" & vbCrLf
 
-            texto &= Chr(&H1D) & "V" & Chr(66) & Chr(0) ' Full cut con espera
+            textoFinal &= Chr(&H1D) & "V" & Chr(66) & Chr(0)
 
+            ' Si no hay bebidas, no imprimir el ticket final
+            If cantBebidas = 0 Then
+                Return
+            End If
             ' Enviar a la impresora
-            RawPrinterHelper.SendStringToPrinter(Configuraciones.nombreImpresora, texto)
-
+            RawPrinterHelper.SendStringToPrinter(
+            Configuraciones.nombreImpresora, textoFinal)
 
         Catch ex As Exception
-            MessageBox.Show("Error Impresion: Revise en el menu principal la impresora predeterminada " & ex.Message)
-            MessageBox.Show("Revise la tabla principal para confirmar si el ticket fue guardado y reimprimirlo")
-            Me.Dispose()
-            Menu.Show()
+            MessageBox.Show("Error Impresion: " & ex.Message)
         End Try
     End Sub
+
 
     Private Sub CheckBoxtTransferencia_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxtTransferencia.CheckedChanged
 

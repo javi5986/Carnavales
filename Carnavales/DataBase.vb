@@ -78,8 +78,7 @@ Module DataBase
 
         Catch ex As Exception
             ' Manejo de errores: mostrar mensaje y cerrar la aplicación
-            MessageBox.Show("Error al insertar datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Application.Exit()
+            MessageBox.Show("Error al insertar datos: " & ex.Message, "REVISE NO PUEDE UTILIZAR COMILLAS SIMPLES ' O DOBLES ''", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return False
 
         End Try

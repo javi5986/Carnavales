@@ -141,6 +141,12 @@ Public Class Precios
 
     Private Sub ConvertirAMayusculas_KeyPress(sender As Object, e As KeyPressEventArgs)
 
+        ' Bloquear comilla simple '
+        If e.KeyChar = "'"c Then
+            e.Handled = True
+            Exit Sub
+        End If
+
         ' Permitir solo letras y convertirlas a mayúsculas
         If Char.IsLetter(e.KeyChar) Then
 

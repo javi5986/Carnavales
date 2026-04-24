@@ -83,7 +83,13 @@
 
     Private Sub Apellidos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Apellidos.KeyPress
 
-        ' Convertir a mayúsculas respetando Unicode (Ñ, Á, É, etc.)
+        ' Bloquear comilla simple '
+        If e.KeyChar = "'"c Then
+            e.Handled = True
+            Exit Sub
+        End If
+
+        ' Convertir a mayúsculas respetando Unicode
         e.KeyChar = Char.ToUpper(e.KeyChar)
 
         ' Si se presiona Enter, pasar al siguiente control
@@ -93,6 +99,4 @@
         End If
 
     End Sub
-
-
 End Class
