@@ -34,7 +34,11 @@ Partial Class Menu
         Label1 = New Label()
         TxtTotalVentas = New TextBox()
         ConfigurarProductos = New Button()
+        PanelCargando = New Panel()
+        ProgressBarCarga = New ProgressBar()
+        LabelCargando = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        PanelCargando.SuspendLayout()
         SuspendLayout()
         ' 
         ' Cobrar
@@ -154,11 +158,43 @@ Partial Class Menu
         ConfigurarProductos.Text = "CONFIGURAR" & vbCrLf & "PRECIOS"
         ConfigurarProductos.UseVisualStyleBackColor = True
         ' 
+        ' PanelCargando
+        ' 
+        PanelCargando.Controls.Add(ProgressBarCarga)
+        PanelCargando.Controls.Add(LabelCargando)
+        PanelCargando.Dock = DockStyle.Fill
+        PanelCargando.Location = New Point(0, 0)
+        PanelCargando.Name = "PanelCargando"
+        PanelCargando.Size = New Size(1262, 800)
+        PanelCargando.TabIndex = 10
+        PanelCargando.Visible = False
+        ' 
+        ' ProgressBarCarga
+        ' 
+        ProgressBarCarga.Location = New Point(271, 371)
+        ProgressBarCarga.MarqueeAnimationSpeed = 30
+        ProgressBarCarga.Name = "ProgressBarCarga"
+        ProgressBarCarga.Size = New Size(634, 58)
+        ProgressBarCarga.Style = ProgressBarStyle.Marquee
+        ProgressBarCarga.TabIndex = 1
+        ' 
+        ' LabelCargando
+        ' 
+        LabelCargando.AutoSize = True
+        LabelCargando.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LabelCargando.Location = New Point(340, 292)
+        LabelCargando.Name = "LabelCargando"
+        LabelCargando.Size = New Size(510, 32)
+        LabelCargando.TabIndex = 0
+        LabelCargando.Text = "Cargando ventas, por favor espere..."
+        LabelCargando.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1262, 800)
+        Controls.Add(PanelCargando)
         Controls.Add(ConfigurarProductos)
         Controls.Add(TxtTotalVentas)
         Controls.Add(Label1)
@@ -175,6 +211,8 @@ Partial Class Menu
         StartPosition = FormStartPosition.CenterScreen
         Text = "Menu"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        PanelCargando.ResumeLayout(False)
+        PanelCargando.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -189,4 +227,7 @@ Partial Class Menu
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtTotalVentas As TextBox
     Friend WithEvents ConfigurarProductos As Button
+    Friend WithEvents PanelCargando As Panel
+    Friend WithEvents LabelCargando As Label
+    Friend WithEvents ProgressBarCarga As ProgressBar
 End Class

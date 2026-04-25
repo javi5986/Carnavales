@@ -8,6 +8,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Menu
 
+    Private WithEvents bgWorker As New System.ComponentModel.BackgroundWorker()
     Private Sub Menu_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ' Confirmación de cierre de la aplicación
         Application.Exit()
@@ -28,15 +29,43 @@ Public Class Menu
 
     End Sub
 
-    Private Sub Menu_Shown(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Menu_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ' Mostrar panel de carga y deshabilitar controles
+        PanelCargando.Visible = True
+        PanelCargando.BringToFront()
+        DataGridView1.Visible = False
+        ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
+        ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
 
+        ' Arrancar carga en segundo plano
+        bgWorker.RunWorkerAsync()
         ' Obtener la lista de productos al cargar el formulario
-        DatosGlobales.ListaProductos = DatosGlobales.ObtenerProductos()
+        'DatosGlobales.ListaProductos = DatosGlobales.ObtenerProductos()
         ' Actualizar la lista de ventas al cargar el formulario
-        ActualizarDataViewGrid()
+        'ActualizarDataViewGrid()
 
     End Sub
+    ' Se ejecuta en segundo plano — acá va la carga pesada
+    Private Sub bgWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bgWorker.DoWork
+        ' Recargar la lista de ventas desde la DB
+        DatosGlobales.ListaVentas = DatosGlobales.ObtenerVentas()
+        System.Threading.Thread.Sleep(800) ' mínimo 0.8 segundos visible
+    End Sub
 
+    ' Se ejecuta cuando termina — acá actualizás la UI
+    Private Sub bgWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bgWorker.RunWorkerCompleted
+        If e.Error IsNot Nothing Then
+            MessageBox.Show("Error al cargar ventas: " & e.Error.Message)
+        Else
+            ' Cargar el DataGridView con los datos ya listos
+            ActualizarDataViewGrid()
+        End If
+
+        ' Ocultar panel de carga y mostrar la grilla
+        ProgressBarCarga.Style = ProgressBarStyle.Blocks
+        PanelCargando.Visible = False
+        DataGridView1.Visible = True
+    End Sub
     Private Sub ActualizarDataViewGrid()
 
         ' Actualizar el DataGridView con la lista de ventas
@@ -141,8 +170,14 @@ Public Class Menu
                     ' Cambiamos el color de fondo de la fila a rojo para indicar que está anulado
                     DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red
 
-                    ' Actualizamos data grid view
-                    ActualizarDataViewGrid()
+                    ' Mostrar panel de carga y deshabilitar controles
+                    PanelCargando.Visible = True
+                    PanelCargando.BringToFront()
+                    DataGridView1.Visible = False
+                    ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
+                    ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
+                    ' Arrancar carga en segundo plano
+                    bgWorker.RunWorkerAsync()
 
                 End If
             Else
@@ -163,8 +198,14 @@ Public Class Menu
                     ' Cambiamos el color de fondo de la fila a blanco para indicar que está restaurado
                     DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
 
-                    ' Actualizamos data grid view
-                    ActualizarDataViewGrid()
+                    ' Mostrar panel de carga y deshabilitar controles
+                    PanelCargando.Visible = True
+                    PanelCargando.BringToFront()
+                    DataGridView1.Visible = False
+                    ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
+                    ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
+                    ' Arrancar carga en segundo plano
+                    bgWorker.RunWorkerAsync()
 
                 End If
             End If

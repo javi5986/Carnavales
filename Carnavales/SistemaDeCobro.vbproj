@@ -18,31 +18,31 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
+    <OutputPath>C:\Users\Nawy\Desktop\Compilacion</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
