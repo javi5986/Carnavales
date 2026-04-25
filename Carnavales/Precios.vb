@@ -12,7 +12,8 @@ Public Class Precios
         copiaProductos = DatosGlobales.ObtenerProductos().Select(Function(p) New Producto With {
         .ID = p.ID,
         .Nombre = p.Nombre,
-        .Precio = p.Precio
+        .Precio = p.Precio,
+        .ImprimirPorUnidad = p.ImprimirPorUnidad
     }).ToList()
 
         ' Reiniciar completamente el DataGridView
@@ -76,7 +77,9 @@ Public Class Precios
             If cantidades(i) > 0 Then
 
                 ' Si hay ventas, SI bloqueamos la fila
-                DataGridView1.Rows(i).ReadOnly = True
+                DataGridView1.Rows(i).Cells("Nombre").ReadOnly = True
+                DataGridView1.Rows(i).Cells("Precio").ReadOnly = True
+                DataGridView1.Rows(i).Cells("ID").ReadOnly = True
                 ' Cambiamos el color de fondo para indicar que está bloqueado
                 DataGridView1.Rows(i).DefaultCellStyle.BackColor = Color.LightGray
 
@@ -103,17 +106,37 @@ Public Class Precios
             .Columns("ID").Width = 60
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Nombre").ReadOnly = False
-            .Columns("Nombre").Width = 600
+            .Columns("Nombre").Width = 550
             .Columns("Nombre").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Precio").ReadOnly = False
             .Columns("Precio").Width = 180
             .Columns("Precio").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Precio").DefaultCellStyle.Format = "N0"
+            .Columns("ImprimirPorUnidad").ReadOnly = False
+            .Columns("ImprimirPorUnidad").Width = 90
+            .Columns("ImprimirPorUnidad").HeaderText = "X Unidad"
+            .Columns("ImprimirPorUnidad").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
         End With
 
 
     End Sub
 
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+
+        If DataGridView1.Columns(e.ColumnIndex).Name = "ImprimirPorUnidad" Then
+
+            If e.Value IsNot Nothing AndAlso CBool(e.Value) = True Then
+                e.CellStyle.BackColor = Color.LightGreen
+                e.CellStyle.ForeColor = Color.Black
+            Else
+                e.CellStyle.BackColor = Color.White
+                e.CellStyle.ForeColor = Color.Black
+            End If
+
+        End If
+
+    End Sub
 
     Private Sub DataGridView1_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles DataGridView1.CellValidating
 
@@ -182,7 +205,8 @@ Public Class Precios
             DatosGlobales.ListaProductos = copiaProductos.Select(Function(p) New Producto With {
             .ID = p.ID,
             .Nombre = p.Nombre,
-            .Precio = p.Precio
+            .Precio = p.Precio,
+            .ImprimirPorUnidad = p.ImprimirPorUnidad
         }).ToList()
         Else
             ' Si hay errores en la tabla, mostrar un mensaje de advertencia
@@ -285,6 +309,7 @@ Public Class Precios
                 ' Limpiar los valores de las celdas "Nombre" y "Precio"
                 fila.Cells("Nombre").Value = ""
                 fila.Cells("Precio").Value = ""
+                fila.Cells("ImprimirPorUnidad").Value = False
             End If
         Next
     End Sub

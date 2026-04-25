@@ -147,10 +147,12 @@ Module DataBase
                         Dim id As Integer = Convert.ToInt32(fila.Cells("ID").Value)
                         Dim nombre As String = ""
                         Dim precio As Decimal = 0
+                        Dim imprimirPorUnidad As Boolean = Convert.ToBoolean(fila.Cells("ImprimirPorUnidad").Value)
 
                         ' Obtener el valor de la celda "Nombre" y "Precio"
                         Dim nombreCelda As Object = fila.Cells("Nombre").Value
                         Dim precioCelda As Object = fila.Cells("Precio").Value
+                        Dim imprimirPorUnidadCelda As Object = fila.Cells("ImprimirPorUnidad").Value
 
                         ' Validar que los valores no sean Nothing o DBNull
                         If nombreCelda IsNot Nothing AndAlso Not IsDBNull(nombreCelda) AndAlso Not String.IsNullOrWhiteSpace(nombreCelda.ToString()) Then
@@ -168,7 +170,7 @@ Module DataBase
                         End If
 
                         ' Construir la consulta SQL de actualización
-                        Dim sqlUpdate As String = "UPDATE Listado SET Nombre = @Nombre, Precio = @Precio WHERE ID = @ID"
+                        Dim sqlUpdate As String = "UPDATE Listado SET Nombre = @Nombre, Precio = @Precio, ImprimirPorUnidad = @ImprimirPorUnidad WHERE ID = @ID"
 
                         ' Crear el comando SQL con parámetros
                         Using comando As New OleDb.OleDbCommand(sqlUpdate, conexion)
@@ -182,6 +184,9 @@ Module DataBase
                             Else
                                 comando.Parameters.AddWithValue("@Precio", precio)
                             End If
+
+                            ' Agregar el valor de ImprimirPorUnidad, que se obtiene del checkbox en la fila
+                            comando.Parameters.AddWithValue("@ImprimirPorUnidad", imprimirPorUnidad)  ' ← nueva línea
 
                             ' Agregar el parámetro ID
                             comando.Parameters.AddWithValue("@ID", id)

@@ -133,7 +133,7 @@
         ' Conexión a Access
         Dim conexion As New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Configuraciones.rutaDB & ";")
         ' Comando SQL para seleccionar los productos
-        Dim comando As New OleDb.OleDbCommand("SELECT Id, Nombre, Precio FROM Listado", conexion)
+        Dim comando As New OleDb.OleDbCommand("SELECT Id, Nombre, Precio,ImprimirPorUnidad FROM Listado", conexion)
 
         Try
             ' Abrir la conexión y ejecutar el comando                
@@ -177,8 +177,12 @@
                     producto.Precio = Convert.ToDecimal(lector("Precio"))
                 End If
 
+                ' obtener el valor de ImprimirPorUnidad, verificando si es DBNull                    
+                producto.ImprimirPorUnidad = Convert.ToBoolean(lector("ImprimirPorUnidad"))
+
                 ' Agregar el producto a la lista de productos
                 productos.Add(producto)
+
             End While
 
             ' Cerrar el lector de datos

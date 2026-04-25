@@ -2,6 +2,15 @@
 
     Private Sub Principal_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
+        ' Verificar licencia antes de cualquier otra cosa
+        If Not Configuraciones.EsLicenciaValida() Then
+            MessageBox.Show(
+            "Esta aplicación no está autorizada para ejecutarse en esta PC." & vbNewLine &
+            "Contacte al administrador del sistema.",
+            "Licencia inválida", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Application.Exit()
+            Return
+        End If
         Try
 
             ' Inicializar la lista de cajeros
