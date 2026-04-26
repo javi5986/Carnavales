@@ -5,7 +5,7 @@
         ' Verificar licencia antes de cualquier otra cosa
         If Not Configuraciones.EsLicenciaValida() Then
             MessageBox.Show(
-            "Esta aplicación no está autorizada para ejecutarse en esta PC." & vbNewLine &
+            "Esta aplicación no está autorizada para ejecutarse en esta PC." & vbCrLf &
             "Contacte al administrador del sistema.",
             "Licencia inválida", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             Application.Exit()

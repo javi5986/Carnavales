@@ -8,7 +8,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Menu
 
-    Private WithEvents bgWorker As New System.ComponentModel.BackgroundWorker()
+    Private WithEvents BgWorker As New System.ComponentModel.BackgroundWorker()
     Private Sub Menu_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ' Confirmación de cierre de la aplicación
         Application.Exit()
@@ -30,53 +30,125 @@ Public Class Menu
     End Sub
 
     Private Sub Menu_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        ' Mostrar panel de carga y deshabilitar controles
+
+        ' Configurar el BackgroundWorker
+        BgWorker.WorkerReportsProgress = True
+
+        ' Actualizar productos al entrar al menú
+        DatosGlobales.ListaProductos = DatosGlobales.ObtenerProductos()
+
+
+        ' Mostrar panel de carga y ocultar grilla mientras carga
         PanelCargando.Visible = True
         PanelCargando.BringToFront()
-        DataGridView1.Visible = False
-        ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
-        ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
+        ProgressBarCarga.Style = ProgressBarStyle.Marquee
+        ProgressBarCarga.MarqueeAnimationSpeed = 10 ' Velocidad de la barra de progreso
 
-        ' Arrancar carga en segundo plano
-        bgWorker.RunWorkerAsync()
-        ' Obtener la lista de productos al cargar el formulario
-        'DatosGlobales.ListaProductos = DatosGlobales.ObtenerProductos()
-        ' Actualizar la lista de ventas al cargar el formulario
-        'ActualizarDataViewGrid()
+        DataGridView1.Visible = False
+
+        ' Iniciar carga en segundo plano
+        BgWorker.RunWorkerAsync()
 
     End Sub
+
     ' Se ejecuta en segundo plano — acá va la carga pesada
-    Private Sub bgWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bgWorker.DoWork
+    Private Sub BgWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BgWorker.DoWork
+
         ' Recargar la lista de ventas desde la DB
         DatosGlobales.ListaVentas = DatosGlobales.ObtenerVentas()
-        System.Threading.Thread.Sleep(800) ' mínimo 0.8 segundos visible
+
+        ' cargamos en segundo plano el DataTable con los datos de las ventas para luego asignarlo al DataGridView y que se muestre instantáneamente sin que se note la carga
+        Dim dt As New DataTable()
+        dt.Columns.Add("ID", GetType(Integer))
+        dt.Columns.Add("TotalVentas", GetType(Double))
+        dt.Columns.Add("MetodoPago", GetType(Boolean))
+        dt.Columns.Add("Anulado", GetType(Boolean))
+
+        ' Llenar el DataTable con los datos de las ventas
+        For Each v As Ventas In DatosGlobales.ListaVentas
+            dt.Rows.Add(v.ID, v.TotalVentas, v.MetodoPago, v.Anulado)
+        Next
+
+        ' retornar el DataTable con los datos de las ventas para que se pueda asignar al DataGridView en el evento RunWorkerCompleted
+        e.Result = dt
+
     End Sub
 
     ' Se ejecuta cuando termina — acá actualizás la UI
-    Private Sub bgWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bgWorker.RunWorkerCompleted
+    Private Sub BgWorker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgWorker.RunWorkerCompleted
+
+        ' control de errores, desactiva el panel de carga y muestra un mensaje si hubo un error durante la carga de ventas
         If e.Error IsNot Nothing Then
             MessageBox.Show("Error al cargar ventas: " & e.Error.Message)
-        Else
-            ' Cargar el DataGridView con los datos ya listos
-            ActualizarDataViewGrid()
+            PanelCargando.Visible = False
+            Return
         End If
 
-        ' Ocultar panel de carga y mostrar la grilla
-        ProgressBarCarga.Style = ProgressBarStyle.Blocks
+        ' Binding instantáneo — el DataTable ya está armado
+        Dim dt As DataTable = CType(e.Result, DataTable)
+
+        ' Suspender el layout del DataGridView para evitar redibujados innecesarios mientras se configura
+        DataGridView1.SuspendLayout()
+
+        ' Asignar el DataTable como fuente de datos del DataGridView
+        DataGridView1.DataSource = dt
+        ' Configurar el DataGridView para que no permita agregar filas manualmente
+        DataGridView1.AllowUserToAddRows = False
+
+        ' Configurar columnas
+        With DataGridView1
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            .Columns("ID").HeaderText = "ID"
+            .Columns("ID").ReadOnly = True
+            .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("TotalVentas").HeaderText = "Monto Total"
+            .Columns("TotalVentas").ReadOnly = True
+            .Columns("TotalVentas").DefaultCellStyle.Format = "N0"
+            .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            .Columns("MetodoPago").HeaderText = "Efectivo"
+            .Columns("MetodoPago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("Anulado").HeaderText = "Anulado"
+            .Columns("Anulado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        End With
+
+        ' Colorear anulados
+        For i As Integer = 1 To DataGridView1.Rows.Count
+            If DataGridView1.Rows(DataGridView1.Rows.Count - i).Cells("Anulado").Value Then
+                DataGridView1.Rows(DataGridView1.Rows.Count - i).DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
+
+        ' Scroll al último registro
+        If DataGridView1.Rows.Count > 0 Then
+            DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.Rows.Count - 1
+        End If
+
+        DataGridView1.ResumeLayout()
+
+        ' Actualizar total
+        Dim ventasValidas = DatosGlobales.ListaVentas.Where(Function(v) Not v.Anulado)
+        TxtTotalVentas.Text = ventasValidas.Sum(Function(v) v.TotalVentas).ToString("N0")
+
+        ' Mostrar tabla y ocultar panel de carga
         PanelCargando.Visible = False
         DataGridView1.Visible = True
+
     End Sub
     Private Sub ActualizarDataViewGrid()
 
         ' Actualizar el DataGridView con la lista de ventas
-        DatosGlobales.ListaVentas = DatosGlobales.ObtenerVentas()
+        ' DatosGlobales.ListaVentas = DatosGlobales.ObtenerVentas()
         Dim listaVentas = DatosGlobales.ListaVentas
+
 
         ' Limpiar el DataGridView antes de asignar la nueva fuente de datos
         DataGridView1.DataSource = Nothing
 
         ' Asignar la fuente de datos al DataGridView
         DataGridView1.DataSource = listaVentas
+
+        ' Suspender redibujado para mayor velocidad de carga
+        DataGridView1.SuspendLayout()
 
         ' Ocultar columnas innecesarias
         With DataGridView1
@@ -120,6 +192,9 @@ Public Class Menu
         If DataGridView1.Rows.Count > 0 Then
             DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.Rows.Count - 1
         End If
+
+        ' Reanudar redibujado después de asignar la nueva fuente de datos
+        DataGridView1.ResumeLayout()
 
         ' ACTUALIZAMOS EL TOTAL DE VENTAS
 
@@ -170,14 +245,18 @@ Public Class Menu
                     ' Cambiamos el color de fondo de la fila a rojo para indicar que está anulado
                     DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red
 
-                    ' Mostrar panel de carga y deshabilitar controles
+                    ' Configurar el BackgroundWorker
+                    BgWorker.WorkerReportsProgress = True
+
+                    ' Mostrar panel de carga y ocultar grilla mientras carga
                     PanelCargando.Visible = True
                     PanelCargando.BringToFront()
+                    ProgressBarCarga.Style = ProgressBarStyle.Marquee
+                    ProgressBarCarga.MarqueeAnimationSpeed = 30 ' Velocidad de la barra de progreso
                     DataGridView1.Visible = False
-                    ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
-                    ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
-                    ' Arrancar carga en segundo plano
-                    bgWorker.RunWorkerAsync()
+
+                    ' Iniciar carga en segundo plano
+                    BgWorker.RunWorkerAsync()
 
                 End If
             Else
@@ -198,14 +277,19 @@ Public Class Menu
                     ' Cambiamos el color de fondo de la fila a blanco para indicar que está restaurado
                     DataGridView1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
 
-                    ' Mostrar panel de carga y deshabilitar controles
+
+                    ' Configurar el BackgroundWorker
+                    BgWorker.WorkerReportsProgress = True
+
+                    ' Mostrar panel de carga y ocultar grilla mientras carga
                     PanelCargando.Visible = True
                     PanelCargando.BringToFront()
+                    ProgressBarCarga.Style = ProgressBarStyle.Marquee
+                    ProgressBarCarga.MarqueeAnimationSpeed = 30 ' Velocidad de la barra de progreso
                     DataGridView1.Visible = False
-                    ProgressBarCarga.Style = ProgressBarStyle.Marquee        ' ← forzar por código
-                    ProgressBarCarga.MarqueeAnimationSpeed = 30              ' ← velocidad
-                    ' Arrancar carga en segundo plano
-                    bgWorker.RunWorkerAsync()
+
+                    ' Iniciar carga en segundo plano
+                    BgWorker.RunWorkerAsync()
 
                 End If
             End If
@@ -567,7 +651,7 @@ Public Class Menu
         End Try
     End Sub
 
-    Sub CompactarBaseDatos(dbPath As String)
+    Public Sub CompactarBaseDatos(dbPath As String)
 
         ' Función para compactar la base de datos Access
         Dim tempPath As String = Path.ChangeExtension(dbPath, ".temp.accdb")
