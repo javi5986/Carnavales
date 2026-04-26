@@ -210,7 +210,7 @@ Public Class Menu
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
 
         ' Verificar que la fila seleccionada no sea la fila de encabezado
-        If (e.ColumnIndex = -1 Or e.ColumnIndex = 0 Or e.ColumnIndex = 28) And e.RowIndex >= 0 Then
+        If (e.ColumnIndex = -1 Or e.ColumnIndex = 0 Or e.ColumnIndex = 1) And e.RowIndex >= 0 Then
             ' Si se hace clic en la columna de Anulado o Efectivo, no hacer nada
             Reimprimir.Enabled = True
         Else
