@@ -175,6 +175,7 @@ Partial Class Menu
         ProgressBarCarga.MarqueeAnimationSpeed = 30
         ProgressBarCarga.Name = "ProgressBarCarga"
         ProgressBarCarga.Size = New Size(634, 58)
+        ProgressBarCarga.Step = 30
         ProgressBarCarga.Style = ProgressBarStyle.Marquee
         ProgressBarCarga.TabIndex = 1
         ' 

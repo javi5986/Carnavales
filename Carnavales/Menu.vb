@@ -97,17 +97,21 @@ Public Class Menu
 
         ' Configurar columnas
         With DataGridView1
-            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             .Columns("ID").HeaderText = "ID"
+            .Columns("ID").Width = 100
             .Columns("ID").ReadOnly = True
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("TotalVentas").HeaderText = "Monto Total"
+            .Columns("TotalVentas").Width = 200
             .Columns("TotalVentas").ReadOnly = True
             .Columns("TotalVentas").DefaultCellStyle.Format = "N0"
             .Columns("TotalVentas").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             .Columns("MetodoPago").HeaderText = "Efectivo"
+            .Columns("MetodoPago").Width = 120
             .Columns("MetodoPago").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Anulado").HeaderText = "Anulado"
+            .Columns("Anulado").Width = 120
             .Columns("Anulado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         End With
 
@@ -154,7 +158,7 @@ Public Class Menu
         With DataGridView1
 
             ' Configurar propiedades del DataGridView
-            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             .Columns("ID").HeaderText = "ID"
             .Columns("ID").ReadOnly = True
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -256,8 +260,9 @@ Public Class Menu
                     DataGridView1.Visible = False
 
                     ' Iniciar carga en segundo plano
-                    BgWorker.RunWorkerAsync()
-
+                    If Not BgWorker.IsBusy Then
+                        BgWorker.RunWorkerAsync()
+                    End If
                 End If
             Else
 
@@ -289,7 +294,9 @@ Public Class Menu
                     DataGridView1.Visible = False
 
                     ' Iniciar carga en segundo plano
-                    BgWorker.RunWorkerAsync()
+                    If Not BgWorker.IsBusy Then
+                        BgWorker.RunWorkerAsync()
+                    End If
 
                 End If
             End If
