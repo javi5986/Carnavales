@@ -22,8 +22,8 @@ Partial Class Menu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Cobrar = New Button()
         CerrarCaja = New Button()
         Salir = New Button()
@@ -43,87 +43,87 @@ Partial Class Menu
         ' 
         ' Cobrar
         ' 
-        Cobrar.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Cobrar.Location = New Point(85, 41)
+        Cobrar.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        Cobrar.Location = New Point(12, 12)
         Cobrar.Name = "Cobrar"
-        Cobrar.Size = New Size(270, 95)
+        Cobrar.Size = New Size(182, 58)
         Cobrar.TabIndex = 0
         Cobrar.Text = "COBRAR"
         Cobrar.UseVisualStyleBackColor = True
         ' 
         ' CerrarCaja
         ' 
-        CerrarCaja.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        CerrarCaja.Location = New Point(85, 151)
+        CerrarCaja.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        CerrarCaja.Location = New Point(12, 87)
         CerrarCaja.Name = "CerrarCaja"
-        CerrarCaja.Size = New Size(270, 95)
+        CerrarCaja.Size = New Size(182, 58)
         CerrarCaja.TabIndex = 1
         CerrarCaja.Text = "CERRAR CAJA"
         CerrarCaja.UseVisualStyleBackColor = True
         ' 
         ' Salir
         ' 
-        Salir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Salir.Location = New Point(85, 630)
+        Salir.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        Salir.Location = New Point(12, 401)
         Salir.Name = "Salir"
-        Salir.Size = New Size(270, 95)
+        Salir.Size = New Size(182, 58)
         Salir.TabIndex = 5
         Salir.Text = "SALIR"
         Salir.UseVisualStyleBackColor = True
         ' 
         ' DataGridView1
         ' 
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        DataGridView1.Location = New Point(443, 41)
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Window
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle4.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridView1.Location = New Point(213, 15)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 70
         DataGridView1.ScrollBars = ScrollBars.Vertical
-        DataGridView1.Size = New Size(780, 549)
+        DataGridView1.Size = New Size(763, 444)
         DataGridView1.TabIndex = 7
         ' 
         ' Reimprimir
         ' 
         Reimprimir.Enabled = False
-        Reimprimir.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Reimprimir.Location = New Point(537, 630)
+        Reimprimir.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Reimprimir.Location = New Point(256, 475)
         Reimprimir.Name = "Reimprimir"
-        Reimprimir.Size = New Size(270, 95)
+        Reimprimir.Size = New Size(182, 66)
         Reimprimir.TabIndex = 6
         Reimprimir.Text = "IMPRIMIR"
         Reimprimir.UseVisualStyleBackColor = True
         ' 
         ' ConfigurarImpresora
         ' 
-        ConfigurarImpresora.Font = New Font("Segoe UI", 17F, FontStyle.Bold)
-        ConfigurarImpresora.Location = New Point(85, 393)
+        ConfigurarImpresora.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        ConfigurarImpresora.Location = New Point(12, 253)
         ConfigurarImpresora.Name = "ConfigurarImpresora"
-        ConfigurarImpresora.Size = New Size(270, 95)
+        ConfigurarImpresora.Size = New Size(182, 58)
         ConfigurarImpresora.TabIndex = 3
         ConfigurarImpresora.Text = "CONFIGURAR IMPRESORA"
         ConfigurarImpresora.UseVisualStyleBackColor = True
         ' 
         ' ResetTabla
         ' 
-        ResetTabla.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
-        ResetTabla.Location = New Point(85, 511)
+        ResetTabla.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        ResetTabla.Location = New Point(12, 328)
         ResetTabla.Name = "ResetTabla"
-        ResetTabla.Size = New Size(270, 95)
+        ResetTabla.Size = New Size(182, 58)
         ResetTabla.TabIndex = 4
         ResetTabla.Text = "ELIMINAR  TODAS LAS VENTAS"
         ResetTabla.UseVisualStyleBackColor = True
@@ -132,7 +132,7 @@ Partial Class Menu
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(917, 617)
+        Label1.Location = New Point(558, 462)
         Label1.Name = "Label1"
         Label1.Size = New Size(207, 31)
         Label1.TabIndex = 8
@@ -141,19 +141,19 @@ Partial Class Menu
         ' TxtTotalVentas
         ' 
         TxtTotalVentas.Enabled = False
-        TxtTotalVentas.Font = New Font("Segoe UI", 24.8000011F, FontStyle.Bold)
-        TxtTotalVentas.Location = New Point(890, 663)
+        TxtTotalVentas.Font = New Font("Segoe UI", 18F, FontStyle.Bold)
+        TxtTotalVentas.Location = New Point(524, 496)
         TxtTotalVentas.Name = "TxtTotalVentas"
-        TxtTotalVentas.Size = New Size(266, 62)
+        TxtTotalVentas.Size = New Size(266, 47)
         TxtTotalVentas.TabIndex = 9
         TxtTotalVentas.TextAlign = HorizontalAlignment.Center
         ' 
         ' ConfigurarProductos
         ' 
-        ConfigurarProductos.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ConfigurarProductos.Location = New Point(85, 268)
+        ConfigurarProductos.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        ConfigurarProductos.Location = New Point(12, 165)
         ConfigurarProductos.Name = "ConfigurarProductos"
-        ConfigurarProductos.Size = New Size(270, 107)
+        ConfigurarProductos.Size = New Size(182, 70)
         ConfigurarProductos.TabIndex = 2
         ConfigurarProductos.Text = "CONFIGURAR" & vbCrLf & "PRECIOS"
         ConfigurarProductos.UseVisualStyleBackColor = True
@@ -165,13 +165,13 @@ Partial Class Menu
         PanelCargando.Dock = DockStyle.Fill
         PanelCargando.Location = New Point(0, 0)
         PanelCargando.Name = "PanelCargando"
-        PanelCargando.Size = New Size(1262, 800)
+        PanelCargando.Size = New Size(1006, 553)
         PanelCargando.TabIndex = 10
         PanelCargando.Visible = False
         ' 
         ' ProgressBarCarga
         ' 
-        ProgressBarCarga.Location = New Point(271, 371)
+        ProgressBarCarga.Location = New Point(191, 264)
         ProgressBarCarga.MarqueeAnimationSpeed = 30
         ProgressBarCarga.Name = "ProgressBarCarga"
         ProgressBarCarga.Size = New Size(634, 58)
@@ -183,7 +183,7 @@ Partial Class Menu
         ' 
         LabelCargando.AutoSize = True
         LabelCargando.Font = New Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LabelCargando.Location = New Point(340, 292)
+        LabelCargando.Location = New Point(255, 203)
         LabelCargando.Name = "LabelCargando"
         LabelCargando.Size = New Size(510, 32)
         LabelCargando.TabIndex = 0
@@ -194,7 +194,7 @@ Partial Class Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1262, 800)
+        ClientSize = New Size(1006, 553)
         Controls.Add(PanelCargando)
         Controls.Add(ConfigurarProductos)
         Controls.Add(TxtTotalVentas)

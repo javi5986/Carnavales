@@ -24,6 +24,10 @@ Public Class Precios
         DataGridView1.Columns.Clear()
         ' Asignar la copia a DataGridView
         DataGridView1.DataSource = copiaProductos
+
+        ' ancho automitco de columnas
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
         ' Configurar las columnas del DataGridView
         ConfigurarDataGridView()
 
@@ -103,7 +107,7 @@ Public Class Precios
 
             ' Configuramos las columnas del DataGridView
             .Columns("ID").ReadOnly = True
-            .Columns("ID").Width = 60
+            .Columns("ID").Width = 50
             .Columns("ID").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Nombre").ReadOnly = False
             .Columns("Nombre").Width = 550
@@ -118,7 +122,8 @@ Public Class Precios
             .Columns("ImprimirPorUnidad").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         End With
-
+        ' ancho automitco de columnas
+        '   DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
     End Sub
 

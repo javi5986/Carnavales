@@ -98,8 +98,8 @@ Public Class Ticket
 
         ' Cambiar fuente si es Label, Button o TextBox
         If TypeOf ctrl Is Label OrElse TypeOf ctrl Is Button OrElse TypeOf ctrl Is TextBox Then
-            ' Reducir el tamaño de la fuente en 4 puntos
-            ctrl.Font = New Font(ctrl.Font.FontFamily, ctrl.Font.Size - 4)
+            ' Reducir el tamaño de la fuente en 6 puntos
+            ctrl.Font = New Font(ctrl.Font.FontFamily, ctrl.Font.Size - 6)
         End If
 
     End Sub

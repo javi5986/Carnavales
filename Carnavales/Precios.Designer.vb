@@ -37,10 +37,10 @@ Partial Class Precios
         ' Titulo
         ' 
         Titulo.AutoSize = True
-        Titulo.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Titulo.Location = New Point(199, 9)
+        Titulo.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
+        Titulo.Location = New Point(114, 30)
         Titulo.Name = "Titulo"
-        Titulo.Size = New Size(874, 54)
+        Titulo.Size = New Size(744, 46)
         Titulo.TabIndex = 0
         Titulo.Text = "CONFIGURACIÓN DE PRODUCTOS Y PRECIOS"
         ' 
@@ -66,18 +66,18 @@ Partial Class Precios
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        DataGridView1.Location = New Point(43, 118)
+        DataGridView1.Location = New Point(29, 118)
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 45
-        DataGridView1.Size = New Size(1143, 532)
+        DataGridView1.Size = New Size(953, 336)
         DataGridView1.TabIndex = 1
         ' 
         ' Guardar
         ' 
-        Guardar.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Guardar.Location = New Point(248, 670)
+        Guardar.Font = New Font("Segoe UI", 14.2F, FontStyle.Bold)
+        Guardar.Location = New Point(43, 484)
         Guardar.Name = "Guardar"
         Guardar.Size = New Size(252, 57)
         Guardar.TabIndex = 2
@@ -86,8 +86,8 @@ Partial Class Precios
         ' 
         ' Salir
         ' 
-        Salir.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Salir.Location = New Point(821, 670)
+        Salir.Font = New Font("Segoe UI", 14.2F, FontStyle.Bold)
+        Salir.Location = New Point(713, 484)
         Salir.Name = "Salir"
         Salir.Size = New Size(252, 57)
         Salir.TabIndex = 3
@@ -96,8 +96,8 @@ Partial Class Precios
         ' 
         ' LimpiarTabla
         ' 
-        LimpiarTabla.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LimpiarTabla.Location = New Point(530, 670)
+        LimpiarTabla.Font = New Font("Segoe UI", 14.2F, FontStyle.Bold)
+        LimpiarTabla.Location = New Point(396, 484)
         LimpiarTabla.Name = "LimpiarTabla"
         LimpiarTabla.Size = New Size(252, 57)
         LimpiarTabla.TabIndex = 4
@@ -108,7 +108,7 @@ Partial Class Precios
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1260, 739)
+        ClientSize = New Size(1006, 553)
         Controls.Add(LimpiarTabla)
         Controls.Add(Salir)
         Controls.Add(Guardar)
