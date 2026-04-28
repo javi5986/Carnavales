@@ -110,7 +110,7 @@ Partial Class Menu
         ' 
         ' ConfigurarImpresora
         ' 
-        ConfigurarImpresora.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        ConfigurarImpresora.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         ConfigurarImpresora.Location = New Point(12, 253)
         ConfigurarImpresora.Name = "ConfigurarImpresora"
         ConfigurarImpresora.Size = New Size(182, 58)
@@ -150,7 +150,7 @@ Partial Class Menu
         ' 
         ' ConfigurarProductos
         ' 
-        ConfigurarProductos.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold)
+        ConfigurarProductos.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         ConfigurarProductos.Location = New Point(12, 165)
         ConfigurarProductos.Name = "ConfigurarProductos"
         ConfigurarProductos.Size = New Size(182, 70)
