@@ -350,15 +350,53 @@ Public Class Ticket
                             ' EL LARGO DE LOS NOMBRES DE LOS PRODUCTOS NO DEBE EXCEDER LOS 32 CARACTERES
                             ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
 
-                            texto &= "================================================" & vbCrLf
-                            ' Tamaño grande (doble ancho + doble alto)
-                            texto &= Chr(&H1D) & "!" & Chr(&H11)
-                            texto &= "        A D J C  " & vbCrLf
-                            ' Volver a tamaño normal
+                            texto = texto & "================================================" & vbCrLf
+
+                            ' Centrar
+                            texto &= Chr(&H1B) & "a" & Chr(1)
+
+                            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+                            texto &= Chr(&H1B) & "!" & Chr(56)
+
+                            ' El número con espacios de padding para que el bloque negro sea ancho
+                            texto = texto & "A.D.J.C" & vbCrLf
+
+                            ' Volver a fuente normal y alineación izquierda
                             texto &= Chr(&H1B) & "!" & Chr(16)
-                            texto &= "================================================" & vbCrLf
+                            texto &= Chr(&H1B) & "a" & Chr(0)
+
+                            ' ─────────────────────────────────────────────────────────────────
+
+                            texto = texto & "================================================" & vbCrLf
+
                             texto &= "Fecha: " & venta.Fecha & vbCrLf
+                            'texto &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+
+
+                            ' ── Número de ticket grande — fondo negro, número blanco ─────────
+
+                            ' Centrar
+                            texto &= Chr(&H1B) & "a" & Chr(1)
+
+                            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+                            texto &= Chr(&H1B) & "!" & Chr(56)
+
+                            ' Activar impresión invertida (fondo negro, texto blanco)
+                            texto &= Chr(&H1D) & "B" & Chr(1)
+
+                            ' El número con espacios de padding para que el bloque negro sea ancho
                             texto &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+
+                            ' Desactivar inversión
+                            texto &= Chr(&H1D) & "B" & Chr(0)
+
+                            ' Volver a fuente normal y alineación izquierda
+                            texto &= Chr(&H1B) & "!" & Chr(16)
+                            texto &= Chr(&H1B) & "a" & Chr(0)
+
+                            ' ─────────────────────────────────────────────────────────────────
+
+
                             texto &= "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos & vbCrLf
                             texto &= "Cant    Detalle                          Monto  " & vbCrLf
                             texto &= "------------------------------------------------" & vbCrLf
@@ -393,15 +431,49 @@ Public Class Ticket
             ' Fuente A (12pt), con negrita
             textoFinal &= Chr(&H1B) & "!" & Chr(16)
 
-            textoFinal &= "================================================" & vbCrLf
-            ' Tamaño grande (doble ancho + doble alto)
-            textoFinal &= Chr(&H1D) & "!" & Chr(&H11)
-            textoFinal &= "        A D J C  " & vbCrLf
-            ' Volver a tamaño normal
+            textoFinal = textoFinal & "================================================" & vbCrLf
+
+            ' Centrar
+            textoFinal &= Chr(&H1B) & "a" & Chr(1)
+
+            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+            textoFinal &= Chr(&H1B) & "!" & Chr(56)
+
+            ' El número con espacios de padding para que el bloque negro sea ancho
+            textoFinal = textoFinal & "A.D.J.C" & vbCrLf
+
+            ' Volver a fuente normal y alineación izquierda
             textoFinal &= Chr(&H1B) & "!" & Chr(16)
-            textoFinal &= "================================================" & vbCrLf
+            textoFinal &= Chr(&H1B) & "a" & Chr(0)
+
+            ' ─────────────────────────────────────────────────────────────────
+
+            textoFinal = textoFinal & "================================================" & vbCrLf
             textoFinal &= "Fecha: " & venta.Fecha & vbCrLf
+            'textoFinal &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+
+            ' ── Número de ticket grande — fondo negro, número blanco ─────────
+
+            ' Centrar
+            textoFinal &= Chr(&H1B) & "a" & Chr(1)
+
+            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+            textoFinal &= Chr(&H1B) & "!" & Chr(56)
+
+            ' Activar impresión invertida (fondo negro, texto blanco)
+            textoFinal &= Chr(&H1D) & "B" & Chr(1)
+
+            ' El número con espacios de padding para que el bloque negro sea ancho
             textoFinal &= "Ticket Nº: " & LabelNumTicket.Text & vbCrLf
+
+            ' Desactivar inversión
+            textoFinal &= Chr(&H1D) & "B" & Chr(0)
+
+            ' Volver a fuente normal y alineación izquierda
+            textoFinal &= Chr(&H1B) & "!" & Chr(16)
+            textoFinal &= Chr(&H1B) & "a" & Chr(0)
+
+            ' ─────────────────────────────────────────────────────────────────
             textoFinal &= "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos & vbCrLf
             textoFinal &= "Cant    Detalle                          Monto  " & vbCrLf
             textoFinal &= "------------------------------------------------" & vbCrLf

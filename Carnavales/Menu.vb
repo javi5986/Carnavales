@@ -392,11 +392,48 @@ Public Class Menu
             ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $9.999.999
 
             texto = texto & "================================================" & vbCrLf
-            texto = texto & "                     ADJC                       " & vbCrLf
+
+            ' Centrar
+            texto &= Chr(&H1B) & "a" & Chr(1)
+
+            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+            texto &= Chr(&H1B) & "!" & Chr(56)
+
+            ' El número con espacios de padding para que el bloque negro sea ancho
+            texto = texto & "A.D.J.C" & vbCrLf
+
+            ' Volver a fuente normal y alineación izquierda
+            texto &= Chr(&H1B) & "!" & Chr(16)
+            texto &= Chr(&H1B) & "a" & Chr(0)
+
+            ' ─────────────────────────────────────────────────────────────────
+
             texto = texto & "================================================" & vbCrLf
 
             texto = texto & "Fecha: " & venta.Fecha.ToString & " " & vbCrLf
+            'texto = texto & "Ticket Nº: " & venta.ID.ToString & "  " & vbCrLf
+            ' ── Número de ticket grande — fondo negro, número blanco ─────────
+
+            ' Centrar
+            texto &= Chr(&H1B) & "a" & Chr(1)
+
+            ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+            texto &= Chr(&H1B) & "!" & Chr(56)
+
+            ' Activar impresión invertida (fondo negro, texto blanco)
+            texto &= Chr(&H1D) & "B" & Chr(1)
+
+            ' El número con espacios de padding para que el bloque negro sea ancho
             texto = texto & "Ticket Nº: " & venta.ID.ToString & "  " & vbCrLf
+
+            ' Desactivar inversión
+            texto &= Chr(&H1D) & "B" & Chr(0)
+
+            ' Volver a fuente normal y alineación izquierda
+            texto &= Chr(&H1B) & "!" & Chr(16)
+            texto &= Chr(&H1B) & "a" & Chr(0)
+
+            ' ─────────────────────────────────────────────────────────────────
             texto = texto & "Evento/Cajeros: " & DatosGlobales.cajeros.Apellidos.ToString & "  " & vbCrLf
             texto = texto & "Cant    Detalle                          Monto  " & vbCrLf
             texto = texto & "------------------------------------------------" & vbCrLf
