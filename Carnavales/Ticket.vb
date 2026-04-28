@@ -359,7 +359,7 @@ Public Class Ticket
                             texto &= Chr(&H1B) & "!" & Chr(56)
 
                             ' El número con espacios de padding para que el bloque negro sea ancho
-                            texto = texto & "A.D.J.C" & vbCrLf
+                            texto = texto & "NOMBRE EMPRESA" & vbCrLf
 
                             ' Volver a fuente normal y alineación izquierda
                             texto &= Chr(&H1B) & "!" & Chr(16)
@@ -440,7 +440,7 @@ Public Class Ticket
             textoFinal &= Chr(&H1B) & "!" & Chr(56)
 
             ' El número con espacios de padding para que el bloque negro sea ancho
-            textoFinal = textoFinal & "A.D.J.C" & vbCrLf
+            textoFinal = textoFinal & "NOMBRE EMPRESA" & vbCrLf
 
             ' Volver a fuente normal y alineación izquierda
             textoFinal &= Chr(&H1B) & "!" & Chr(16)

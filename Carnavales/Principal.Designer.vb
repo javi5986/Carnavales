@@ -24,11 +24,9 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Label1 = New Label()
         Label2 = New Label()
-        PictureBox1 = New PictureBox()
         Apellidos = New TextBox()
         Aceptar = New Button()
         Salir = New Button()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -50,16 +48,6 @@ Partial Class Principal
         Label2.Size = New Size(459, 92)
         Label2.TabIndex = 1
         Label2.Text = "Ingrese el nombre del evento" & vbCrLf & "o los apellidos de los cajeros"
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = My.Resources.Resources.Escudo
-        PictureBox1.Location = New Point(619, 12)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(169, 162)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
         ' 
         ' Apellidos
         ' 
@@ -99,7 +87,6 @@ Partial Class Principal
         Controls.Add(Salir)
         Controls.Add(Aceptar)
         Controls.Add(Apellidos)
-        Controls.Add(PictureBox1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.FixedSingle
@@ -107,14 +94,12 @@ Partial Class Principal
         Name = "Principal"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Principal"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Apellidos As TextBox
     Friend WithEvents Aceptar As Button
     Friend WithEvents Salir As Button

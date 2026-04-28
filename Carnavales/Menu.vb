@@ -400,7 +400,7 @@ Public Class Menu
             texto &= Chr(&H1B) & "!" & Chr(56)
 
             ' El número con espacios de padding para que el bloque negro sea ancho
-            texto = texto & "A.D.J.C" & vbCrLf
+            texto = texto & "NOMBRE EMPRESA" & vbCrLf
 
             ' Volver a fuente normal y alineación izquierda
             texto &= Chr(&H1B) & "!" & Chr(16)
@@ -548,7 +548,22 @@ Public Class Menu
                 ' EL PRECIO SE MUESTRA COMO DOUBLE SIN DECIMALES HASTA  $99.999.999
 
                 texto = texto & "================================================" & vbCrLf
-                texto = texto & "                     ADJC                       " & vbCrLf
+
+                ' Centrar
+                texto &= Chr(&H1B) & "a" & Chr(1)
+
+                ' Fuente grande: doble ancho + doble alto + negrita (8+16+32=56)
+                texto &= Chr(&H1B) & "!" & Chr(56)
+
+                ' El número con espacios de padding para que el bloque negro sea ancho
+                texto = texto & "NOMBRE EMPRESA" & vbCrLf
+
+                ' Volver a fuente normal y alineación izquierda
+                texto &= Chr(&H1B) & "!" & Chr(16)
+                texto &= Chr(&H1B) & "a" & Chr(0)
+
+                ' ─────────────────────────────────────────────────────────────────
+
                 texto = texto & "================================================" & vbCrLf
                 texto = texto & "Fecha: " & FechaHora.ToString & " " & vbCrLf
                 texto = texto & "CIERRE DE CAJA " & vbCrLf
