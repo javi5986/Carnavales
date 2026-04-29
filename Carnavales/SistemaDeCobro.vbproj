@@ -6,7 +6,7 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>Escudo.ico</ApplicationIcon>
+    <ApplicationIcon>Escudo2.ico</ApplicationIcon>
     <RootNamespace>SistemaDeCobro</RootNamespace>
     <AssemblyName>SistemaDeCobro</AssemblyName>
 
@@ -45,6 +45,10 @@
     <OutputPath>C:\Users\JOM\Desktop\Compilacion</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Escudo2.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
