@@ -31,6 +31,15 @@
 
             End If
 
+            ' Conectar visor en segundo plano — no bloquea el arranque
+            Dim t As New System.Threading.Thread(Sub()
+                                                     Dim ok As Boolean = Visor.Conectar()
+                                                     ' Opcional: mostrar estado en la UI
+                                                     ' If ok Then ... Else ...
+                                                 End Sub)
+            t.IsBackground = True
+            t.Start()
+
         Catch ex As Exception
             ' Manejar cualquier error que ocurra al cargar los cajeros
             MessageBox.Show("Error al cargar CAJEROS: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

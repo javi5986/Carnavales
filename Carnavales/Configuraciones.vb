@@ -4,6 +4,9 @@ Imports System.Text
 Module Configuraciones
 
     ' Configuraciones generales del sistema
+
+    ' puerto tablero led del visor de caja (se detecta automáticamente al conectar el visor)
+    Public puertoVisor As String = ""
     ' Nombre de la impresora por defecto
     Public nombreImpresora As String = "cobro"
     ' Ruta de la base de datos

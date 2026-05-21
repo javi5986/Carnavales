@@ -11,6 +11,7 @@ Public Class Menu
     Private WithEvents BgWorker As New System.ComponentModel.BackgroundWorker()
     Private Sub Menu_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ' Confirmación de cierre de la aplicación
+        Visor.Desconectar()
         Application.Exit()
 
     End Sub

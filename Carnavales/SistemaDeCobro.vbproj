@@ -60,6 +60,8 @@
 
     <PackageReference Include="System.Data.OleDb" Version="9.0.7" />
 
+    <PackageReference Include="System.IO.Ports" Version="10.0.8" />
+
     <PackageReference Include="System.Management" Version="10.0.7" />
   </ItemGroup>
 

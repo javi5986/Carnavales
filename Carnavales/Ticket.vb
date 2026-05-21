@@ -17,6 +17,7 @@ Public Class Ticket
 
         ' Cerrar el formulario y mostrar el menú principal
         Menu.Show()
+        Visor.EnviarIdle()
         Me.Close()
 
     End Sub
@@ -182,6 +183,20 @@ Public Class Ticket
 
         ' Actualizar el TextBox de Total con el valor calculado
         TextBoxTotal.Text = total.ToString("N0")
+
+        ' Dim total As Double = 0
+        Double.TryParse(TextBoxTotal.Text.Replace(".", "").Replace(",", ""),
+                        System.Globalization.NumberStyles.Any,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        total)
+
+        ' Enviar al visor solo si hay algo que mostrar
+        If total > 0 Then
+            Visor.EnviarTotal(total)
+        Else
+            ' Si borró todo, volver a idle
+            Visor.EnviarIdle()
+        End If
 
     End Sub
 
@@ -525,6 +540,9 @@ Public Class Ticket
             ' Enviar a la impresora
             RawPrinterHelper.SendStringToPrinter(
             Configuraciones.nombreImpresora, textoFinal)
+
+            ' El Arduino sostendrá el monto 2 minutos y volverá solo a la marquesina
+            Visor.EnviarImpresion(venta.TotalVentas)
 
         Catch ex As Exception
             'MessageBox.Show("Error Impresion: " & ex.Message)
