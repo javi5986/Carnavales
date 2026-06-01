@@ -532,6 +532,10 @@ Public Class Ticket
             totalTicket.ToString("N0") & vbCrLf
             textoFinal &= "================================================" & vbCrLf
             textoFinal &= Chr(&H1D) & "V" & Chr(66) & Chr(0)
+
+            ' El Arduino sostendrá el monto 2 minutos y volverá solo a la marquesina
+            Visor.EnviarImpresion(venta.TotalVentas)
+
             ' Si no hay bebidas, no imprimir el ticket final
             If cantBebidas = 0 Then
                 Return
@@ -541,8 +545,6 @@ Public Class Ticket
             RawPrinterHelper.SendStringToPrinter(
             Configuraciones.nombreImpresora, textoFinal)
 
-            ' El Arduino sostendrá el monto 2 minutos y volverá solo a la marquesina
-            Visor.EnviarImpresion(venta.TotalVentas)
 
         Catch ex As Exception
             'MessageBox.Show("Error Impresion: " & ex.Message)
@@ -591,12 +593,17 @@ Public Class Ticket
         ' Detecta I o i (no distingue mayúsculas)
         If e.KeyCode = Keys.I Then
             Call Imprimir_Click(sender, e)
-            e.Handled = True
+            ' Marcar el evento como manejado para evitar que se procesen otras acciones relacionadas con la tecla I
+            'e.Handled = True
         End If
         ' Detecta S o s (no distingue mayúsculas)
         If e.KeyCode = Keys.S Then
             ' Cerrar el formulario y mostrar el menú principal
             Menu.Show()
+            ' Volver a idle para que no quede el monto en la marquesina
+            Visor.EnviarIdle()
+            ' Marcar el evento como manejado para evitar que se procesen otras acciones relacionadas con la tecla I
+            e.Handled = True
             Me.Close()
         End If
     End Sub
